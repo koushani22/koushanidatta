@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=DM+Sans:opsz,wght@9..40,300..800&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: #F3EEE8; }
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: #C41E2A; }
+    ::selection { background: #C41E2A; color: #fff; }
+  </style>
+<style id="kos-mobile">
+@media (max-width: 760px) {
+  html, body { overflow-x: hidden; }
+  [style*="grid-template-columns: repeat(2"]:not([data-slide-wrap] *),
+  [style*="grid-template-columns: repeat(3"]:not([data-slide-wrap] *),
+  [style*="grid-template-columns: repeat(4"]:not([data-slide-wrap] *),
+  [style*="grid-template-columns: 1fr 1fr"]:not([data-slide-wrap] *),
+  [style*="grid-template-columns: minmax(0px, 1fr) minmax(0px, 1.2fr)"]:not([data-slide-wrap] *),
+  [style*="grid-template-columns: minmax(96px, auto) minmax(0px, 1fr) auto"]:not([data-slide-wrap] *) { grid-template-columns: minmax(0, 1fr) !important; }
+  [style*="justify-self: end"]:not([data-slide-wrap] *) { justify-self: start !important; text-align: left !important; }
+  [style*="white-space: nowrap"]:not([data-slide-wrap] *) { white-space: normal !important; }
+}
+</style>
+  <script src="./lazy-video.js"></script>
+</helmet>
+<div style="background:#F3EEE8;color:#14110F;font-family:'DM Sans',sans-serif;">
+  <div style="position:sticky;top:0;z-index:50;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;padding:14px clamp(16px,3vw,40px);background:rgba(246,242,236,0.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(43,36,102,0.12);font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:11.5px;letter-spacing:0.2em;text-transform:uppercase;color:#14110F;">
+    <a href="Cover Monument.dc.html" style="justify-self:start;" style-hover="color:#C41E2A">Koushani Datta</a>
+    <span style="color:#2B2466;">Logofolio</span>
+    <a href="Cover Monument.dc.html#work" style="justify-self:end;border-bottom:1.5px solid currentColor;padding-bottom:2px;" style-hover="color:#C41E2A">← All work</a>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:clamp(16px,2.4vw,32px);padding:clamp(20px,4vw,56px) clamp(12px,3vw,40px);">
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Cover" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -30px rgba(20,17,15,0.55);">
+    <img loading="lazy" decoding="async" src="assets/logofolio/cover-wide.webp" alt="Logofolio" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block;" />
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Enduro Strides" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -30px rgba(20,17,15,0.55);display:grid;grid-template-columns:1.35fr 1fr;">
+    <div style="position:relative;background:#FFFFFF;display:flex;align-items:center;justify-content:center;"><img loading="lazy" decoding="async" src="assets/logofolio/enduro-blue.png" alt="" style="width:64%;height:auto;display:block;" /></div>
+    <div style="position:relative;background:#0213C4;display:flex;align-items:center;justify-content:center;"><img loading="lazy" decoding="async" src="assets/logofolio/enduro-white.png" alt="" style="width:74%;height:auto;display:block;" /></div>
+    <div style="position:absolute;left:3%;right:3%;top:5%;display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:clamp(8px,0.78vw,12px);letter-spacing:0.22em;text-transform:uppercase;pointer-events:none;"><span style="color:#0213C4;">Enduro Strides</span><span style="color:#FFFFFF;">Running club</span></div>
+    <div style="position:absolute;left:3%;right:3%;bottom:5%;display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:clamp(8px,0.78vw,12px);letter-spacing:0.22em;text-transform:uppercase;pointer-events:none;"><span style="color:#0213C4;">Primary lockup</span><span style="color:#FFFFFF;">Reversed · 2026</span></div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Gate 4 Films" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -30px rgba(20,17,15,0.55);display:grid;grid-template-columns:1.35fr 1fr;">
+    <div style="position:relative;background:#F3EEE8;display:flex;align-items:center;justify-content:center;"><img loading="lazy" decoding="async" src="assets/logofolio/gate4-black-full.png" alt="" style="width:52%;height:auto;display:block;" /></div>
+    <div style="position:relative;background:#14110F;display:flex;align-items:center;justify-content:center;"><img loading="lazy" decoding="async" src="assets/logofolio/gate4-white-full.png" alt="" style="width:64%;height:auto;display:block;" /></div>
+    <div style="position:absolute;left:3%;right:3%;top:5%;display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:clamp(8px,0.78vw,12px);letter-spacing:0.22em;text-transform:uppercase;pointer-events:none;"><span style="color:#14110F;">Gate 4 Films</span><span style="color:#F3EEE8;">Film production</span></div>
+    <div style="position:absolute;left:3%;right:3%;bottom:5%;display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:clamp(8px,0.78vw,12px);letter-spacing:0.22em;text-transform:uppercase;pointer-events:none;"><span style="color:#14110F;">Primary lockup</span><span style="color:#F3EEE8;">Reversed · 2026</span></div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Courier Connected" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -30px rgba(20,17,15,0.55);display:grid;grid-template-columns:1.35fr 1fr;">
+    <div style="position:relative;background:#FFFFFF;display:flex;align-items:center;justify-content:center;"><img loading="lazy" decoding="async" src="assets/logofolio/cc-blue.png" alt="" style="width:66%;height:auto;display:block;" /></div>
+    <div style="position:relative;background:#1553C9;display:flex;align-items:center;justify-content:center;"><img loading="lazy" decoding="async" src="assets/logofolio/cc-white.png" alt="" style="width:76%;height:auto;display:block;" /></div>
+    <div style="position:absolute;left:3%;right:3%;top:5%;display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:clamp(8px,0.78vw,12px);letter-spacing:0.22em;text-transform:uppercase;pointer-events:none;"><span style="color:#1553C9;">Courier Connected</span><span style="color:#FFFFFF;">Logistics</span></div>
+    <div style="position:absolute;left:3%;right:3%;bottom:5%;display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:clamp(8px,0.78vw,12px);letter-spacing:0.22em;text-transform:uppercase;pointer-events:none;"><span style="color:#1553C9;">Primary lockup</span><span style="color:#FFFFFF;">Reversed · 2025</span></div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Lumi Club" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -30px rgba(20,17,15,0.55);display:grid;grid-template-columns:1.35fr 1fr;">
+    <div style="position:relative;background:#FBF8F3;display:flex;align-items:center;justify-content:center;"><img loading="lazy" decoding="async" src="assets/logofolio/lumi-colour.png" alt="" style="width:62%;height:auto;display:block;" /></div>
+    <div style="position:relative;background:#1B2220;display:flex;align-items:center;justify-content:center;"><img loading="lazy" decoding="async" src="assets/logofolio/lumi-reversed.png" alt="" style="width:74%;height:auto;display:block;" /></div>
+    <div style="position:absolute;left:3%;right:3%;top:5%;display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:clamp(8px,0.78vw,12px);letter-spacing:0.22em;text-transform:uppercase;pointer-events:none;"><span style="color:#1B2220;">Lumi Club</span><span style="color:#FBF8F3;">Kids’ club</span></div>
+    <div style="position:absolute;left:3%;right:3%;bottom:5%;display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:clamp(8px,0.78vw,12px);letter-spacing:0.22em;text-transform:uppercase;pointer-events:none;"><span style="color:#1B2220;">Primary lockup</span><span style="color:#FBF8F3;">Reversed · 2026</span></div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Paul’s Residency" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -30px rgba(20,17,15,0.55);display:grid;grid-template-columns:1.35fr 1fr;">
+    <div style="position:relative;background:#fcfbfa;display:flex;align-items:center;justify-content:center;"><img loading="lazy" decoding="async" src="assets/logofolio/pauls-logo-clean.png" alt="" style="width:86%;height:auto;display:block;" /></div>
+    <div style="position:relative;background:#2E3B2C;display:flex;align-items:center;justify-content:center;"><img loading="lazy" decoding="async" src="assets/logofolio/pauls-reversed.png" alt="" style="width:90%;height:auto;display:block;" /></div>
+    <div style="position:absolute;left:3%;right:3%;top:5%;display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:clamp(8px,0.78vw,12px);letter-spacing:0.22em;text-transform:uppercase;pointer-events:none;"><span style="color:#2F3A2A;">Paul’s Residency</span><span style="color:#F3EEE8;">Homestay · Darjeeling</span></div>
+    <div style="position:absolute;left:3%;right:3%;bottom:5%;display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:clamp(8px,0.78vw,12px);letter-spacing:0.22em;text-transform:uppercase;pointer-events:none;"><span style="color:#2F3A2A;">Primary lockup</span><span style="color:#F3EEE8;">Reversed · 2026</span></div>
+  </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

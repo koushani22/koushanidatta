@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <script src="./autoplay.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=DM+Sans:opsz,wght@9..40,300..800&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: #F3EEE8; }
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: #C41E2A; }
+    ::selection { background: #C41E2A; color: #fff; }
+  </style>
+<style id="kos-mobile">
+@media (max-width: 760px) {
+  html, body { overflow-x: hidden; }
+  [style*="grid-template-columns: repeat(2"]:not([data-slide-wrap] *),
+  [style*="grid-template-columns: repeat(3"]:not([data-slide-wrap] *),
+  [style*="grid-template-columns: repeat(4"]:not([data-slide-wrap] *),
+  [style*="grid-template-columns: 1fr 1fr"]:not([data-slide-wrap] *),
+  [style*="grid-template-columns: minmax(0px, 1fr) minmax(0px, 1.2fr)"]:not([data-slide-wrap] *),
+  [style*="grid-template-columns: minmax(96px, auto) minmax(0px, 1fr) auto"]:not([data-slide-wrap] *) { grid-template-columns: minmax(0, 1fr) !important; }
+  [style*="justify-self: end"]:not([data-slide-wrap] *) { justify-self: start !important; text-align: left !important; }
+  [style*="white-space: nowrap"]:not([data-slide-wrap] *) { white-space: normal !important; }
+}
+</style>
+  <script src="./lazy-video.js"></script>
+</helmet>
+<div style="background:#F3EEE8;color:#14110F;font-family:'DM Sans',sans-serif;">
+  <div style="position:sticky;top:0;z-index:50;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;padding:14px clamp(16px,3vw,40px);background:rgba(246,242,236,0.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(43,36,102,0.12);font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:11.5px;letter-spacing:0.2em;text-transform:uppercase;color:#14110F;">
+    <a href="Cover Monument.dc.html" style="justify-self:start;" style-hover="color:#C41E2A">Koushani Datta</a>
+    <span style="color:#2B2466;">06 — SQ FT.</span>
+    <a href="Cover Monument.dc.html#work" style="justify-self:end;border-bottom:1.5px solid currentColor;padding-bottom:2px;" style-hover="color:#C41E2A">← All work</a>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:clamp(16px,2.4vw,32px);padding:clamp(20px,4vw,56px) clamp(12px,3vw,40px);">
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Logo motion" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(43,36,102,0.45),0 0 0 1px rgba(43,36,102,0.08);background:#0C0A09;">
+<div data-label="SQ FT. — Logo motion" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(0.2);background:#0C0A09;color:#F3EEE8;font-family:'DM Sans',sans-serif;overflow:hidden;">
+    <div style="position:absolute;inset:0;overflow:hidden;"><video preload="none" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" data-lazy="assets/sqft2/sq-01-02.mp4" poster="assets/sqft2/sq-01-02-poster.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video></div>
+    <div style="display:none;"><div style="display:flex;flex-direction:column;gap:14px;">
+        
+        <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-0.02em;font-size:54px;line-height:1;text-wrap:balance;">A puffy, stackable mark</span>
+        <p style="margin:0;font-size:26px;line-height:1.45;opacity:0.85;text-wrap:pretty;">The logo inflates like the bottle — soft, square and collectable.</p>
+      </div></div>
+  </div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Opener" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(43,36,102,0.45),0 0 0 1px rgba(43,36,102,0.08);background:#0C0A09;">
+<div data-label="SQ FT. — Opener" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(0.2);background:#0C0A09;color:#F3EEE8;font-family:'DM Sans',sans-serif;overflow:hidden;">
+    <img loading="lazy" decoding="async" src="assets/sqft/01.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;" />
+  </div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Case study" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(43,36,102,0.45),0 0 0 1px rgba(43,36,102,0.08);background:#0C0A09;">
+<div data-label="SQ FT. — Case study" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(0.2);background:#0C0A09;color:#F3EEE8;font-family:'DM Sans',sans-serif;overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute;right:-30px;bottom:-90px;font-size:640px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-0.04em;line-height:0.8;color:transparent;-webkit-text-stroke:2px rgba(243,238,232,0.14);white-space:nowrap;pointer-events:none;">06</div>
+    <span style="position:absolute;left:80px;top:170px;font-size:24px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#4FB8E8;">Case study</span>
+    <h2 style="position:absolute;left:80px;width:820px;top:220px;margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-0.03em;font-size:82px;line-height:1;text-wrap:balance;">A stackable spirit, where every bottle is a piece of art.</h2>
+    <div style="position:absolute;left:80px;width:820px;bottom:80px;display:flex;flex-direction:column;border-top:3px solid #F3EEE8;"><div style="display:grid;grid-template-columns:220px 1fr;gap:20px;padding:16px 0;border-bottom:1px solid rgba(243,238,232,0.25);font-size:26px;"><span style="font-weight:700;letter-spacing:0.12em;text-transform:uppercase;font-size:24px;opacity:0.7;">Role</span><span style="font-weight:600;">Brand &amp; packaging designer · Solo project</span></div><div style="display:grid;grid-template-columns:220px 1fr;gap:20px;padding:16px 0;border-bottom:1px solid rgba(243,238,232,0.25);font-size:26px;"><span style="font-weight:700;letter-spacing:0.12em;text-transform:uppercase;font-size:24px;opacity:0.7;">Deliverables</span><span style="font-weight:600;">Naming, identity, structural packaging, 3D, campaign</span></div></div>
+    <div style="position:absolute;left:1020px;right:80px;top:170px;bottom:80px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:0;"><div style="display:flex;flex-direction:column;gap:14px;padding:28px 32px 28px 0px;"><div style="display:flex;align-items:baseline;gap:16px;"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:72px;line-height:0.8;color:#4FB8E8;">01</span><span style="font-size:24px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;">Challenge</span></div><p style="margin:0;font-size:29px;line-height:1.38;text-wrap:pretty;">Design a spirit for people who move cities and rent their walls.</p></div><div style="display:flex;flex-direction:column;gap:14px;padding:28px 0px 28px 32px;border-left:1px solid rgba(243,238,232,0.25);"><div style="display:flex;align-items:baseline;gap:16px;"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:72px;line-height:0.8;color:#4FB8E8;">02</span><span style="font-size:24px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;">Insight</span></div><p style="margin:0;font-size:29px;line-height:1.38;text-wrap:pretty;">Bottles bought on the move clutter a shelf, then get thrown away.</p></div><div style="display:flex;flex-direction:column;gap:14px;padding:28px 32px 28px 0px;border-top:1px solid rgba(243,238,232,0.25);"><div style="display:flex;align-items:baseline;gap:16px;"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:72px;line-height:0.8;color:#4FB8E8;">03</span><span style="font-size:24px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;">Idea</span></div><p style="margin:0;font-size:29px;line-height:1.38;text-wrap:pretty;">A stackable stoneware cube, with each series drawn by a different artist.</p></div><div style="display:flex;flex-direction:column;gap:14px;padding:28px 0px 28px 32px;border-left:1px solid rgba(243,238,232,0.25);border-top:1px solid rgba(243,238,232,0.25);"><div style="display:flex;align-items:baseline;gap:16px;"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:72px;line-height:0.8;color:#4FB8E8;">04</span><span style="font-size:24px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;">Outcome</span></div><p style="margin:0;font-size:29px;line-height:1.38;text-wrap:pretty;">A bottle that outlives the drink: refillable, collectable and stackable into your own display.</p></div></div>
+  </div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Origin" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(43,36,102,0.45),0 0 0 1px rgba(43,36,102,0.08);background:#0C0A09;">
+<div data-label="SQ FT. — Origin" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(0.2);background:#0C0A09;color:#F3EEE8;font-family:'DM Sans',sans-serif;overflow:hidden;">
+    <img loading="lazy" decoding="async" src="assets/sqft2/03.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;" />
+    
+  </div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Art you can sip" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(43,36,102,0.45),0 0 0 1px rgba(43,36,102,0.08);background:#0C0A09;">
+<div data-label="SQ FT. — Art you can sip" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(0.2);background:#0C0A09;color:#F3EEE8;font-family:'DM Sans',sans-serif;overflow:hidden;">
+    <img loading="lazy" decoding="async" src="assets/sqft2/04.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;" />
+    
+  </div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Cocktail drop" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(43,36,102,0.45),0 0 0 1px rgba(43,36,102,0.08);background:#0C0A09;">
+<div data-label="SQ FT. — Cocktail drop" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(0.2);background:#0C0A09;color:#F3EEE8;font-family:'DM Sans',sans-serif;overflow:hidden;">
+    <img loading="lazy" decoding="async" src="assets/sqft2/12.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;" />
+    
+  </div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Flavours" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(43,36,102,0.45),0 0 0 1px rgba(43,36,102,0.08);background:#0C0A09;">
+<div data-label="SQ FT. — Flavours" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(0.2);background:#0C0A09;color:#F3EEE8;font-family:'DM Sans',sans-serif;overflow:hidden;">
+    <video preload="none" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" data-lazy="assets/sqft2/sq-08-11.mp4" poster="assets/sqft2/sq-08-11-poster.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+    
+  </div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Square bottle" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(43,36,102,0.45),0 0 0 1px rgba(43,36,102,0.08);background:#0C0A09;">
+<div data-label="SQ FT. — Square bottle" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(0.2);background:#0C0A09;color:#F3EEE8;font-family:'DM Sans',sans-serif;overflow:hidden;">
+    <img loading="lazy" decoding="async" src="assets/sqft2/06.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;" />
+    
+  </div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Unbox" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(43,36,102,0.45),0 0 0 1px rgba(43,36,102,0.08);background:#0C0A09;">
+<div data-label="SQ FT. — Unbox" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(0.2);background:#0C0A09;color:#F3EEE8;font-family:'DM Sans',sans-serif;overflow:hidden;">
+    <img loading="lazy" decoding="async" src="assets/sqft2/07.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;" />
+    
+  </div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Materials" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(43,36,102,0.45),0 0 0 1px rgba(43,36,102,0.08);background:#0C0A09;">
+<div data-label="SQ FT. — Materials" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(0.2);background:#1A1715;color:#F3EEE8;font-family:'DM Sans',sans-serif;overflow:hidden;">
+    <div style="position:absolute;inset:0;overflow:hidden;"><img loading="lazy" decoding="async" src="assets/sqft2/14.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;" /></div>
+    
+  </div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Artist platform" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(43,36,102,0.45),0 0 0 1px rgba(43,36,102,0.08);background:#0C0A09;">
+<div data-label="SQ FT. — Artist platform" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(0.2);background:#0C0A09;color:#F3EEE8;font-family:'DM Sans',sans-serif;overflow:hidden;">
+    <img loading="lazy" decoding="async" src="assets/sqft2/13.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;" />
+    
+  </div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Street" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(43,36,102,0.45),0 0 0 1px rgba(43,36,102,0.08);background:#0C0A09;">
+<div data-label="SQ FT. — Street" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(0.2);background:#0C0A09;color:#F3EEE8;font-family:'DM Sans',sans-serif;overflow:hidden;">
+    <img loading="lazy" decoding="async" src="assets/sqft2/16.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;" />
+    
+  </div>
+  </div>
+    <div data-slide-wrap="1" data-card="1" data-screen-label="Car film" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(43,36,102,0.45),0 0 0 1px rgba(43,36,102,0.08);background:#0C0A09;">
+<div data-car-film="1" style="position:absolute;inset:0;background:#0C0A09;overflow:hidden;">
+    <video data-car="0" data-src="assets/sqft2/car-14.mp4" muted="{{ true }}" playsInline="{{ true }}" preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:1;"></video>
+    <video data-car="1" data-src="assets/sqft2/car-15.mp4" muted="{{ true }}" playsInline="{{ true }}" preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;"></video>
+    <video data-car="2" data-src="assets/sqft2/car-16.mp4" muted="{{ true }}" playsInline="{{ true }}" preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;"></video>
+    <video data-car="3" data-src="assets/sqft2/car-17.mp4" muted="{{ true }}" playsInline="{{ true }}" preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;"></video>
+    <video data-car="4" data-src="assets/sqft2/car-18.mp4" muted="{{ true }}" playsInline="{{ true }}" preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;"></video>
+  </div>
+  </div>
+  </div>
+  <a href="Wise.dc.html" style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:16px;padding:clamp(40px,7vw,96px) clamp(16px,3vw,32px);background:linear-gradient(180deg,#4A3E8C,#2B2466);color:#F6F2EC;font-family:'DM Sans',sans-serif;border-top:2px solid #C41E2A;" style-hover="color:#C41E2A">
+    <span style="font-size:12px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;">Next project</span>
+    <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;letter-spacing:-0.02em;font-size:clamp(40px,6vw,96px);line-height:1;">Wise →</span>
+  </a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    const cars = [...document.querySelectorAll('video[data-car]')];
+    if (cars.length) {
+      const prep = i => { const n = cars[i % cars.length]; if (n._req) return n._req; n._req = fetch(n.dataset.src).then(r => r.blob()).then(b => { n.src = URL.createObjectURL(b); n.load(); return new Promise(res => n.readyState >= 3 ? res() : n.addEventListener('canplaythrough', res, { once: true })); }); return n._req; };
+      cars.forEach(v => { v.loop = false; v.muted = true; });
+      prep(0).then(() => { if (on) cars[0].play().catch(() => {}); return cars.slice(1).reduce((p, _, k) => p.then(() => prep(k + 1)), Promise.resolve()); });
+      cars[0].addEventListener('playing', () => prep(1), { once: true });
+      let cur = 0, on = false, swapping = false, raf;
+      const show = (i) => cars.forEach((v, k) => { v.style.zIndex = k === i ? 2 : 1; v.style.opacity = k === i ? 1 : 0; });
+      const swap = () => {
+        if (swapping) return; swapping = true;
+        const v = cars[cur], ni = (cur + 1) % cars.length, n = cars[ni];
+        if (!n.src) { v.pause(); prep(ni).then(() => { swapping = false; swap(); }); return; }
+        n.currentTime = 0;
+        const reveal = () => { show(ni); v.pause(); cur = ni; swapping = false; prep(ni + 1); setTimeout(() => { v.currentTime = 0; }, 100); };
+        n.play().then(() => { n.requestVideoFrameCallback ? n.requestVideoFrameCallback(reveal) : reveal(); }).catch(() => { swapping = false; });
+      };
+      const tick = () => { raf = requestAnimationFrame(tick); const v = cars[cur]; if (on && v.duration && v.duration - v.currentTime < 0.12) swap(); };
+      cars.forEach(v => v.addEventListener('ended', swap));
+      show(0); tick();
+      const io = new IntersectionObserver(es => es.forEach(e => { on = e.isIntersecting; if (on) { cars[cur].muted = true; cars[cur].play().catch(() => {}); } else cars[cur].pause(); }), { threshold: 0.2 });
+      io.observe(cars[0].parentElement); this.carIO = io; this.carRaf = () => cancelAnimationFrame(raf);
+    }
+    const kick = () => document.querySelectorAll('video:not([data-car])').forEach(v => { v.muted = true; v.defaultMuted = true; v.playsInline = true; v.loop = true; v.setAttribute('muted', ''); v.setAttribute('playsinline', ''); if (v.paused) { const p = v.play(); p && p.catch(() => {}); } });
+    kick(); [200, 800, 2000].forEach(t => setTimeout(kick, t));
+    this.vio = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting && e.target.paused) { e.target.muted = true; const p = e.target.play(); p && p.catch(() => {}); } }), { threshold: 0.1 });
+    document.querySelectorAll('video:not([data-car])').forEach(v => this.vio.observe(v));
+    const once = () => { kick(); window.removeEventListener('pointerdown', once); window.removeEventListener('scroll', once); };
+    window.addEventListener('pointerdown', once); window.addEventListener('scroll', once, { passive: true });
+    const fit = () => document.querySelectorAll('[data-slide-wrap]').forEach(w => { const s = w.clientWidth / 1920; const el = w.firstElementChild; if (el && !el.hasAttribute('data-car-film')) el.style.transform = 'scale(' + s + ')'; });
+    fit(); this.ro = new ResizeObserver(fit); document.querySelectorAll('[data-slide-wrap]').forEach(w => this.ro.observe(w));
+    const wraps = [...document.querySelectorAll('[data-slide-wrap]')];
+    wraps.forEach((w, k) => { if (k) { w.style.opacity = '0'; w.style.transform = 'translateY(40px)'; w.style.transition = 'opacity .9s cubic-bezier(.16,.8,.24,1), transform .9s cubic-bezier(.16,.8,.24,1)'; } });
+    this.io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'none'; this.io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
+    wraps.forEach(w => this.io.observe(w));
+  }
+  componentWillUnmount() { clearTimeout(this.k3t); this.k3 && this.k3.dispose && this.k3.dispose(); this.ro && this.ro.disconnect(); this.io && this.io.disconnect(); }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

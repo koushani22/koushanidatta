@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..900&family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=DM+Sans:opsz,wght@9..40,300..800&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: #F3EEE8; }
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: #C41E2A; }
+    ::selection { background: #C41E2A; color: #fff; }
+    @keyframes wiseIn { from { opacity:0; transform:scale(.86); } to { opacity:1; transform:none; } }
+    @keyframes wiseFloat { 0%,100% { transform: translateY(0) rotate(var(--r,0deg)); } 50% { transform: translateY(-16px) rotate(calc(var(--r,0deg) * -1)); } }
+  @keyframes wisePhoneScroll { 0%,8% { transform: translateY(0); } 46%,54% { transform: translateY(var(--end)); } 92%,100% { transform: translateY(0); } }
+  </style>
+<style id="kos-mobile">
+@media (max-width: 760px) {
+  html, body { overflow-x: hidden; }
+  [style*="grid-template-columns: repeat(2"]:not([data-slide-wrap] *),
+  [style*="grid-template-columns: repeat(3"]:not([data-slide-wrap] *),
+  [style*="grid-template-columns: repeat(4"]:not([data-slide-wrap] *),
+  [style*="grid-template-columns: 1fr 1fr"]:not([data-slide-wrap] *),
+  [style*="grid-template-columns: minmax(0px, 1fr) minmax(0px, 1.2fr)"]:not([data-slide-wrap] *),
+  [style*="grid-template-columns: minmax(96px, auto) minmax(0px, 1fr) auto"]:not([data-slide-wrap] *) { grid-template-columns: minmax(0, 1fr) !important; }
+  [style*="justify-self: end"]:not([data-slide-wrap] *) { justify-self: start !important; text-align: left !important; }
+  [style*="white-space: nowrap"]:not([data-slide-wrap] *) { white-space: normal !important; }
+}
+</style>
+  <script src="./lazy-video.js"></script>
+</helmet>
+<div style="background:#F3EEE8;color:#14110F;font-family:'DM Sans',sans-serif;">
+  <div style="position:sticky;top:0;z-index:50;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;padding:14px clamp(16px,3vw,40px);background:rgba(246,242,236,0.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(43,36,102,0.12);font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:11.5px;letter-spacing:0.2em;text-transform:uppercase;color:#14110F;">
+    <a href="Cover Monument.dc.html" style="justify-self:start;" style-hover="color:#C41E2A">Koushani Datta</a>
+    <span style="color:#2B2466;">07 — Wise</span>
+    <a href="Cover Monument.dc.html#work" style="justify-self:end;border-bottom:1.5px solid currentColor;padding-bottom:2px;" style-hover="color:#C41E2A">← All work</a>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:clamp(16px,2.4vw,32px);padding:clamp(20px,4vw,56px) clamp(12px,3vw,40px);">
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Logo film" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(40,30,20,0.45);background:#9FE870;display:flex;align-items:center;justify-content:center;">
+    <img loading="lazy" decoding="async" src="assets/wise2/wise-logo.png" alt="Wise" style="width:44%;height:auto;display:block;animation:wiseIn 1.4s cubic-bezier(.16,.8,.24,1) both .2s;" />
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Case study" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(0,0,0,0.35),0 0 0 1px rgba(0,0,0,0.06);background:#173000;">
+<div data-label="Wise — Case study" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(0.2);background:#0E1F00;color:#F6F2EC;font-family:'DM Sans',sans-serif;overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute;right:-30px;bottom:-90px;font-size:640px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-0.04em;line-height:0.8;color:transparent;-webkit-text-stroke:2px rgba(159,232,112,0.14);white-space:nowrap;pointer-events:none;"></div>
+    <span style="position:absolute;left:80px;top:170px;font-size:24px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#9FE870;">Case study</span>
+    <h2 style="position:absolute;left:80px;width:820px;top:220px;margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-0.03em;font-size:82px;line-height:1;text-wrap:balance;">A money app that turns saving into a game kids want to play, with guardrails parents trust.</h2>
+    <div style="position:absolute;left:80px;width:820px;bottom:80px;display:flex;flex-direction:column;border-top:3px solid #F6F2EC;"><div style="display:grid;grid-template-columns:220px 1fr;gap:20px;padding:16px 0;border-bottom:1px solid rgba(159,232,112,0.30);font-size:26px;"><span style="font-weight:700;letter-spacing:0.12em;text-transform:uppercase;font-size:24px;opacity:0.7;">Role</span><span style="font-weight:600;">Brand &amp; product designer</span></div><div style="display:grid;grid-template-columns:220px 1fr;gap:20px;padding:16px 0;border-bottom:1px solid rgba(159,232,112,0.30);font-size:26px;"><span style="font-weight:700;letter-spacing:0.12em;text-transform:uppercase;font-size:24px;opacity:0.7;">Context</span><span style="font-weight:600;">Wise · Concept extension</span></div><div style="display:grid;grid-template-columns:220px 1fr;gap:20px;padding:16px 0;border-bottom:1px solid rgba(159,232,112,0.30);font-size:26px;"><span style="font-weight:700;letter-spacing:0.12em;text-transform:uppercase;font-size:24px;opacity:0.7;">Deliverables</span><span style="font-weight:600;">Young Explorer identity, jars, app UI, dashboard, film</span></div><div style="display:grid;grid-template-columns:220px 1fr;gap:20px;padding:16px 0;border-bottom:1px solid rgba(159,232,112,0.30);font-size:26px;"><span style="font-weight:700;letter-spacing:0.12em;text-transform:uppercase;font-size:24px;opacity:0.7;">Audience</span><span style="font-weight:600;">Kids 8–14 and parents</span></div></div>
+    <div style="position:absolute;left:1020px;right:80px;top:170px;bottom:80px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:0;"><div style="display:flex;flex-direction:column;gap:14px;padding:28px 32px 28px 0px;"><div style="display:flex;align-items:baseline;gap:16px;"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:72px;line-height:0.8;color:#9FE870;">01</span><span style="font-size:24px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;">Challenge</span></div><p style="margin:0;font-size:29px;line-height:1.38;text-wrap:pretty;">Kids are handed cards and apps before anyone teaches them what money is.</p></div><div style="display:flex;flex-direction:column;gap:14px;padding:28px 0px 28px 32px;border-left:1px solid rgba(159,232,112,0.30);"><div style="display:flex;align-items:baseline;gap:16px;"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:72px;line-height:0.8;color:#9FE870;">02</span><span style="font-size:24px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;">Insight</span></div><p style="margin:0;font-size:29px;line-height:1.38;text-wrap:pretty;">Kids learn by playing; parents just want visibility and limits.</p></div><div style="display:flex;flex-direction:column;gap:14px;padding:28px 32px 28px 0px;border-top:1px solid rgba(159,232,112,0.30);"><div style="display:flex;align-items:baseline;gap:16px;"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:72px;line-height:0.8;color:#9FE870;">03</span><span style="font-size:24px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;">Idea</span></div><p style="margin:0;font-size:29px;line-height:1.38;text-wrap:pretty;">Young Explorer Jars: fill jars, keep streaks and unlock rewards.</p></div><div style="display:flex;flex-direction:column;gap:14px;padding:28px 0px 28px 32px;border-left:1px solid rgba(159,232,112,0.30);border-top:1px solid rgba(159,232,112,0.30);"><div style="display:flex;align-items:baseline;gap:16px;"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:72px;line-height:0.8;color:#9FE870;">04</span><span style="font-size:24px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;">Outcome</span></div><p style="margin:0;font-size:29px;line-height:1.38;text-wrap:pretty;">One app, two views: a playful kids’ side and a calm parent dashboard.</p></div></div>
+  </div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Brief" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(40,30,20,0.45);background:#173000;">
+    <div data-noscale="1" style="position:absolute;inset:0;"><img loading="lazy" decoding="async" src="assets/wise2/brief.webp" alt="Wise — Brief" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" /></div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Insight" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(40,30,20,0.45);background:#173000;">
+    <div data-noscale="1" style="position:absolute;inset:0;"><img loading="lazy" decoding="async" src="assets/wise2/insight.webp" alt="Wise — Insight" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" /></div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Young Explorer Jars" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(40,30,20,0.45);background:#173000;">
+    <div data-noscale="1" style="position:absolute;inset:0;"><img loading="lazy" decoding="async" src="assets/wise2/hero.webp" alt="Wise — Young Explorer Jars" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" /></div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Set the guardrail" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(40,30,20,0.45);background:#173000;">
+    <div data-noscale="1" style="position:absolute;inset:0;"><img loading="lazy" decoding="async" src="assets/wise2/guardrail.webp" alt="Wise — Set the guardrail" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" /></div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Visibility for parents" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(40,30,20,0.45);background:#173000;">
+    <div data-noscale="1" style="position:absolute;inset:0;"><img loading="lazy" decoding="async" src="assets/wise2/visibility.webp" alt="Wise — Visibility for parents" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" /></div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Dashboard" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(40,30,20,0.45);background:#173000;">
+    <div data-noscale="1" style="position:absolute;inset:0;"><img loading="lazy" decoding="async" src="assets/wise2/dashboard.webp" alt="Wise — Dashboard" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" /></div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="App screens" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(40,30,20,0.45);background:#173000;">
+    <div data-noscale="1" style="position:absolute;inset:0;"><img loading="lazy" decoding="async" src="assets/wise2/app.webp" alt="Wise — App screens" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" /></div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Phone app" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(40,30,20,0.45);background:#173000;"><div data-label="Wise — Phone app" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(0.2);background:#173000;color:#F6F2EC;font-family:'DM Sans',sans-serif;overflow:hidden;">
+    <div style="position:absolute;left:120px;top:0;bottom:0;width:640px;display:flex;flex-direction:column;justify-content:center;gap:36px;">
+      <div style="position:relative;width:640px;height:600px;">
+        <div style="position:absolute;left:110px;top:60px;width:440px;height:440px;border-radius:50%;background:#9FE870;"></div>
+        <img loading="lazy" decoding="async" src="assets/wise2/el-jar.png" alt="" style="position:absolute;left:140px;top:90px;width:380px;height:380px;border-radius:50%;box-shadow:0 40px 70px -30px rgba(0,0,0,0.5);display:block;" />
+        <img loading="lazy" decoding="async" src="assets/wise2/el-heart.png" alt="" style="position:absolute;left:470px;top:20px;width:170px;height:auto;filter:drop-shadow(0 24px 30px rgba(0,0,0,0.35));display:block;animation:wiseFloat 5.5s ease-in-out infinite -1.2s;--r:8deg;" />
+        <img loading="lazy" decoding="async" src="assets/wise2/el-coin.png" alt="" style="position:absolute;left:20px;top:380px;width:150px;height:auto;filter:drop-shadow(0 24px 30px rgba(0,0,0,0.35));display:block;animation:wiseFloat 6.2s ease-in-out infinite -2.4s;--r:-6deg;" />
+        <img loading="lazy" decoding="async" src="assets/wise2/el-bars.png" alt="" style="position:absolute;left:470px;top:400px;width:160px;height:auto;filter:drop-shadow(0 24px 30px rgba(0,0,0,0.35));display:block;animation:wiseFloat 6.8s ease-in-out infinite -3.1s;--r:4deg;" />
+        <div style="position:absolute;left:30px;top:70px;display:flex;align-items:center;gap:10px;padding:12px 20px;border-radius:999px;background:#F6F2EC;color:#173000;font-family:'Inter',sans-serif;font-weight:800;font-size:22px;letter-spacing:-0.01em;box-shadow:0 18px 30px -16px rgba(0,0,0,0.4);animation:wiseFloat 6s ease-in-out infinite -0.6s;">21-day streak</div>
+        <div style="position:absolute;left:300px;top:540px;display:flex;align-items:center;gap:10px;padding:12px 20px;border-radius:999px;background:#9FE870;color:#173000;font-family:'Inter',sans-serif;font-weight:800;font-size:22px;letter-spacing:-0.01em;box-shadow:0 18px 30px -16px rgba(0,0,0,0.4);animation:wiseFloat 7.4s ease-in-out infinite -1.8s;">+1.5% unlocked</div>
+      </div>
+      <p style="margin:0;font-family:'Inter',sans-serif;font-weight:500;font-size:21px;line-height:1.5;color:#D8E8C8;max-width:34ch;text-wrap:pretty;">Kids fill their jars, keep streaks and unlock rewards. Parents top up the Explorer card, set limits and see the monthly report.</p>
+    </div>
+    <div style="position:absolute;right:110px;top:50%;transform:translateY(-50%);display:flex;gap:70px;">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:26px;">
+      <div style="position:relative;width:414px;height:868px;border-radius:64px;background:#0C0A09;padding:12px;box-shadow:0 60px 90px -40px rgba(0,0,0,0.55),inset 0 0 0 2px #2A2A2A;">
+        <div style="position:relative;width:390px;height:844px;border-radius:52px;overflow:hidden;background:#FFFFFF;">
+          <img loading="lazy" decoding="async" src="assets/wise2/kid.webp" alt="" style="--end:-594px;position:absolute;left:0;top:0;width:390px;height:1438px;max-width:none;display:block;animation:wisePhoneScroll 16s cubic-bezier(.65,0,.35,1) infinite 0s;" />
+          <img loading="lazy" decoding="async" src="assets/wise2/kid-nav.png" alt="" style="position:absolute;left:20px;bottom:22px;width:350px;height:auto;display:block;filter:drop-shadow(0 10px 18px rgba(0,0,0,0.18));" />
+          <div style="position:absolute;left:50%;top:12px;width:120px;height:34px;margin-left:-60px;border-radius:20px;background:#0C0A09;"></div>
+        </div>
+      </div>
+      <span style="font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:22px;letter-spacing:0.18em;text-transform:uppercase;color:#9FE870;">For kids</span>
+    </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:26px;">
+      <div style="position:relative;width:414px;height:868px;border-radius:64px;background:#0C0A09;padding:12px;box-shadow:0 60px 90px -40px rgba(0,0,0,0.55),inset 0 0 0 2px #2A2A2A;">
+        <div style="position:relative;width:390px;height:844px;border-radius:52px;overflow:hidden;background:#FFFFFF;">
+          <img loading="lazy" decoding="async" src="assets/wise2/parent.webp" alt="" style="--end:-1080px;position:absolute;left:0;top:0;width:390px;height:1924px;max-width:none;display:block;animation:wisePhoneScroll 16s cubic-bezier(.65,0,.35,1) infinite -4s;" />
+          
+          <div style="position:absolute;left:50%;top:12px;width:120px;height:34px;margin-left:-60px;border-radius:20px;background:#0C0A09;"></div>
+        </div>
+      </div>
+      <span style="font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:22px;letter-spacing:0.18em;text-transform:uppercase;color:#9FE870;">For parents</span>
+    </div>
+    </div>
+  </div></div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Money" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(40,30,20,0.45);background:#173000;">
+    <div data-noscale="1" style="position:absolute;inset:0;"><img loading="lazy" decoding="async" src="assets/wise2/money.webp" alt="Wise — Money" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" /><video data-car="0" data-src="assets/wise2/w01a.mp4" muted="{{ true }}" playsInline="{{ true }}" preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:1;"></video><video data-car="1" data-src="assets/wise2/w01b.mp4" muted="{{ true }}" playsInline="{{ true }}" preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;"></video><video data-car="2" data-src="assets/wise2/w02.mp4" muted="{{ true }}" playsInline="{{ true }}" preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;"></video><video data-car="3" data-src="assets/wise2/w03.mp4" muted="{{ true }}" playsInline="{{ true }}" preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;"></video><video data-car="4" data-src="assets/wise2/w04.mp4" muted="{{ true }}" playsInline="{{ true }}" preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;"></video><video data-car="5" data-src="assets/wise2/w05.mp4" muted="{{ true }}" playsInline="{{ true }}" preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;"></video><video data-car="6" data-src="assets/wise2/w06.mp4" muted="{{ true }}" playsInline="{{ true }}" preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;"></video><video data-car="7" data-src="assets/wise2/w07.mp4" muted="{{ true }}" playsInline="{{ true }}" preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;"></video><video data-car="8" data-src="assets/wise2/w08.mp4" muted="{{ true }}" playsInline="{{ true }}" preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;"></video><video data-car="9" data-src="assets/wise2/w09.mp4" muted="{{ true }}" playsInline="{{ true }}" preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;"></video><video data-car="10" data-src="assets/wise2/w10.mp4" muted="{{ true }}" playsInline="{{ true }}" preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;"></video><button data-wise-sound="1" aria-label="Sound on" style="position:absolute;right:clamp(10px,1.6vw,24px);bottom:clamp(10px,1.6vw,24px);z-index:5;display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border:0;border-radius:999px;background:rgba(12,10,9,0.72);color:#F6F2EC;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;cursor:pointer;backdrop-filter:blur(6px);" style-hover="background:#C41E2A"><span data-wise-icon="1" style="font-size:13px;letter-spacing:0;">♪</span><span data-wise-label="1">Sound on</span></button></div>
+  </div>
+  </div>
+  <a href="MindFool.dc.html" style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:16px;padding:clamp(40px,7vw,96px) clamp(16px,3vw,32px);background:linear-gradient(180deg,#4A3E8C,#2B2466);color:#F6F2EC;font-family:'DM Sans',sans-serif;border-top:2px solid #C41E2A;" style-hover="color:#C41E2A">
+    <span style="font-size:12px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;">Next project</span>
+    <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;letter-spacing:-0.02em;font-size:clamp(40px,6vw,96px);line-height:1;">MindFool →</span>
+  </a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    const cars = [...document.querySelectorAll('video[data-car]')];
+    if (cars.length) {
+      const prep = i => { const n = cars[i % cars.length]; if (n._req) return n._req; n._req = fetch(n.dataset.src).then(r => r.blob()).then(b => { n.src = URL.createObjectURL(b); n.load(); return new Promise(res => n.readyState >= 3 ? res() : n.addEventListener('canplaythrough', res, { once: true })); }); return n._req; };
+      cars.forEach(v => { v.loop = false; v.muted = true; });
+      let cur = 0, on = false, swapping = false, raf;
+      prep(0).then(() => { if (on) cars[0].play().catch(() => {}); return prep(1); });
+      const show = (i) => cars.forEach((v, k) => { v.style.zIndex = k === i ? 2 : 1; v.style.opacity = k === i ? 1 : 0; });
+      const swap = () => {
+        if (swapping) return; swapping = true;
+        const v = cars[cur], ni = (cur + 1) % cars.length, n = cars[ni];
+        if (!n.src) { v.pause(); prep(ni).then(() => { swapping = false; swap(); }); return; }
+        n.currentTime = 0; n.muted = !this.musicOn;
+        const reveal = () => { show(ni); v.pause(); cur = ni; swapping = false; prep(ni + 1); setTimeout(() => { v.currentTime = 0; }, 100); };
+        n.play().then(() => { n.requestVideoFrameCallback ? n.requestVideoFrameCallback(reveal) : reveal(); }).catch(() => { swapping = false; });
+      };
+      const tick = () => { raf = requestAnimationFrame(tick); const v = cars[cur]; if (on && v.duration && v.duration - v.currentTime < 0.12) swap(); };
+      cars.forEach(v => v.addEventListener('ended', swap));
+      show(0); tick();
+      const io = new IntersectionObserver(es => es.forEach(e => { on = e.isIntersecting; if (on) { cars[cur].muted = !this.musicOn; cars[cur].play().catch(() => {}); if (this.musicOn) this.musicResume(); } else { cars[cur].pause(); this.musicPause && this.musicPause(); } }), { threshold: 0.2 });
+      io.observe(cars[0].parentElement); this.carIO = io; this.carRaf = () => cancelAnimationFrame(raf);
+    }
+    const sb = document.querySelector('[data-wise-sound]');
+    if (sb) {
+      let ac = null, master = null, timer = null, nextT = 0, step = 0;
+      const BPM = 100, SPB = 60 / BPM / 2;
+      const prog = [[60, 64, 67], [55, 59, 62], [57, 60, 64], [53, 57, 60]];
+      const mel = [72, 0, 76, 79, 0, 76, 74, 0, 71, 0, 74, 79, 0, 74, 71, 0, 72, 0, 76, 72, 0, 69, 72, 0, 69, 0, 72, 77, 0, 76, 72, 0];
+      const hz = m => 440 * Math.pow(2, (m - 69) / 12);
+      const pluck = (m, t, len, vol, type) => { const o = ac.createOscillator(), o2 = ac.createOscillator(), g = ac.createGain(); o.type = type || 'sine'; o2.type = 'sine'; o.frequency.value = hz(m); o2.frequency.value = hz(m) * 4.02; const g2 = ac.createGain(); g2.gain.value = 0.12; o2.connect(g2).connect(g); o.connect(g); g.connect(master); g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(vol, t + 0.008); g.gain.exponentialRampToValueAtTime(0.0001, t + len); o.start(t); o2.start(t); o.stop(t + len + 0.05); o2.stop(t + len + 0.05); };
+      const shaker = (t, vol) => { const b = ac.createBuffer(1, ac.sampleRate * 0.05, ac.sampleRate), d = b.getChannelData(0); for (let i = 0; i < d.length; i++) d[i] = (Math.random() * 2 - 1) * (1 - i / d.length); const src = ac.createBufferSource(), f = ac.createBiquadFilter(), g = ac.createGain(); f.type = 'highpass'; f.frequency.value = 6000; g.gain.value = vol; src.buffer = b; src.connect(f).connect(g).connect(master); src.start(t); };
+      const sched = () => { while (nextT < ac.currentTime + 0.25) { const bar = Math.floor(step / 8) % 4, ch = prog[bar], k = step % 8;
+          if (k === 0) pluck(ch[0] - 24, nextT, 0.9, 0.22, 'triangle');
+          if (k === 4) pluck(ch[0] - 12, nextT, 0.5, 0.12, 'triangle');
+          if (k % 2 === 1) ch.forEach(n => pluck(n, nextT, 0.35, 0.05));
+          const m = mel[step % 32]; if (m) pluck(m, nextT, 0.6, 0.11);
+          shaker(nextT, k % 2 ? 0.05 : 0.025);
+          nextT += SPB; step++; } };
+      const label = sb.querySelector('[data-wise-label]');
+      this.musicResume = () => { if (!ac) return; ac.resume(); if (!timer) { nextT = ac.currentTime + 0.05; timer = setInterval(sched, 60); } };
+      this.musicPause = () => { if (timer) { clearInterval(timer); timer = null; } };
+      sb.addEventListener('click', () => {
+        if (!ac) { ac = new (window.AudioContext || window.webkitAudioContext)(); master = ac.createGain(); master.gain.value = 0.07; master.connect(ac.destination);
+          }
+        this.musicOn = !this.musicOn; label.textContent = this.musicOn ? 'Sound off' : 'Sound on';
+        cars.forEach(v => { v.muted = !this.musicOn; v.volume = 1; }); if (this.musicOn) { const v = cars.find(x => x.style.opacity === "1") || cars[0]; v.play().catch(() => {}); }
+        this.musicOn ? this.musicResume() : this.musicPause();
+      });
+      this.musicKill = () => { cancelAnimationFrame(this.duckRaf); this.musicPause(); ac && ac.close(); };
+    }
+    const fit = () => document.querySelectorAll('[data-slide-wrap]').forEach(w => { const s = w.clientWidth / 1920; const el = w.firstElementChild; if (el && el.hasAttribute('data-label')) el.style.transform = 'scale(' + s + ')'; });
+    fit(); this.ro = new ResizeObserver(fit); document.querySelectorAll('[data-slide-wrap]').forEach(w => this.ro.observe(w));
+    const wraps = [...document.querySelectorAll('[data-slide-wrap]')];
+    wraps.forEach((w, k) => { if (k) { w.style.opacity = '0'; w.style.transform = 'translateY(40px)'; w.style.transition = 'opacity .9s cubic-bezier(.16,.8,.24,1), transform .9s cubic-bezier(.16,.8,.24,1)'; } });
+    this.io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'none'; this.io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
+    wraps.forEach(w => this.io.observe(w));
+  }
+  componentWillUnmount() { this.carIO && this.carIO.disconnect(); this.carRaf && this.carRaf(); this.musicKill && this.musicKill(); clearTimeout(this.k3t); this.k3 && this.k3.dispose && this.k3.dispose(); this.ro && this.ro.disconnect(); this.io && this.io.disconnect(); }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

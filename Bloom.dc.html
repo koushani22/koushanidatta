@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <script src="./autoplay.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=DM+Sans:opsz,wght@9..40,300..800&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: #F3EEE8; }
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: #C41E2A; }
+    ::selection { background: #C41E2A; color: #fff; }
+  </style>
+<style id="kos-mobile">
+@media (max-width: 760px) {
+  html, body { overflow-x: hidden; }
+  [style*="grid-template-columns: repeat(2"]:not([data-slide-wrap] *),
+  [style*="grid-template-columns: repeat(3"]:not([data-slide-wrap] *),
+  [style*="grid-template-columns: repeat(4"]:not([data-slide-wrap] *),
+  [style*="grid-template-columns: 1fr 1fr"]:not([data-slide-wrap] *),
+  [style*="grid-template-columns: minmax(0px, 1fr) minmax(0px, 1.2fr)"]:not([data-slide-wrap] *),
+  [style*="grid-template-columns: minmax(96px, auto) minmax(0px, 1fr) auto"]:not([data-slide-wrap] *) { grid-template-columns: minmax(0, 1fr) !important; }
+  [style*="justify-self: end"]:not([data-slide-wrap] *) { justify-self: start !important; text-align: left !important; }
+  [style*="white-space: nowrap"]:not([data-slide-wrap] *) { white-space: normal !important; }
+}
+</style>
+  <script src="./lazy-video.js"></script>
+</helmet>
+<div style="background:#F3EEE8;color:#14110F;font-family:'DM Sans',sans-serif;">
+  <div style="position:sticky;top:0;z-index:50;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;padding:14px clamp(16px,3vw,40px);background:rgba(246,242,236,0.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(43,36,102,0.12);font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:11.5px;letter-spacing:0.2em;text-transform:uppercase;color:#14110F;">
+    <a href="Cover Monument.dc.html" style="justify-self:start;" style-hover="color:#C41E2A">Koushani Datta</a>
+    <span style="color:#2B2466;">03 — Bloom</span>
+    <a href="Cover Monument.dc.html#work" style="justify-self:end;border-bottom:1.5px solid currentColor;padding-bottom:2px;" style-hover="color:#C41E2A">← All work</a>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:clamp(16px,2.4vw,32px);padding:clamp(20px,4vw,56px) clamp(12px,3vw,40px);">
+  <div data-screen-label="Logo film" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(43,36,102,0.45);background:#BFDDF7;">
+    <video preload="none" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" data-lazy="assets/bloom2/bloom-logo.mp4" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.075);"></video>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Case study" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(43,36,102,0.45);background:#BFDDF7;">
+<div data-label="Bloom — Case study" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(0.2);background:#BFDDF7;color:#0C0A09;font-family:'DM Sans',sans-serif;overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute;right:-30px;bottom:-90px;font-size:640px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-0.04em;line-height:0.8;color:transparent;-webkit-text-stroke:2px rgba(12,10,9,0.12);white-space:nowrap;pointer-events:none;">03</div>
+    <span style="position:absolute;left:80px;top:170px;font-size:24px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#1F4FD8;">Case study</span>
+    <h2 style="position:absolute;left:80px;width:820px;top:220px;margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-0.03em;font-size:82px;line-height:1;text-wrap:balance;">A vape brand that turns the warning label into the joke.</h2>
+    <div style="position:absolute;left:80px;width:820px;bottom:80px;display:flex;flex-direction:column;border-top:3px solid #0C0A09;"><div style="display:grid;grid-template-columns:220px 1fr;gap:20px;padding:16px 0;border-bottom:1px solid rgba(12,10,9,0.25);font-size:26px;"><span style="font-weight:700;letter-spacing:0.12em;text-transform:uppercase;font-size:24px;opacity:0.7;">Role</span><span style="font-weight:600;">Brand designer · with Debaditya Naha</span></div><div style="display:grid;grid-template-columns:220px 1fr;gap:20px;padding:16px 0;border-bottom:1px solid rgba(12,10,9,0.25);font-size:26px;"><span style="font-weight:700;letter-spacing:0.12em;text-transform:uppercase;font-size:24px;opacity:0.7;">Deliverables</span><span style="font-weight:600;">Identity, device, packaging, campaign, out-of-home, social</span></div></div>
+    <div style="position:absolute;left:1020px;right:80px;top:170px;bottom:80px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:0;"><div style="display:flex;flex-direction:column;gap:14px;padding:28px 32px 28px 0px;"><div style="display:flex;align-items:baseline;gap:16px;"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:72px;line-height:0.8;color:#1F4FD8;">01</span><span style="font-size:24px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;">Challenge</span></div><p style="margin:0;font-size:29px;line-height:1.38;text-wrap:pretty;">Stand out in a category where every pack looks like a health warning.</p></div><div style="display:flex;flex-direction:column;gap:14px;padding:28px 0px 28px 32px;border-left:1px solid rgba(12,10,9,0.25);"><div style="display:flex;align-items:baseline;gap:16px;"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:72px;line-height:0.8;color:#1F4FD8;">02</span><span style="font-size:24px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;">Insight</span></div><p style="margin:0;font-size:29px;line-height:1.38;text-wrap:pretty;">Warning-label language is everywhere, and nobody reads it any more.</p></div><div style="display:flex;flex-direction:column;gap:14px;padding:28px 32px 28px 0px;border-top:1px solid rgba(12,10,9,0.25);"><div style="display:flex;align-items:baseline;gap:16px;"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:72px;line-height:0.8;color:#1F4FD8;">03</span><span style="font-size:24px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;">Idea</span></div><p style="margin:0;font-size:29px;line-height:1.38;text-wrap:pretty;">Soft cloud-and-meadow visuals with loud, tongue-in-cheek copy.</p></div><div style="display:flex;flex-direction:column;gap:14px;padding:28px 0px 28px 32px;border-left:1px solid rgba(12,10,9,0.25);border-top:1px solid rgba(12,10,9,0.25);"><div style="display:flex;align-items:baseline;gap:16px;"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:72px;line-height:0.8;color:#1F4FD8;">04</span><span style="font-size:24px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;">Outcome</span></div><p style="margin:0;font-size:29px;line-height:1.38;text-wrap:pretty;">One cloud-blue system across the device, three functional ranges, packaging, posters and social.</p></div></div>
+  </div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Garden of Bloom" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(43,36,102,0.45),0 0 0 1px rgba(43,36,102,0.08);background:#7FC3F0;"><div data-label="Garden of Bloom" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(0.2);background:#7FC3F0;overflow:hidden;"><img loading="lazy" decoding="async" src="assets/bloom2/eden.webp" alt="Three Bloom devices hanging like fruit from a vine" style="position:absolute;inset:0;width:1920px;height:1080px;object-fit:cover;display:block;max-width:none;" /></div></div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:16px 40px;align-items:end;padding:clamp(40px,7vh,90px) 0 4px;border-top:2px solid #14110F;">
+    <div style="display:flex;flex-direction:column;gap:10px;"><span style="font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:11.5px;letter-spacing:0.2em;text-transform:uppercase;color:#2B6FB8;">01 — Device</span><h2 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(40px,5.4vw,92px);line-height:0.95;letter-spacing:-0.02em;">The object</h2></div>
+    <p style="margin:0;max-width:48ch;justify-self:end;font-size:clamp(15px,1.2vw,18px);line-height:1.55;color:#2B2466;text-wrap:pretty;">A palm-sized device dressed like a toy — soft gradients, a chunky dial and the wordmark wrapped around it.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(10px,1.2vw,18px);aspect-ratio:2 / 1.1;"><div data-g="1" style="overflow:hidden;border-radius:clamp(10px,1.2vw,18px);background:#BFDDF7;height:100%;min-height:0;"><img src="assets/bloom2/b00.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s cubic-bezier(.16,.8,.24,1);" style-hover="transform:scale(1.03)" /></div><div data-g="1" style="overflow:hidden;border-radius:clamp(10px,1.2vw,18px);background:#BFDDF7;height:100%;min-height:0;"><img src="assets/bloom2/b12.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s cubic-bezier(.16,.8,.24,1);" style-hover="transform:scale(1.03)" /></div></div>
+  <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,1.2vw,18px);aspect-ratio:8 / 3;"><div data-g="1" style="overflow:hidden;border-radius:clamp(10px,1.2vw,18px);background:#BFDDF7;height:100%;min-height:0;"><video preload="none" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" data-lazy="assets/bloom2/v41.mp4" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div><div data-g="1" style="overflow:hidden;border-radius:clamp(10px,1.2vw,18px);background:#BFDDF7;height:100%;min-height:0;"><video preload="none" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" data-lazy="assets/bloom2/v42.mp4" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div><div data-g="1" style="overflow:hidden;border-radius:clamp(10px,1.2vw,18px);background:#BFDDF7;height:100%;min-height:0;"><video preload="none" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" data-lazy="assets/bloom2/v43.mp4" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div></div>
+  <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,1.2vw,18px);aspect-ratio:8 / 3;"><div data-g="1" style="overflow:hidden;border-radius:clamp(10px,1.2vw,18px);background:#BFDDF7;height:100%;min-height:0;"><video preload="none" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" data-lazy="assets/bloom2/v45.mp4" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div><div data-g="1" style="overflow:hidden;border-radius:clamp(10px,1.2vw,18px);background:#BFDDF7;height:100%;min-height:0;"><video preload="none" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" data-lazy="assets/bloom2/v39.mp4" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div><div data-g="1" style="overflow:hidden;border-radius:clamp(10px,1.2vw,18px);background:#BFDDF7;height:100%;min-height:0;"><video preload="none" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" data-lazy="assets/bloom2/v44.mp4" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div></div>
+  <div style="height:clamp(20px,4vh,48px);"></div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Identity" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(43,36,102,0.45),0 0 0 1px rgba(43,36,102,0.08);background:#BFDDF7;">
+<div data-label="Bloom — Identity" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(0.2);background:#BFDDF7;overflow:hidden;">
+    <img loading="lazy" decoding="async" src="assets/bloom2/b13.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+  </div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Device" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(43,36,102,0.45),0 0 0 1px rgba(43,36,102,0.08);background:#F6A6D8;">
+<div data-label="Bloom — Device" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(0.2);background:#F6A6D8;overflow:hidden;">
+    <div style="position:absolute;inset:40px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;"><div style="overflow:hidden;border-radius:18px;"><video preload="none" data-lazy="assets/bloom2/v41.mp4" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div><div style="overflow:hidden;border-radius:18px;"><img loading="lazy" decoding="async" src="assets/bloom2/b16.webp" alt="" style="width:100%;height:100%;object-fit:cover;display:block;" /></div></div>
+  </div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Packaging — dieline" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(43,36,102,0.45),0 0 0 1px rgba(43,36,102,0.08);background:#6FA84A;">
+<div data-label="Bloom — Packaging — dieline" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(0.2);background:#6FA84A;overflow:hidden;">
+    <img loading="lazy" decoding="async" src="assets/bloom2/b01.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+  </div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Packaging" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(43,36,102,0.45),0 0 0 1px rgba(43,36,102,0.08);background:#DCEBF7;">
+<div data-label="Bloom — Packaging" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(0.2);background:#DCEBF7;overflow:hidden;">
+    <div style="position:absolute;inset:40px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;"><div style="overflow:hidden;border-radius:18px;"><img loading="lazy" decoding="async" src="assets/bloom2/b14.webp" alt="" style="width:100%;height:100%;object-fit:cover;display:block;" /></div><div style="overflow:hidden;border-radius:18px;"><img loading="lazy" decoding="async" src="assets/bloom2/b15.webp" alt="" style="width:100%;height:100%;object-fit:cover;display:block;" /></div></div>
+  </div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Flavours" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(43,36,102,0.45),0 0 0 1px rgba(43,36,102,0.08);background:#FBD3EC;">
+<div data-label="Bloom — Flavours" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(0.2);background:#FBD3EC;overflow:hidden;">
+    <div style="position:absolute;inset:40px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;"><div style="overflow:hidden;border-radius:18px;"><img loading="lazy" decoding="async" src="assets/bloom2/b08.png" alt="" style="width:100%;height:100%;object-fit:contain;display:block;" /></div><div style="overflow:hidden;border-radius:18px;"><img loading="lazy" decoding="async" src="assets/bloom2/b09.png" alt="" style="width:100%;height:100%;object-fit:contain;display:block;" /></div><div style="overflow:hidden;border-radius:18px;"><img loading="lazy" decoding="async" src="assets/bloom2/b10.png" alt="" style="width:100%;height:100%;object-fit:contain;display:block;" /></div></div>
+  </div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Campaign posters" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(43,36,102,0.45),0 0 0 1px rgba(43,36,102,0.08);background:#BFDDF7;">
+<div data-label="Bloom — Campaign posters" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(0.2);background:#BFDDF7;overflow:hidden;">
+    <div style="position:absolute;inset:40px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;"><div style="overflow:hidden;border-radius:18px;"><img loading="lazy" decoding="async" src="assets/bloom2/b02.webp" alt="" style="width:100%;height:100%;object-fit:cover;display:block;" /></div><div style="overflow:hidden;border-radius:18px;"><img loading="lazy" decoding="async" src="assets/bloom2/b05.webp" alt="" style="width:100%;height:100%;object-fit:cover;display:block;" /></div><div style="overflow:hidden;border-radius:18px;"><img loading="lazy" decoding="async" src="assets/bloom2/b06.webp" alt="" style="width:100%;height:100%;object-fit:cover;display:block;" /></div><div style="overflow:hidden;border-radius:18px;"><img loading="lazy" decoding="async" src="assets/bloom2/b07.webp" alt="" style="width:100%;height:100%;object-fit:cover;display:block;" /></div></div>
+  </div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Energy SZN" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(43,36,102,0.45),0 0 0 1px rgba(43,36,102,0.08);background:#BFDDF7;">
+<div data-label="Bloom — Energy SZN" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(0.2);background:#BFDDF7;overflow:hidden;">
+    <img loading="lazy" decoding="async" src="assets/bloom2/b03.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+  </div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Campaign — hero" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(43,36,102,0.45),0 0 0 1px rgba(43,36,102,0.08);background:#BFDDF7;">
+<div data-label="Bloom — Campaign — hero" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(0.2);background:#BFDDF7;overflow:hidden;">
+    <img loading="lazy" decoding="async" src="assets/bloom2/b04.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+    <svg aria-hidden="true" viewBox="0 0 1920 1080" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;"><line x1="470" y1="240" x2="900" y2="440" stroke="#FFFFFF" stroke-width="3" stroke-dasharray="2 9" stroke-linecap="round"></line><circle cx="900" cy="440" r="11" fill="#FFFFFF"></circle><circle cx="900" cy="440" r="24" fill="none" stroke="#FFFFFF" stroke-width="2.5"></circle><line x1="1010" y1="760" x2="800" y2="525" stroke="#FFFFFF" stroke-width="3" stroke-dasharray="2 9" stroke-linecap="round"></line><circle cx="800" cy="525" r="11" fill="#FFFFFF"></circle><circle cx="800" cy="525" r="24" fill="none" stroke="#FFFFFF" stroke-width="2.5"></circle><line x1="470" y1="900" x2="690" y2="660" stroke="#FFFFFF" stroke-width="3" stroke-dasharray="2 9" stroke-linecap="round"></line><circle cx="690" cy="660" r="11" fill="#FFFFFF"></circle><circle cx="690" cy="660" r="24" fill="none" stroke="#FFFFFF" stroke-width="2.5"></circle></svg>
+    <div style="position:absolute;left:90px;top:150px;display:flex;flex-direction:column;gap:6px;padding:16px 22px;border-radius:18px;background:rgba(255,255,255,0.92);box-shadow:0 18px 40px -18px rgba(20,40,80,0.5);max-width:400px;"><span style="font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:17px;letter-spacing:0.18em;text-transform:uppercase;color:#2B6FB8;">01 · Shell</span><span style="font-family:'Instrument Serif',serif;font-size:36px;line-height:1.05;color:#14110F;">Soft-touch gradient</span></div>
+    <div style="position:absolute;left:1010px;top:720px;display:flex;flex-direction:column;gap:6px;padding:16px 22px;border-radius:18px;background:rgba(255,255,255,0.92);box-shadow:0 18px 40px -18px rgba(20,40,80,0.5);max-width:400px;"><span style="font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:17px;letter-spacing:0.18em;text-transform:uppercase;color:#2B6FB8;">02 · Wordmark</span><span style="font-family:'Instrument Serif',serif;font-size:36px;line-height:1.05;color:#14110F;">Wrapped all the way round</span></div>
+    <div style="position:absolute;left:90px;top:860px;display:flex;flex-direction:column;gap:6px;padding:16px 22px;border-radius:18px;background:rgba(255,255,255,0.92);box-shadow:0 18px 40px -18px rgba(20,40,80,0.5);max-width:400px;"><span style="font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:17px;letter-spacing:0.18em;text-transform:uppercase;color:#2B6FB8;">03 · Dial</span><span style="font-family:'Instrument Serif',serif;font-size:36px;line-height:1.05;color:#14110F;">Twist to pick your mode</span></div>
+  </div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Out of home" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(43,36,102,0.45),0 0 0 1px rgba(43,36,102,0.08);background:#2F4A2A;">
+<div data-label="Bloom — Out of home" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(0.2);background:#2F4A2A;overflow:hidden;">
+    <img loading="lazy" decoding="async" src="assets/bloom2/b11.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+  </div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Voice" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(43,36,102,0.45);background:#BFDDF7;">
+<div data-label="Bloom — Voice" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(0.2);background:#0C0A09;color:#F3EEE8;font-family:'DM Sans',sans-serif;overflow:hidden;">
+    <video preload="none" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" data-lazy="assets/bloom2/v-dl9.mp4" poster="assets/bloom2/v-dl9-poster.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+  </div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Social" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(43,36,102,0.45);background:#BFDDF7;">
+<div data-label="Bloom — Social" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(0.2);background:#0C0A09;color:#F3EEE8;font-family:'DM Sans',sans-serif;overflow:hidden;">
+    <video preload="none" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" data-lazy="assets/bloom2/v-deb.mp4" poster="assets/bloom2/v-deb-poster.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+  </div>
+  </div>
+  </div>
+  <a href="Mycelium.dc.html" style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:16px;padding:clamp(40px,7vw,96px) clamp(16px,3vw,32px);background:linear-gradient(180deg,#4A3E8C,#2B2466);color:#F6F2EC;font-family:'DM Sans',sans-serif;border-top:2px solid #C41E2A;" style-hover="color:#C41E2A">
+    <span style="font-size:12px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;">Next project</span>
+    <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;letter-spacing:-0.02em;font-size:clamp(40px,6vw,96px);line-height:1;">Mycelium →</span>
+  </a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    const kick = () => document.querySelectorAll('video').forEach(v => { v.muted = true; v.defaultMuted = true; v.playsInline = true; v.loop = true; v.setAttribute('muted', ''); v.setAttribute('playsinline', ''); if (v.paused) { const p = v.play(); p && p.catch(() => {}); } });
+    kick(); [200, 800, 2000].forEach(t => setTimeout(kick, t));
+    this.vio = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting && e.target.paused) { e.target.muted = true; const p = e.target.play(); p && p.catch(() => {}); } }), { threshold: 0.1 });
+    document.querySelectorAll('video').forEach(v => this.vio.observe(v));
+    const once = () => { kick(); window.removeEventListener('pointerdown', once); window.removeEventListener('scroll', once); };
+    window.addEventListener('pointerdown', once); window.addEventListener('scroll', once, { passive: true });
+    const fit = () => document.querySelectorAll('[data-slide-wrap]').forEach(w => { const s = w.clientWidth / 1920; const el = w.firstElementChild; if (el) el.style.transform = 'scale(' + s + ')'; });
+    fit(); this.ro = new ResizeObserver(fit); document.querySelectorAll('[data-slide-wrap]').forEach(w => this.ro.observe(w));
+    const wraps = [...document.querySelectorAll('[data-slide-wrap]')];
+    wraps.forEach((w, k) => { if (k) { w.style.opacity = '0'; w.style.transform = 'translateY(40px)'; w.style.transition = 'opacity .9s cubic-bezier(.16,.8,.24,1), transform .9s cubic-bezier(.16,.8,.24,1)'; } });
+    this.io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'none'; this.io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
+    wraps.forEach(w => this.io.observe(w));
+  }
+  componentWillUnmount() { clearTimeout(this.k3t); this.k3 && this.k3.dispose && this.k3.dispose(); this.ro && this.ro.disconnect(); this.io && this.io.disconnect(); }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

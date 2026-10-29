@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=DM+Sans:opsz,wght@9..40,300..800&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: #F3EEE8; }
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: #C41E2A; }
+    ::selection { background: #C41E2A; color: #fff; }
+  </style>
+<style id="kos-mobile">
+@media (max-width: 760px) {
+  html, body { overflow-x: hidden; }
+  [style*="grid-template-columns: repeat(2"]:not([data-slide-wrap] *),
+  [style*="grid-template-columns: repeat(3"]:not([data-slide-wrap] *),
+  [style*="grid-template-columns: repeat(4"]:not([data-slide-wrap] *),
+  [style*="grid-template-columns: 1fr 1fr"]:not([data-slide-wrap] *),
+  [style*="grid-template-columns: minmax(0px, 1fr) minmax(0px, 1.2fr)"]:not([data-slide-wrap] *),
+  [style*="grid-template-columns: minmax(96px, auto) minmax(0px, 1fr) auto"]:not([data-slide-wrap] *) { grid-template-columns: minmax(0, 1fr) !important; }
+  [style*="justify-self: end"]:not([data-slide-wrap] *) { justify-self: start !important; text-align: left !important; }
+  [style*="white-space: nowrap"]:not([data-slide-wrap] *) { white-space: normal !important; }
+}
+</style>
+  <script src="./lazy-video.js"></script>
+</helmet>
+<div style="background:#F3EEE8;color:#14110F;font-family:'DM Sans',sans-serif;">
+  <div style="position:sticky;top:0;z-index:50;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;padding:14px clamp(16px,3vw,40px);background:rgba(246,242,236,0.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(43,36,102,0.12);font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:11.5px;letter-spacing:0.2em;text-transform:uppercase;color:#14110F;">
+    <a href="Cover Monument.dc.html" style="justify-self:start;" style-hover="color:#C41E2A">Koushani Datta</a>
+    <span style="color:#2B2466;">01 — The Forest Gold</span>
+    <a href="Cover Monument.dc.html#work" style="justify-self:end;border-bottom:1.5px solid currentColor;padding-bottom:2px;" style-hover="color:#C41E2A">← All work</a>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:clamp(16px,2.4vw,32px);padding:clamp(20px,4vw,56px) clamp(12px,3vw,40px);">
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Logo film" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);background:#000;box-shadow:0 30px 60px -30px rgba(20,17,15,0.55);">
+    <video preload="none" data-lazy="assets/forest-gold/fg-logo.mp4" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.18);transform-origin:center;"></video>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Hero" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(43,36,102,0.45),0 0 0 1px rgba(43,36,102,0.08);background:#0C0A09;">
+<div data-label="The Forest Gold — Hero" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(0.2);background:#0C0A09;color:#F3EEE8;font-family:'DM Sans',sans-serif;overflow:hidden;">
+    <img loading="lazy" decoding="async" src="assets/forest-gold/pg33.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;" />
+    <div aria-hidden="true" style="position:absolute;left:0;top:0;bottom:0;width:58%;z-index:2;pointer-events:none;mix-blend-mode:lighten;background:linear-gradient(180deg,#020000 0%,#040101 30%,#1A0201 48%,#4A0302 58%,#740303 68%,#7E0403 80%,#860403 100%);-webkit-mask-image:linear-gradient(90deg,#000 0%,#000 74%,transparent 100%);mask-image:linear-gradient(90deg,#000 0%,#000 74%,transparent 100%);"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,0.25) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,0) 70%,rgba(0,0,0,0.35) 100%);"></div>
+  </div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Case study" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(43,36,102,0.45),0 0 0 1px rgba(43,36,102,0.08);background:#0C0A09;">
+<div data-label="The Forest Gold — Case study" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(0.2);background:#5C0A10;color:#F3EEE8;font-family:'DM Sans',sans-serif;overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute;right:-30px;bottom:-90px;font-size:640px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-0.04em;line-height:0.8;color:transparent;-webkit-text-stroke:2px rgba(243,238,232,0.14);white-space:nowrap;pointer-events:none;">01</div>
+    <span style="position:absolute;left:80px;top:170px;font-size:24px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E3B65C;">Case study</span>
+    <h2 style="position:absolute;left:80px;width:820px;top:220px;margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-0.03em;font-size:82px;line-height:1;text-wrap:balance;">A Sundarbans whiskey built to stand out on a global shelf.</h2>
+    <div style="position:absolute;left:80px;width:820px;bottom:80px;display:flex;flex-direction:column;border-top:3px solid #F3EEE8;"><div style="display:grid;grid-template-columns:220px 1fr;gap:20px;padding:16px 0;border-bottom:1px solid rgba(243,238,232,0.25);font-size:26px;"><span style="font-weight:700;letter-spacing:0.12em;text-transform:uppercase;font-size:24px;opacity:0.7;">Role</span><span style="font-weight:600;">Brand &amp; packaging designer · with Debaditya Naha</span></div><div style="display:grid;grid-template-columns:220px 1fr;gap:20px;padding:16px 0;border-bottom:1px solid rgba(243,238,232,0.25);font-size:26px;"><span style="font-weight:700;letter-spacing:0.12em;text-transform:uppercase;font-size:24px;opacity:0.7;">Context</span><span style="font-weight:600;">UAL London College of Communication</span></div><div style="display:grid;grid-template-columns:220px 1fr;gap:20px;padding:16px 0;border-bottom:1px solid rgba(243,238,232,0.25);font-size:26px;"><span style="font-weight:700;letter-spacing:0.12em;text-transform:uppercase;font-size:24px;opacity:0.7;">Deliverables</span><span style="font-weight:600;">Identity, illustration, labels, 3D bottle, gift box</span></div><div style="display:grid;grid-template-columns:220px 1fr;gap:20px;padding:16px 0;border-bottom:1px solid rgba(243,238,232,0.25);font-size:26px;"><span style="font-weight:700;letter-spacing:0.12em;text-transform:uppercase;font-size:24px;opacity:0.7;">Award</span><span style="font-weight:600;">Pentawards Bronze 2026</span></div></div>
+    <div style="position:absolute;left:1020px;right:80px;top:170px;bottom:80px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:0;"><div style="display:flex;flex-direction:column;gap:14px;padding:28px 32px 28px 0px;"><div style="display:flex;align-items:baseline;gap:16px;"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:72px;line-height:0.8;color:#E3B65C;">01</span><span style="font-size:24px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;">Challenge</span></div><p style="margin:0;font-size:29px;line-height:1.38;text-wrap:pretty;">Indian craft spirits borrow Scotch codes and vanish on an international shelf.</p></div><div style="display:flex;flex-direction:column;gap:14px;padding:28px 0px 28px 32px;border-left:1px solid rgba(243,238,232,0.25);"><div style="display:flex;align-items:baseline;gap:16px;"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:72px;line-height:0.8;color:#E3B65C;">02</span><span style="font-size:24px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;">Insight</span></div><p style="margin:0;font-size:29px;line-height:1.38;text-wrap:pretty;">The Sundarbans honey gatherers, and the tigers they work beside, are a story no Scotch can tell.</p></div><div style="display:flex;flex-direction:column;gap:14px;padding:28px 32px 28px 0px;border-top:1px solid rgba(243,238,232,0.25);"><div style="display:flex;align-items:baseline;gap:16px;"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:72px;line-height:0.8;color:#E3B65C;">03</span><span style="font-size:24px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;">Idea</span></div><p style="margin:0;font-size:29px;line-height:1.38;text-wrap:pretty;">Hand-drawn tigers, mangroves and Bengal textile borders, framed in one arched label.</p></div><div style="display:flex;flex-direction:column;gap:14px;padding:28px 0px 28px 32px;border-left:1px solid rgba(243,238,232,0.25);border-top:1px solid rgba(243,238,232,0.25);"><div style="display:flex;align-items:baseline;gap:16px;"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:72px;line-height:0.8;color:#E3B65C;">04</span><span style="font-size:24px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;">Outcome</span></div><p style="margin:0;font-size:29px;line-height:1.38;text-wrap:pretty;">A label system that flexes across two expressions, modelled and rendered in 3D for launch.</p></div></div>
+  </div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Research" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(43,36,102,0.45),0 0 0 1px rgba(43,36,102,0.08);background:#0C0A09;">
+<div data-label="The Forest Gold — Research" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(0.2);background:#5C0A10;color:#F3EEE8;font-family:'DM Sans',sans-serif;overflow:hidden;">
+    <div style="position:absolute;inset:0;overflow:hidden;"><img loading="lazy" decoding="async" src="assets/forest-gold/pg34-dark.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;" /></div>
+    <div style="position:absolute;left:0;top:0;width:700px;height:110px;background:#3E070B;"></div>
+  </div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Tiger 2D" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(43,36,102,0.45),0 0 0 1px rgba(43,36,102,0.08);background:#0C0A09;">
+<div data-label="The Forest Gold — Tiger 2D" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(0.2);background:#5C0A10;color:#F3EEE8;font-family:'DM Sans',sans-serif;overflow:hidden;">
+    <div style="position:absolute;inset:0;overflow:hidden;"><img loading="lazy" decoding="async" src="assets/forest-gold/pg35.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;" /></div>
+    <div style="position:absolute;left:560px;right:80px;top:836px;display:flex;align-items:baseline;gap:40px;color:#5C0A10;"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:48px;line-height:1;letter-spacing:-0.03em;white-space:nowrap;">The tiger, drawn by hand</span><p style="margin:0;max-width:640px;font-size:24px;line-height:1.4;color:#3A2A2A;">Illustration built from Sundarbans flora, mangroves and Bengal borders.</p></div>
+  </div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Label system" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(43,36,102,0.45),0 0 0 1px rgba(43,36,102,0.08);background:#0C0A09;">
+<div data-label="The Forest Gold — Label system" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(0.2);background:#3E070B;color:#F3EEE8;font-family:'DM Sans',sans-serif;overflow:hidden;">
+    <div style="position:absolute;inset:0;overflow:hidden;"><img loading="lazy" decoding="async" src="assets/forest-gold/pg36-dark.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;" /></div>
+    <div style="position:absolute;inset:auto 0 0 0;height:56px;background:#3E070B;"></div><div style="position:absolute;left:72px;top:96px;width:560px;display:flex;flex-direction:column;gap:18px;color:#F3EEE8;"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:40px;line-height:1;letter-spacing:-0.03em;">One frame,<br />many expressions</span><p style="margin:0;max-width:520px;font-size:24px;line-height:1.4;color:#E6D9D2;">One arched frame, many expressions — tested across colourways and formats.</p></div>
+  </div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Bottle 3D" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(43,36,102,0.45),0 0 0 1px rgba(43,36,102,0.08);background:#0C0A09;">
+<div data-label="The Forest Gold — Bottle 3D" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(0.2);background:#5C0A10;color:#F3EEE8;font-family:'DM Sans',sans-serif;overflow:hidden;">
+    <div style="position:absolute;inset:0;overflow:hidden;"><img loading="lazy" decoding="async" src="assets/forest-gold/pg37-dark.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;" /></div>
+    <div style="position:absolute;left:0;top:0;bottom:0;width:168px;background:#3E070B;"></div>
+  </div>
+  </div>
+  <div data-screen-label="Bottle 3D caption" style="display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap;padding:4px clamp(4px,1vw,12px) 0;margin-top:calc(-1 * clamp(4px,1.2vw,16px));color:#14110F;">
+    <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(20px,2vw,30px);letter-spacing:-0.02em;">From 2D to 3D</span>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Shoot" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(43,36,102,0.45),0 0 0 1px rgba(43,36,102,0.08);background:#0C0A09;">
+<div data-label="The Forest Gold — Opener" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(0.2);background:#5C0A10;color:#F3EEE8;font-family:'DM Sans',sans-serif;overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute;left:-20px;bottom:-60px;font-size:330px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-0.04em;line-height:0.8;color:transparent;-webkit-text-stroke:2px rgba(227,182,92,0.3);white-space:nowrap;pointer-events:none;">Sundarbans</div>
+    <span style="position:absolute;left:80px;top:200px;font-size:24px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E3B65C;">01 — Packaging &amp; Identity</span>
+    <h2 style="position:absolute;left:72px;top:250px;margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:220px;line-height:0.84;letter-spacing:-0.045em;">The<br />Forest<br />Gold<span style="color:#E3B65C;">.</span></h2>
+    <p style="position:absolute;left:80px;top:880px;width:760px;margin:0;font-size:28px;line-height:1.45;">A craft whiskey from the Sundarbans of Bengal, honouring the honey gatherers behind every bottle.</p>
+    <div style="position:absolute;left:1000px;top:130px;width:760px;height:760px;overflow:hidden;"><img loading="lazy" decoding="async" src="assets/forest-gold/shot09.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;" /></div>
+    <div style="position:absolute;left:880px;top:640px;width:380px;height:380px;padding:12px;background:#F3EEE8;transform:rotate(-6deg);box-shadow:0 30px 60px -20px rgba(0,0,0,0.6);"><div style="position:relative;width:100%;height:100%;overflow:hidden;"><img loading="lazy" decoding="async" src="assets/forest-gold/shot04.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;" /></div></div>
+    <div style="position:absolute;right:70px;top:70px;width:340px;height:150px;overflow:hidden;border-radius:12px;background:#000;box-shadow:0 20px 40px -18px rgba(0,0,0,0.6);"><img loading="lazy" decoding="async" src="assets/forest-gold/penta-bronze-white.png" alt="Pentawards Bronze 2026" style="position:absolute;left:-6%;top:-12%;width:112%;height:124%;object-fit:cover;" /></div>
+  </div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Flat-lay" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(43,36,102,0.45),0 0 0 1px rgba(43,36,102,0.08);background:#3E070B;">
+<div data-label="The Forest Gold — Flat-lay" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(0.2);background:#3E070B;color:#F3EEE8;font-family:'DM Sans',sans-serif;overflow:hidden;">
+    <div style="position:absolute;left:0;top:0;width:1312px;height:1080px;overflow:hidden;"><img loading="lazy" decoding="async" src="assets/forest-gold/hi-flatlay-wide.webp" alt="Red honey and teal Pippali Forest Gold bottles lying on a red woven mat" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;" /></div>
+    <div data-video-slot="forest-gold" style="position:absolute;left:1312px;top:0;right:0;bottom:0;background:#0B3B36;overflow:hidden;"><video preload="none" data-fgfilm="1" data-lazy="assets/forest-gold/fg-film-1.mp4" muted="{{ true }}" playsInline="{{ true }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:1;"></video><video preload="none" data-fgfilm="2" data-lazy="assets/forest-gold/fg-film-2.mp4" muted="{{ true }}" playsInline="{{ true }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;"></video></div>
+  </div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Final — front" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(43,36,102,0.45),0 0 0 1px rgba(43,36,102,0.08);background:#0C0A09;">
+<div data-label="The Forest Gold — Final — front" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(0.2);background:#0C0A09;color:#F3EEE8;font-family:'DM Sans',sans-serif;overflow:hidden;">
+    <div style="position:absolute;left:0;top:0;width:1080px;height:1080px;overflow:hidden;"><img loading="lazy" decoding="async" src="assets/forest-gold/final-lounge.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;" /></div>
+    <div style="position:absolute;left:1160px;right:80px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;gap:22px;"><span style="font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:20px;letter-spacing:0.2em;text-transform:uppercase;color:#E0A24A;">Final product</span><span style="font-family:'Instrument Serif',serif;font-size:92px;line-height:0.95;letter-spacing:-0.02em;">The Royal Blend,<br /><em>in hand.</em></span><p style="margin:0;max-width:560px;font-size:24px;line-height:1.5;color:#CFC4BC;">Honey blended whiskey from the Sundarbans — foiled tigers, a Bengal border and an arched window that frames the spirit.</p></div>
+  </div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Final — back" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(43,36,102,0.45),0 0 0 1px rgba(43,36,102,0.08);background:#0C0A09;">
+<div data-label="The Forest Gold — Final — back" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(0.2);background:#0C0A09;color:#F3EEE8;font-family:'DM Sans',sans-serif;overflow:hidden;">
+    <div style="position:absolute;left:0;top:0;width:1080px;height:1080px;display:flex;flex-direction:column;justify-content:center;gap:22px;padding:0 96px;"><span style="font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:20px;letter-spacing:0.2em;text-transform:uppercase;color:#E0A24A;">Back label</span><span style="font-family:'Instrument Serif',serif;font-size:92px;line-height:0.95;letter-spacing:-0.02em;">The story<br /><em>on the back.</em></span><p style="margin:0;max-width:620px;font-size:24px;line-height:1.5;color:#CFC4BC;">The honey gatherers' story, the maker's mark and UK drink-aware units — set inside the same arch, so the back reads as part of the front.</p></div>
+    <div style="position:absolute;left:840px;top:0;right:0;height:1080px;overflow:hidden;"><img loading="lazy" decoding="async" src="assets/forest-gold/hi-back.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 62%;" /></div>
+  </div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Final — gift box" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(43,36,102,0.45),0 0 0 1px rgba(43,36,102,0.08);background:#0C0A09;">
+<div data-label="The Forest Gold — Final — gift box" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(0.2);background:#0C0A09;color:#F3EEE8;font-family:'DM Sans',sans-serif;overflow:hidden;">
+    <div style="position:absolute;left:0;top:0;width:840px;height:1080px;display:flex;flex-direction:column;justify-content:center;gap:22px;padding:0 80px 0 96px;"><span style="font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:20px;letter-spacing:0.2em;text-transform:uppercase;color:#E0A24A;">Pentawards Bronze 2026</span><span style="font-family:'Instrument Serif',serif;font-size:92px;line-height:0.95;letter-spacing:-0.02em;">Opened<br /><em>like a gift.</em></span><p style="margin:0;max-width:600px;font-size:24px;line-height:1.5;color:#CFC4BC;">Brushed-red presentation box with gold-foil script and the FG tiger monogram.</p></div>
+    <div style="position:absolute;left:840px;top:0;width:1080px;height:1080px;overflow:hidden;"><img loading="lazy" decoding="async" src="assets/forest-gold/hi-giftbox-velvet.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" /></div>
+  </div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Lifestyle" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(43,36,102,0.45),0 0 0 1px rgba(43,36,102,0.08);background:#0C0A09;">
+<div data-label="The Forest Gold — Lifestyle" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(0.2);background:#5C0A10;color:#F3EEE8;font-family:'DM Sans',sans-serif;overflow:hidden;">
+    <div style="position:absolute;left:0;top:0;width:1080px;height:1080px;overflow:hidden;"><img loading="lazy" decoding="async" src="assets/forest-gold/hi-cocktail.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;" /></div>
+    <div style="position:absolute;left:1100px;top:0;right:0;height:820px;overflow:hidden;"><img loading="lazy" decoding="async" src="assets/forest-gold/hi-satin.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;" /></div>
+    <div style="position:absolute;left:1140px;right:48px;bottom:48px;"><div style="display:flex;flex-direction:column;gap:14px;">
+        
+        <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-0.02em;font-size:38px;line-height:1;text-wrap:balance;">On the table</span>
+        <p style="margin:0;font-size:24px;line-height:1.4;opacity:0.85;text-wrap:pretty;">Campaign stills shot in deep reds — the colour of the label, the room and the drink.</p>
+      </div></div>
+  </div>
+  </div>
+  <div data-slide-wrap="1" data-card="1" data-screen-label="Gift box" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(43,36,102,0.45),0 0 0 1px rgba(43,36,102,0.08);background:#0C0A09;">
+<div data-label="The Forest Gold — Gift box" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(0.2);background:#5C0A10;color:#F3EEE8;font-family:'DM Sans',sans-serif;overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute;left:60px;top:120px;font-size:300px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-0.04em;line-height:0.8;color:transparent;-webkit-text-stroke:2px rgba(243,238,232,0.22);white-space:nowrap;pointer-events:none;">Gift box</div>
+    <div style="position:absolute;left:60px;right:60px;top:70px;height:770px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;align-items:stretch;"><div style="position:relative;overflow:hidden;"><img loading="lazy" decoding="async" src="assets/forest-gold/hi-range-box.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;" /></div><div style="position:relative;overflow:hidden;"><img loading="lazy" decoding="async" src="assets/forest-gold/hi-giftbox-room.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;" /></div></div>
+    <div style="position:absolute;left:80px;right:80px;bottom:72px;display:grid;grid-template-columns:1fr 1.4fr;gap:60px;align-items:end;border-top:3px solid #F3EEE8;padding-top:22px;"><div style="display:flex;gap:18px;align-items:baseline;"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:46px;line-height:1;letter-spacing:-0.02em;">The gift box</span></div><p style="margin:0;font-size:26px;line-height:1.4;opacity:0.85;">An arched window echoes the label, so the bottle is framed before it is opened.</p></div>
+  </div>
+  </div>
+  </div>
+  <a href="Lethea.dc.html" style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:16px;padding:clamp(40px,7vw,96px) clamp(16px,3vw,32px);background:linear-gradient(180deg,#4A3E8C,#2B2466);color:#F6F2EC;font-family:'DM Sans',sans-serif;border-top:2px solid #C41E2A;" style-hover="color:#C41E2A">
+    <span style="font-size:12px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;">Next project</span>
+    <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;letter-spacing:-0.02em;font-size:clamp(40px,6vw,96px);line-height:1;">Lethea →</span>
+  </a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  fgFilm() {
+    const go = () => {
+      const a = document.querySelector('[data-fgfilm="1"]'), b = document.querySelector('[data-fgfilm="2"]');
+      if (!a || !b) { this._fgR = setTimeout(go, 300); return; }
+      const vs = [a, b]; let cur = 0;
+      b.pause(); b.currentTime = 0;
+      const swap = () => { const v = vs[cur], n = vs[1 - cur]; n.currentTime = 0; n.play().catch(() => {}); n.style.opacity = 1; v.style.opacity = 0; v.pause(); v.currentTime = 0; cur = 1 - cur; };
+      this._fgT = setInterval(() => { const v = vs[cur]; if (v.duration && (v.ended || v.currentTime >= v.duration - 0.06)) swap(); else if (v.paused) v.play().catch(() => {}); }, 30);
+      a.play().catch(() => {});
+    };
+    go();
+  }
+  componentDidMount() {
+    this.fgFilm();
+    const kick = () => document.querySelectorAll('video').forEach(v => { v.muted = true; v.defaultMuted = true; v.playsInline = true; v.loop = true; v.setAttribute('muted', ''); v.setAttribute('playsinline', ''); if (v.paused) { const p = v.play(); p && p.catch(() => {}); } });
+    kick(); [200, 800, 2000].forEach(t => setTimeout(kick, t));
+    this.vio = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting && e.target.paused) { e.target.muted = true; const p = e.target.play(); p && p.catch(() => {}); } }), { threshold: 0.1 });
+    document.querySelectorAll('video').forEach(v => this.vio.observe(v));
+    const once = () => { kick(); window.removeEventListener('pointerdown', once); window.removeEventListener('scroll', once); };
+    window.addEventListener('pointerdown', once); window.addEventListener('scroll', once, { passive: true });
+    const fit = () => document.querySelectorAll('[data-slide-wrap]').forEach(w => { const s = w.clientWidth / 1920; const el = w.firstElementChild; if (el) el.style.transform = 'scale(' + s + ')'; });
+    fit(); this.ro = new ResizeObserver(fit); document.querySelectorAll('[data-slide-wrap]').forEach(w => this.ro.observe(w));
+    const wraps = [...document.querySelectorAll('[data-slide-wrap]')];
+    wraps.forEach((w, k) => { if (k) { w.style.opacity = '0'; w.style.transform = 'translateY(40px)'; w.style.transition = 'opacity .9s cubic-bezier(.16,.8,.24,1), transform .9s cubic-bezier(.16,.8,.24,1)'; } });
+    this.io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'none'; this.io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
+    wraps.forEach(w => this.io.observe(w));
+  }
+  componentWillUnmount() { clearInterval(this._fgT); clearTimeout(this.k3t); this.k3 && this.k3.dispose && this.k3.dispose(); this.ro && this.ro.disconnect(); this.io && this.io.disconnect(); }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
