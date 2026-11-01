@@ -592,6 +592,8 @@ class Component extends DCLogic {
       ex('postprocessing/EffectComposer.js'), ex('postprocessing/RenderPass.js'), ex('postprocessing/UnrealBloomPass.js'), ex('postprocessing/OutputPass.js')]);
     const cv = this.canvasRef.current, root = this.rootRef.current; if (!cv) return;
     const DPR = Math.min(1, window.devicePixelRatio);
+    // lite = phones, low-memory devices, data-saver: skip the remote HDR/PBR/model upgrade and use smaller shadows
+    const nc = navigator.connection || {}, lite = !!nc.saveData || /2g/.test(nc.effectiveType || '') || (navigator.deviceMemory || 8) <= 4 || window.innerWidth < 760;
     const R = new T.WebGLRenderer({ canvas: cv, antialias: true, powerPreference: 'high-performance' });
     R.setPixelRatio(DPR); R.outputColorSpace = T.SRGBColorSpace; R.toneMapping = T.ACESFilmicToneMapping; R.toneMappingExposure = 0.88;
     R.shadowMap.enabled = true; R.shadowMap.type = T.PCFSoftShadowMap;
@@ -621,7 +623,7 @@ class Component extends DCLogic {
     scene.fog = new T.Fog(cur.fog.clone(), 75, 230);
     const hemi = new T.HemisphereLight(cur.hT.clone(), cur.hB.clone(), cur.hI); scene.add(hemi);
     const sun = new T.DirectionalLight(cur.sun.clone(), cur.sunI); sun.position.set(-20, 24, 14); sun.castShadow = true;
-    sun.shadow.mapSize.set(2048, 2048); Object.assign(sun.shadow.camera, { left: -28, right: 28, top: 28, bottom: -28, near: 1, far: 100 }); sun.shadow.bias = -0.0003; sun.shadow.normalBias = 0.03; sun.shadow.radius = 3;
+    sun.shadow.mapSize.setScalar(lite ? 1024 : 2048); Object.assign(sun.shadow.camera, { left: -28, right: 28, top: 28, bottom: -28, near: 1, far: 100 }); sun.shadow.bias = -0.0003; sun.shadow.normalBias = 0.03; sun.shadow.radius = 3;
     scene.add(sun);
     const gateLight = new T.PointLight(0xff4a34, 0, 28, 1.6); gateLight.position.set(0, 5, -2.5); scene.add(gateLight);
     const rep = (t, x, y) => { const c = t.clone(); c.repeat.set(x, y); c.needsUpdate = true; return c; };
@@ -923,9 +925,11 @@ class Component extends DCLogic {
       const applyPBR = (m, t, rx, ry, tint) => { if (!t) return; [['map', t.map], ['normalMap', t.nor], ['roughnessMap', t.rough]].forEach(([k, tx]) => { if (!tx) return; const c = tx.clone(); c.wrapS = c.wrapT = T.RepeatWrapping; c.repeat.set(rx, ry); c.anisotropy = 8; if (k === 'map') c.colorSpace = T.SRGBColorSpace; c.needsUpdate = true; m[k] = c; });
         m.bumpMap = null; m.roughness = 1; m.color.set(tint || 0xffffff); if (m.normalMap) m.normalScale.set(1.2, 1.2); m.needsUpdate = true; };
       const { RGBELoader } = await ex('loaders/RGBELoader.js');
-      const phHDR = async id => { const j = await loadJSON(id); const u = j.hdri['2k'].hdr.url; const t = await new RGBELoader().loadAsync(u); t.mapping = T.EquirectangularReflectionMapping; return t; };
+      const phHDR = async id => { const j = await loadJSON(id); const u = j.hdri['1k'].hdr.url; const t = await new RGBELoader().loadAsync(u); t.mapping = T.EquirectangularReflectionMapping; return t; };
       first(['kloofendal_48d_partly_cloudy_puresky', 'kloppenheim_06_puresky', 'goegap'], phHDR).then(t => { if (!t) return; hdr.day = t; scene.environment = t; envBoost = 1.5; });
-      first(['qwantani_dusk_2_puresky', 'kiara_1_dawn', 'venice_sunset'], phHDR).then(t => { if (t) hdr.dusk = t; });
+      // dusk sky only downloads the first time dusk mode is switched on
+      this._loadDusk = () => { this._loadDusk = null; first(['qwantani_dusk_2_puresky', 'kiara_1_dawn', 'venice_sunset'], phHDR).then(t => { if (t) hdr.dusk = t; }); };
+      if (this.state.dusk) this._loadDusk();
       first(['aerial_beach_01', 'coast_sand_01', 'aerial_sand', 'sand_01'], phTex).then(t => applyPBR(mat.sand, t, 60, 60, 0x93A862));
       first(['sandstone_blocks_08', 'beige_wall_001', 'plastered_stone_wall', 'castle_wall_slates'], phTex).then(t => { applyPBR(mat.stone, t, 3, 3, 0xF6EDE1); applyPBR(mat.stone2, t, 3, 3, 0xE2CBB0); applyPBR(mat.mesa, t, 4, 4, 0xD2AE90); });
       first(['marble_01'], phTex).then(t => { if (!t) return; applyPBR(mat.marble, t, 2, 1); mat.marble.roughness = 0.35; mat.marble.clearcoat = 0.8; });
@@ -975,7 +979,8 @@ class Component extends DCLogic {
           stems.count = fi; fruit.count = fi; extra.forEach(x => { x.im.count = x.n; x.im.castShadow = true; x.im.instanceMatrix.needsUpdate = true; if (x.im.instanceColor) x.im.instanceColor.needsUpdate = true; scene.add(x.im); }); fruit.castShadow = true; fruit.instanceMatrix.needsUpdate = true; if (fruit.instanceColor) fruit.instanceColor.needsUpdate = true; stems.instanceMatrix.needsUpdate = true;
           const bloom = new T.Group();
           scene.add(fruit); scene.add(stems); });
-        first(['namaqualand_boulder_02', 'namaqualand_boulder_05', 'boulder_01', 'rock_09'], phModel).then(m => { if (!m) return; [[-18, 9, 3.2, 0.3], [21, 6, 4.5, 2.1], [-30, -6, 6, 1.2], [28, -22, 7, 4]].forEach(d => { const c = fit(m.clone(true), d[2]); c.position.x = d[0]; c.position.z = d[1]; c.rotation.y = d[3]; scene.add(c); }); });
+        // boulders are ~5MB, so they wait until everything else has had the bandwidth
+        setTimeout(() => first(['namaqualand_boulder_02', 'namaqualand_boulder_05', 'boulder_01', 'rock_09'], phModel).then(m => { if (!m) return; [[-18, 9, 3.2, 0.3], [21, 6, 4.5, 2.1], [-30, -6, 6, 1.2], [28, -22, 7, 4]].forEach(d => { const c = fit(m.clone(true), d[2]); c.position.x = d[0]; c.position.z = d[1]; c.rotation.y = d[3]; scene.add(c); }); }), 8000);
       } catch (e) { console.warn('models skipped', e); }
       try {
         const { Water } = await ex('objects/Water.js');
@@ -986,11 +991,6 @@ class Component extends DCLogic {
           rw.rotation.x = -Math.PI / 2; rw.position.set(0, -0.15, -38); rw.material.uniforms.size.value = 2.5; scene.add(rw); this._river.visible = false; this._rw = rw; }
       } catch (e) { console.warn('water skipped', e); }
       try {
-        const { GTAOPass } = await ex('postprocessing/GTAOPass.js');
-        const ao = new GTAOPass(scene, cam, W, H); ao.updateGtaoMaterial({ radius: 0.9, distanceExponent: 1.2, thickness: 1.5, scale: 1.4, samples: 16 }); ao.blendIntensity = 1;
-        /* GTAO disabled for performance */
-      } catch (e) { console.warn('ao skipped', e); }
-      try {
         const { ShaderPass } = await ex('postprocessing/ShaderPass.js');
         grain = new ShaderPass({ uniforms: { tDiffuse: { value: null }, time: { value: 0 } },
           vertexShader: 'varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0); }',
@@ -999,7 +999,9 @@ class Component extends DCLogic {
       } catch (e) { console.warn('grain skipped', e); }
     };
     const size = () => { W = root.clientWidth; H = root.clientHeight; R.setSize(W, H, false); composer.setSize(W, H); cam.aspect = W / H; cam.updateProjectionMatrix(); rad = cam.aspect < 1 ? 36 / Math.max(0.5, cam.aspect) * 0.9 : 36; };
-    size(); const ro = new ResizeObserver(size); ro.observe(root); upgrade();
+    size(); const ro = new ResizeObserver(size); ro.observe(root);
+    // let the first frames paint before pulling the remote HDR/PBR/model assets
+    if (!lite) (window.requestIdleCallback || (f => setTimeout(f, 1500)))(() => upgrade(), { timeout: 3000 });
     const ray = new T.Raycaster(), ndc = new T.Vector2();
     let az = 0.3, azV = 0, dragging = false, downX = 0, downY = 0, lastX = 0, mx = 0, my = 0, smx = 0, smy = 0, hovered = null, ringK = 0, ringOn = false, pulse = 0;
     const kindOf = o => { while (o && !(o.userData && o.userData.kind)) o = o.parent; return o; };
@@ -1107,6 +1109,7 @@ class Component extends DCLogic {
               if (f.u >= 1) { f.st = 'rest'; f.timer = 6 + Math.random() * 10; } }
           }}); }
       scene.fog.color.copy(cur.fog); hemi.color.copy(cur.hT); hemi.groundColor.copy(cur.hB); hemi.intensity = cur.hI; sun.color.copy(cur.sun); sun.intensity = cur.sunI; scene.environmentIntensity = cur.env * envBoost;
+      if (this.state.dusk && this._loadDusk) this._loadDusk();
       if (hdr.day) { const want = this.state.dusk && hdr.dusk ? hdr.dusk : hdr.day; if (scene.environment !== want) scene.environment = want; }
       if (!this._skyC) { this._skyC = { top: new T.Color(0x2B2466), mid: new T.Color(0xB9B7E8), lt: 0 };
         const disc = (c, r) => { const m = new T.Mesh(new T.CircleGeometry(r, 48), new T.MeshBasicMaterial({ color: c, fog: false, toneMapped: false })); scene.add(m); return m; };
@@ -1205,11 +1208,15 @@ class Component extends DCLogic {
       experience: [['brush','',-1.05,-0.05,0.45,''],['reel','',1.05,-0.05,0.45,'']],
       contact: [] };
     const mf = () => { if (this.kf) return; if (!window.mountKosFloat) { this.kft = setTimeout(mf, 120); return; } this.kf = [];
-      const w = document.querySelector('[data-kosworld]'); if (w && window.mountKosWorld) window.mountKosWorld(w).then(h => this.kf.push(h)).catch(e => console.warn('world failed', e));
-      document.querySelectorAll('[data-kosfloat]').forEach(c => window.mountKosFloat(c, { layout: LAYOUTS[c.dataset.kosfloat === '1' ? 'title' : c.dataset.kosfloat], ring: c.dataset.kosfloat === '1' }).then(h => this.kf.push(h)).catch(e => console.warn('float 3D failed', e))); };
+      const mount = c => c.hasAttribute('data-kosworld')
+        ? window.mountKosWorld && window.mountKosWorld(c).then(h => this.kf.push(h)).catch(e => console.warn('world failed', e))
+        : window.mountKosFloat(c, { layout: LAYOUTS[c.dataset.kosfloat === '1' ? 'title' : c.dataset.kosfloat], ring: c.dataset.kosfloat === '1' }).then(h => this.kf.push(h)).catch(e => console.warn('float 3D failed', e));
+      // each canvas is its own WebGL scene, so only build it when it scrolls near the viewport
+      this.kio = new IntersectionObserver(es => es.forEach(e => { if (!e.isIntersecting) return; this.kio.unobserve(e.target); mount(e.target); }), { rootMargin: '600px 0px' });
+      document.querySelectorAll('[data-kosworld], [data-kosfloat]').forEach(c => this.kio.observe(c)); };
     mf();
   }
-  componentWillUnmount() { this.worldOff && this.worldOff(); this.spaceOff && this.spaceOff(); this.ringOff && this.ringOff(); clearTimeout(this.kft); this.kf && this.kf.forEach && this.kf.forEach(h => h.dispose()); clearInterval(this.clock); clearInterval(this.titleTimer); this.offScene && this.offScene(); }
+  componentWillUnmount() { this.worldOff && this.worldOff(); this.spaceOff && this.spaceOff(); this.ringOff && this.ringOff(); clearTimeout(this.kft); this.kio && this.kio.disconnect(); this.kf && this.kf.forEach && this.kf.forEach(h => h.dispose()); clearInterval(this.clock); clearInterval(this.titleTimer); this.offScene && this.offScene(); }
 
   renderVals() {
     const d = this.state.dusk; const contactSky = { position: 'absolute', inset: 0, zIndex: -1, pointerEvents: 'none', background: 'linear-gradient(180deg, rgba(246,242,236,0) 0%, #1E1A52 14%, #3E2E7A 40%, #7C4E92 66%, #C9768E 86%, #EFA486 100%)', opacity: 0 }; const contactFade = { position: 'absolute', inset: 0, zIndex: 0, pointerEvents: 'none', background: d ? 'linear-gradient(180deg,#A592C6 0%,rgba(165,146,198,0.6) 14%,rgba(165,146,198,0) 36%)' : 'linear-gradient(90deg,rgba(246,242,236,0.55) 0%,rgba(246,242,236,0.25) 45%,rgba(246,242,236,0) 65%)', opacity: 1, transition: 'background 1.4s ease' }; const duskVeil = { position: 'absolute', left: 0, right: 0, top: '100svh', bottom: 0, zIndex: -1, pointerEvents: 'none', background: 'linear-gradient(180deg, #2A2160 0%, #5B3F8F 32%, #A35F95 60%, #5B3F8F 86%, #261C5C 100%)', opacity: d ? 1 : 0, transition: 'opacity 1.4s ease' }; const ink = d ? '#F3E8DA' : '#2A211C', line = d ? 'rgba(243,232,218,0.35)' : 'rgba(42,33,28,0.28)';
