@@ -516,7 +516,7 @@ const SPACE = Array.from({ length: MEDIA.length }, (_, i) => {
 });
 class Component extends DCLogic {
   setupSpace() {
-    const fillSrc = () => document.querySelectorAll('[data-card-in] img[data-src], [data-card-in] video[data-src]').forEach(el => { const v = el.getAttribute('data-src'); if (v && v.indexOf('{{') < 0 && el.getAttribute('src') !== v) { el.setAttribute('src', v); if (el.tagName === 'VIDEO') el.play && el.play().catch(() => {}); } }); fillSrc(); setTimeout(fillSrc, 400); setTimeout(fillSrc, 1500);
+    const fillSrc = () => document.querySelectorAll('[data-card-in] img[data-src], [data-card-in] video[data-src]').forEach(el => { const v = el.getAttribute('data-src'); if (v && v.indexOf('{{') < 0 && el.getAttribute('src') !== v) { el.setAttribute('src', v); if (el.tagName === 'VIDEO') el.play && el.play().catch(() => {}); } });
     const host = this.spaceRef.current; if (!host) return;
     const cards = [...host.querySelectorAll('[data-card]')], close = host.querySelector('[data-space-close]');
     const N = cards.length, NEAR = 420, FAR = -3400, SPAN = NEAR - FAR;
@@ -542,6 +542,9 @@ class Component extends DCLogic {
     const key = e => { if (e.key === 'Escape') doClose(); };
     host.addEventListener('pointermove', move); host.addEventListener('wheel', wheel, { passive: true }); window.addEventListener('keydown', key);
     const io = new IntersectionObserver(([en]) => { vis = en.isIntersecting; }); io.observe(host);
+    // the card media is ~50MB (videos ~36MB), so it only loads once this section is near the screen, and videos pause when it leaves
+    const vio = new IntersectionObserver(([en]) => { if (en.isIntersecting) { fillSrc(); setTimeout(fillSrc, 400); }
+      host.querySelectorAll('video').forEach(v => { if (!en.isIntersecting) v.pause(); else if (v.getAttribute('src')) v.play().catch(() => {}); }); }, { rootMargin: '400px 0px' }); vio.observe(host);
     const loop = now => {
       raf = requestAnimationFrame(loop); const dt = Math.min(50, now - last); last = now; if (!vis) return;
       smx += (mx - smx) * 0.05; smy += (my - smy) * 0.05;
@@ -560,7 +563,7 @@ class Component extends DCLogic {
       });
     };
     raf = requestAnimationFrame(loop);
-    this.spaceOff = () => { cancelAnimationFrame(raf); io.disconnect(); window.removeEventListener('keydown', key); };
+    this.spaceOff = () => { cancelAnimationFrame(raf); io.disconnect(); vio.disconnect(); window.removeEventListener('keydown', key); };
   }
 
   rootRef = React.createRef(); canvasRef = React.createRef(); titleRef = React.createRef(); tipRef = React.createRef();
@@ -587,9 +590,9 @@ class Component extends DCLogic {
     const B = 'https://esm.sh/three@0.169.0';
     const T = await import(B);
     const ex = p => import(B + '/examples/jsm/' + p);
-    const [{ RoundedBoxGeometry }, { Reflector }, { RoomEnvironment }, { EffectComposer }, { RenderPass }, { UnrealBloomPass }, { OutputPass }] = await Promise.all([
+    const [{ RoundedBoxGeometry }, { Reflector }, { RoomEnvironment }, { EffectComposer }, { RenderPass }, { UnrealBloomPass }, { OutputPass }, { mergeGeometries }] = await Promise.all([
       ex('geometries/RoundedBoxGeometry.js'), ex('objects/Reflector.js'), ex('environments/RoomEnvironment.js'),
-      ex('postprocessing/EffectComposer.js'), ex('postprocessing/RenderPass.js'), ex('postprocessing/UnrealBloomPass.js'), ex('postprocessing/OutputPass.js')]);
+      ex('postprocessing/EffectComposer.js'), ex('postprocessing/RenderPass.js'), ex('postprocessing/UnrealBloomPass.js'), ex('postprocessing/OutputPass.js'), ex('utils/BufferGeometryUtils.js')]);
     const cv = this.canvasRef.current, root = this.rootRef.current; if (!cv) return;
     const DPR = Math.min(1, window.devicePixelRatio);
     // lite = phones, low-memory devices, data-saver: skip the remote HDR/PBR/model upgrade and use smaller shadows
@@ -636,7 +639,8 @@ class Component extends DCLogic {
       clay: PH({ color: 0xB9643F, roughness: 0.5, clearcoat: 0.35, clearcoatRoughness: 0.4, sheen: 0.4, sheenColor: new T.Color(0xffc2a0), bumpMap: rep(stoneTex, 3, 3), bumpScale: 0.6 }),
       marble: PH({ map: rep(marbleTex, 2, 1), roughness: 0.18, clearcoat: 0.8, clearcoatRoughness: 0.1 }),
       chrome: PH({ color: 0xffffff, metalness: 1, roughness: 0.0, clearcoat: 1, clearcoatRoughness: 0, envMapIntensity: 2.6 }),
-      glass: PH({ color: 0xffffff, transmission: 1, thickness: 1.4, roughness: 0.02, ior: 1.5, attenuationColor: new T.Color(0xffd2bd), attenuationDistance: 2.5, iridescence: 0.4, envMapIntensity: 1.5 }),
+      // faked glass: real transmission forces an extra full-scene render in every view and mirror
+      glass: PH({ color: 0xffe6dc, transparent: true, opacity: 0.45, roughness: 0.02, metalness: 0.1, clearcoat: 1, iridescence: 0.6, envMapIntensity: 2.2, depthWrite: false }),
       dark: new T.MeshStandardMaterial({ color: 0x241D1E, roughness: 0.7 }),
       bronze: PH({ color: 0x7A5434, metalness: 1, roughness: 0.35 })
     };
@@ -652,6 +656,9 @@ class Component extends DCLogic {
     // mirror pool
     rbox(15.4, 0.34, 7.4, mat.stone, 0, 0.17, 9);
     const refl = new Reflector(new T.PlaneGeometry(14, 6), { color: 0x8a9799, textureWidth: 512, textureHeight: 256, clipBias: 0.003 }); refl.rotation.x = -Math.PI / 2; refl.position.set(0, 0.35, 9); scene.add(refl);
+    // each mirror re-renders the whole scene, so refresh reflections every n-th frame instead of every frame
+    const every = (o, n) => { const f = o.onBeforeRender; let i = 0; o.onBeforeRender = function () { if (i++ % n === 0) f.apply(this, arguments); }; };
+    every(refl, 2);
     // platform, stairs, lanterns
     rbox(18, 1.2, 11, mat.stone, 0, 0.6, -4.5);
     for (let i = 0; i < 6; i++) rbox(6.4, 0.2 * (i + 1), 0.55, mat.stone, 0, 0.1 * (i + 1), 1 + 0.275 + (5 - i) * 0.55, null, 0.03);
@@ -702,7 +709,7 @@ class Component extends DCLogic {
     const bank = new T.Mesh(riverGeo(1.6), new T.MeshStandardMaterial({ color: 0x8E7A62, roughness: 1 })); bank.rotation.x = -Math.PI / 2; bank.position.set(0, -0.19, -38); bank.receiveShadow = true; scene.add(bank);
     const bank2 = new T.Mesh(riverGeo(0.7), new T.MeshStandardMaterial({ color: 0x6F6150, roughness: 0.6 })); bank2.rotation.x = -Math.PI / 2; bank2.position.set(0, -0.17, -38); bank2.receiveShadow = true; scene.add(bank2);
     const river = new Reflector(riverGeo(0), { color: 0x7d8f96, textureWidth: 1024, textureHeight: 256, clipBias: 0.003 });
-    river.rotation.x = -Math.PI / 2; river.position.set(0, -0.15, -38); scene.add(river); this._river = river;
+    river.rotation.x = -Math.PI / 2; river.position.set(0, -0.15, -38); scene.add(river); this._river = river; every(river, 3);
     // ---- kash phool (Saccharum spontaneum) along both riverbanks
     {
       const kr = (() => { let s = 4242; return () => (s = (s * 16807) % 2147483647) / 2147483647; })();
@@ -850,6 +857,13 @@ class Component extends DCLogic {
 
     const GROVE = [["t",-56,-46,1.6],["l",-46,-50,1.75],["t",-40,-46,1.9000000000000001],["t",-30,-50,1.6],["l",-24,-46,1.75],["t",-14,-50,1.9000000000000001],["t",-8,-46,1.6],["l",2,-50,1.75],["t",8,-46,1.9000000000000001],["t",18,-50,1.6],["l",24,-46,1.75],["t",34,-50,1.9000000000000001],["t",40,-46,1.6],["l",50,-50,1.75],["t",56,-46,1.9000000000000001],["l",-50,-58,1.9],["t",-40.8,-61,1.9],["l",-31.6,-64,1.9],["t",-22.400000000000002,-58,1.9],["l",-13.200000000000003,-61,1.9],["t",-4,-64,1.9],["l",5.199999999999996,-58,1.9],["t",14.399999999999991,-61,1.9],["l",23.599999999999994,-64,1.9],["t",32.8,-58,1.9],["l",42,-61,1.9],["t",51.19999999999999,-64,1.9],["t",-30,-22,1.6],["l",-36,-14,1.7],["t",-41,-28,1.8],["b",-26,-8,1.2],["t",-47,-6,1.9],["l",-33,-34,1.6],["t",-52,-20,2],["b",-39,2,1.25],["t",30,-22,1.6],["l",36,-14,1.7],["t",41,-28,1.8],["b",26,-8,1.2],["t",47,-6,1.9],["l",33,-34,1.6],["t",52,-20,2],["b",39,2,1.25]];
     GROVE.forEach(([k, x, z, s], i) => k === 't' ? tree(x, z, s) : k === 'b' ? cypress(x, z, s) : (i % 2 ? tree(x, z, s * 0.95) : cypress(x, z, s * 0.7)));
+    // trees only ever move as a whole group, so bake each one's branches/caps/roots/puffs into one mesh per material (~40 draw calls -> ~4)
+    natTrees.forEach(({ o: g }) => { const by = new Map();
+      g.children.forEach(c => { if (!c.isMesh || c.isInstancedMesh || c.material.transparent) return; const k = c.material.uuid + '|' + Object.keys(c.geometry.attributes).sort().join() + '|' + !!c.geometry.index; by.has(k) ? by.get(k).push(c) : by.set(k, [c]); });
+      by.forEach(list => { if (list.length < 2) return;
+        const geo = mergeGeometries(list.map(c => { c.updateMatrix(); return c.geometry.clone().applyMatrix4(c.matrix); }), false); if (!geo) return;
+        const m = new T.Mesh(geo, list[0].material); m.castShadow = list.some(c => c.castShadow); m.receiveShadow = list.some(c => c.receiveShadow);
+        list.forEach(c => g.remove(c)); g.add(m); }); });
 
     this._trees = natTrees;
     {
@@ -986,9 +1000,9 @@ class Component extends DCLogic {
         const { Water } = await ex('objects/Water.js');
         const wn = await texL.loadAsync('https://threejs.org/examples/textures/waternormals.jpg'); wn.wrapS = wn.wrapT = T.RepeatWrapping;
         water = new Water(new T.PlaneGeometry(14, 6), { textureWidth: 512, textureHeight: 256, waterNormals: wn, sunDirection: sun.position.clone().normalize(), sunColor: 0xfff1de, waterColor: 0x23302f, distortionScale: 0.35, fog: true, alpha: 1 });
-        water.rotation.x = -Math.PI / 2; water.position.set(0, 0.35, 9); water.material.uniforms.size.value = 6; scene.add(water); refl.visible = false;
+        water.rotation.x = -Math.PI / 2; water.position.set(0, 0.35, 9); water.material.uniforms.size.value = 6; scene.add(water); refl.visible = false; every(water, 2);
         if (this._river) { const rw = new Water(this._riverGeo(0), { textureWidth: 512, textureHeight: 256, waterNormals: wn, sunDirection: sun.position.clone().normalize(), sunColor: 0xffe6c8, waterColor: 0x2E4A4C, distortionScale: 1.2, fog: true, alpha: 1 });
-          rw.rotation.x = -Math.PI / 2; rw.position.set(0, -0.15, -38); rw.material.uniforms.size.value = 2.5; scene.add(rw); this._river.visible = false; this._rw = rw; }
+          rw.rotation.x = -Math.PI / 2; rw.position.set(0, -0.15, -38); rw.material.uniforms.size.value = 2.5; scene.add(rw); this._river.visible = false; this._rw = rw; every(rw, 3); }
       } catch (e) { console.warn('water skipped', e); }
       try {
         const { ShaderPass } = await ex('postprocessing/ShaderPass.js');
