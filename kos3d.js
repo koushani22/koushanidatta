@@ -99,7 +99,7 @@
       add(new RB(1.64, 1.24, 0.3, 3, 0.05), red); add(new RB(0.3, 1.24, 1.64, 3, 0.05), red);
       [-1, 1].forEach(d => { const l = add(new T.TorusGeometry(0.26, 0.1, 20, 40), red, d * 0.24, 0.8, 0); l.rotation.y = d * 0.7; l.scale.set(1, 0.8, 1); });
       bead(0.13, chrome, 0, 0.72, 0);
-      outer.userData.label = 'Packaging'; outer.userData.motion = 'tumble'; }
+      outer.userData.label = 'Dieline'; outer.userData.motion = 'tumble'; }
     else if (kind === 'pencil') {
       const body = add(new T.CylinderGeometry(0.32, 0.32, 1.7, 6, 1), pist); body.geometry.computeVertexNormals();
       add(new T.CylinderGeometry(0.33, 0.33, 0.06, 6), cream, 0, 0.5);
@@ -193,8 +193,8 @@
     const ray = new T.Raycaster(), nd = new T.Vector2(); let mx = 0, my = 0, inside = false, hov = null;
     const pick = e => { const r = cv.getBoundingClientRect(); nd.set((e.clientX - r.left) / r.width * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1); ray.setFromCamera(nd, cam); const h = ray.intersectObjects(objs, true)[0]; if (!h) return null; let o = h.object; while (o && objs.indexOf(o) < 0) o = o.parent; return o; };
     const tip = document.createElement('div'); tip.style.cssText = "position:absolute;z-index:5;pointer-events:none;opacity:0;transition:opacity .25s;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:11.5px;letter-spacing:0.2em;text-transform:uppercase;background:#2B2466;color:#F6F2EC;padding:6px 10px;border-radius:999px;white-space:nowrap;"; host.appendChild(tip);
-    const move = e => { const r = cv.getBoundingClientRect(); inside = e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom; mx = ((e.clientX - r.left) / r.width * 2 - 1) * hw; my = -((e.clientY - r.top) / r.height * 2 - 1) * hh; hov = inside ? pick(e) : null; document.body.style.cursor = hov ? 'pointer' : ''; const hr = host.getBoundingClientRect(); if (hov && hov.userData.label) { tip.textContent = hov.userData.label; tip.style.left = (e.clientX - hr.left + 16) + 'px'; tip.style.top = (e.clientY - hr.top + 14) + 'px'; tip.style.opacity = 1; } else tip.style.opacity = 0; };
-    const click = e => { const o = inside && pick(e); if (o) o.userData.k = 1; };
+    const move = e => { const r = cv.getBoundingClientRect(); inside = e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom; mx = ((e.clientX - r.left) / r.width * 2 - 1) * hw; my = -((e.clientY - r.top) / r.height * 2 - 1) * hh; const prevH = hov; hov = inside ? pick(e) : null; if (hov !== prevH && hov && hov.userData.label) window.dispatchEvent(new CustomEvent('kos-obj-hover', { detail: hov.userData.label })); document.body.style.cursor = hov ? 'pointer' : ''; const hr = host.getBoundingClientRect(); if (hov && hov.userData.label) { tip.textContent = hov.userData.label; tip.style.left = (e.clientX - hr.left + 16) + 'px'; tip.style.top = (e.clientY - hr.top + 14) + 'px'; tip.style.opacity = 1; } else tip.style.opacity = 0; };
+    const click = e => { const o = inside && pick(e); if (o) { o.userData.k = 1; window.dispatchEvent(new CustomEvent('kos-obj-click', { detail: o.userData.label || '' })); } };
     window.addEventListener('pointermove', move); window.addEventListener('click', click);
     let vis = true; const io = new IntersectionObserver(([en]) => { vis = en.isIntersecting; }); io.observe(host);
     const t0 = performance.now(); let prev = t0, raf;
@@ -300,7 +300,7 @@
     const fGeo = new T.BufferGeometry(); fGeo.setAttribute('position', new T.BufferAttribute(fPos, 3)); fGeo.setAttribute('color', new T.BufferAttribute(fCol, 3)); const fMat = new T.PointsMaterial({ vertexColors: true, map: glowTex, alphaTest: 0.01, size: 0.55, transparent: true, opacity: 1, depthWrite: false, blending: T.AdditiveBlending }); scene.add(new T.Points(fGeo, fMat));
     // POND_AND_EXTRAS
     { const { Reflector } = await import(B + '/examples/jsm/objects/Reflector.js'); const py = onHill(PX, PZ) + 0.02;
-      const water = new Reflector(warpG(new T.CircleGeometry(1, 128)), { textureWidth: 512, textureHeight: 512, color: 0x8FA3B4, clipBias: 0.003 }); water.rotation.x = -Math.PI / 2; water.scale.set(PRX, PRZ, 1); water.position.set(PX, py, PZ); scene.add(water);
+      const water = new Reflector(warpG(new T.CircleGeometry(1, 128)), { textureWidth: 1024, textureHeight: 1024, color: 0x8FA3B4, clipBias: 0.003 }); water.rotation.x = -Math.PI / 2; water.scale.set(PRX, PRZ, 1); water.position.set(PX, py, PZ); scene.add(water);
       const edgeG = warpG(new T.RingGeometry(0.82, 1.16, 160, 1)); { const p = edgeG.attributes.position, col = []; for (let i = 0; i < p.count; i++) { const r = Math.hypot(p.getX(i), p.getY(i)) / prA(Math.atan2(p.getY(i), p.getX(i))); const a = r < 1 ? Math.min(1, (r - 0.82) / 0.18) * 0.85 : Math.max(0, 1 - (r - 1) / 0.16) * 0.85; col.push(0.3, 0.27, 0.22, a * 0.7); } edgeG.setAttribute('color', new T.Float32BufferAttribute(col, 4)); }
       const edge = new T.Mesh(edgeG, new T.MeshBasicMaterial({ vertexColors: true, transparent: true, depthWrite: false })); edge.rotation.x = -Math.PI / 2; edge.scale.set(PRX, PRZ, 1); edge.position.set(PX, py + 0.008, PZ); scene.add(edge);
       { const reedG = new T.ConeGeometry(0.018, 1, 4); reedG.translate(0, 0.5, 0); const reedM = new T.MeshStandardMaterial({ color: 0x4F6B33, roughness: 0.8 }), RN = 160, reeds = new T.InstancedMesh(reedG, reedM, RN), m4 = new T.Matrix4(), qq = new T.Quaternion(), ee = new T.Euler(), vv = new T.Vector3(), s3 = new T.Vector3(), cc = new T.Color();
@@ -377,7 +377,7 @@
         [-0.3, 0.3].forEach(dx => { const r = new T.Mesh(new T.CylinderGeometry(0.012, 0.012, 2.45, 6), ropeM); r.position.set(dx, -1.22, 0); sw.add(r); });
         const seat = new T.Mesh(new RoundedBoxGeometry(0.78, 0.06, 0.3, 2, 0.02), woodM); seat.position.y = -2.46; seat.castShadow = true; sw.add(seat); U.swing = sw; }
       // bench
-      { const bx = 4.6, bz = -1.9, gy = onHill(bx, bz), b = new T.Group(); b.position.set(bx, gy, bz); b.rotation.y = -0.55; scene.add(b); U.benchProc = b;
+      { const bx = 4.6, bz = -1.9, gy = onHill(bx, bz), b = new T.Group(); b.position.set(bx, gy, bz); b.rotation.y = -0.55; b.visible = false; scene.add(b); U.benchProc = b;
         for (let i = 0; i < 4; i++) { const sl = new T.Mesh(new RoundedBoxGeometry(1.4, 0.04, 0.09, 2, 0.015), woodM); sl.position.set(0, 0.42, -0.15 + i * 0.1); sl.castShadow = true; b.add(sl); }
         for (let i = 0; i < 3; i++) { const sl = new T.Mesh(new RoundedBoxGeometry(1.4, 0.08, 0.035, 2, 0.012), woodM); sl.position.set(0, 0.6 + i * 0.12, -0.24); sl.rotation.x = -0.18; b.add(sl); }
         [[-0.6, -0.15], [0.6, -0.15], [-0.6, 0.15], [0.6, 0.15]].forEach(([x, z]) => { const l = new T.Mesh(new T.BoxGeometry(0.06, 0.42, 0.06), woodD); l.position.set(x, 0.21, z); b.add(l); }); }
@@ -397,7 +397,7 @@
         const get = id => { L.manager.setURLModifier(u => { const m = u.match(/textures\/([^/?#]+)$/); return m ? 'https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/' + id + '/' + m[1] : u; }); return L.loadAsync('https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/' + id + '/' + id + '_1k.gltf').then(g => g.scene); };
         const fit = (o, size, axis) => { const bb = new T.Box3().setFromObject(o), s = new T.Vector3(); bb.getSize(s); o.scale.multiplyScalar(size / (axis === 'y' ? s.y : Math.max(s.x, s.z))); const bb2 = new T.Box3().setFromObject(o); o.position.y -= bb2.min.y; return o; };
         const shadow = o => o.traverse(m => { if (m.isMesh) { m.castShadow = true; m.receiveShadow = true; } });
-        get('painted_wooden_bench').then(m => { fit(m, 1.5, 'x'); shadow(m); const g = new T.Group(); g.add(m); const p = U.benchProc.position; g.position.set(p.x, p.y, p.z); g.rotation.y = U.benchProc.rotation.y; scene.add(g); U.benchProc.visible = false; }).catch(e => console.warn('bench', e));
+        /* bench removed */
       } catch (e) { console.warn('scans', e); } })();
     // floating crafts
     const crafts = ['bottle', 'swatch', 'pencil', 'reel', 'box', 'K', 'knot', 'brush'].map((kd2, i) => { const o = makeCraft(T, RoundedBoxGeometry, kd2); const a = i / 8 * Math.PI * 2; o.userData = Object.assign(o.userData, { kind: 'craft', a, k: 0, base: o.rotation.clone() }); o.scale.setScalar(0.62); scene.add(o); return o; });

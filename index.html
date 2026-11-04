@@ -8,6 +8,10 @@
 <body>
 <x-dc>
 <helmet>
+  <title>Koushani Datta — Branding &amp; Packaging Designer</title>
+  <meta name="description" content="Koushani Datta — London-based branding &amp; packaging designer. Award-winning brand identity, packaging and campaign work." />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <script data-seo="1">(function(){var d=document,h=d.head;d.title="Koushani Datta — Branding & Packaging Designer";if(!h.querySelector('meta[name=description]')){var m=d.createElement('meta');m.name='description';m.content="Koushani Datta \u2014 London-based branding & packaging designer. Award-winning brand identity, packaging and campaign work.";h.appendChild(m);}if(!h.querySelector('link[rel=icon]')){var l=d.createElement('link');l.rel='icon';l.type='image/png';l.href='favicon.png';h.appendChild(l);}})();</script>
   <script src="./autoplay.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
@@ -43,34 +47,19 @@
 }
 </style>
   <script src="./lazy-video.js"></script>
+  <script src="sound.js"></script>
 </helmet>
 <div style="position:relative;isolation:isolate;background:#F6F2EC;color:#14110F;"><div aria-hidden="true" style="{{ duskVeil }}"></div>
-<div ref="{{ rootRef }}" data-screen-label="Cover — Monument" style="position:relative;z-index:2;height:100svh;min-height:480px;overflow:hidden;background:#E6D6C3;font-family:'IBM Plex Mono',monospace;">
-  <canvas ref="{{ canvasRef }}" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;z-index:1;display:block;cursor:grab;touch-action:pan-y;"></canvas>
-  <div aria-hidden="true" style="position:absolute;left:0;right:0;bottom:0;height:46%;z-index:2;pointer-events:none;background:linear-gradient(180deg,rgba(185,183,232,0) 0%,rgba(185,183,232,0.12) 30%,rgba(185,183,232,0.42) 58%,rgba(185,183,232,0.8) 82%,#B9B7E8 100%);"></div>
-  <div aria-hidden="true" style="position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse 120% 90% at 50% 45%,rgba(0,0,0,0) 55%,rgba(30,20,14,0.3) 100%);"></div>
-  <div style="{{ overlayStyle }}">
-    <div style="display:grid;grid-template-columns:1fr auto 1fr;align-items:start;gap:16px;font-size:11.5px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;animation:fadeIn 1.4s ease both 1.2s;">
+<header id="top" data-screen-label="Top bar" style="position:relative;z-index:3;padding:clamp(16px,3vh,28px) clamp(18px,4vw,56px) 0;font-family:'IBM Plex Mono',monospace;color:#14110F;">
+    <div style="display:grid;grid-template-columns:1fr auto 1fr;align-items:start;gap:16px;font-size:11.5px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;">
       <a href="#top" onClick="{{ toTop }}" style="pointer-events:auto;justify-self:start;padding:2px 0;" style-hover="color:#C41E2A">Koushani Datta</a>
       <nav style="display:flex;flex-wrap:wrap;justify-content:center;gap:6px 22px;"><a href="#work" style="pointer-events:auto;padding:2px 0;border-bottom:1.5px solid transparent;transition:border-color .25s,color .25s;" style-hover="border-bottom-color:currentColor;color:#C41E2A">Work</a><a href="#about" style="pointer-events:auto;padding:2px 0;border-bottom:1.5px solid transparent;transition:border-color .25s,color .25s;" style-hover="border-bottom-color:currentColor;color:#C41E2A">About</a><a href="#experience" style="pointer-events:auto;padding:2px 0;border-bottom:1.5px solid transparent;transition:border-color .25s,color .25s;" style-hover="border-bottom-color:currentColor;color:#C41E2A">Journey</a><a href="#contact" style="pointer-events:auto;padding:2px 0;border-bottom:1.5px solid transparent;transition:border-color .25s,color .25s;" style-hover="border-bottom-color:currentColor;color:#C41E2A">Contact</a></nav>
       <span style="display:flex;justify-content:flex-end;align-items:center;gap:14px;">London {{ ldn }}</span>
     </div>
-    <div style="flex:1;"></div>
-    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;">
-      <div style="display:flex;flex-direction:column;gap:14px;">
-        <span style="font-size:11.5px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;animation:fadeIn 1.4s ease both 1.5s;align-self:flex-start;background:#F6F2EC;color:#14110F;padding:6px 10px;border-radius:999px;">Branding &amp; Packaging Designer</span>
-        <span style="font-family:'Anybody',sans-serif;font-variation-settings:'wdth' 130,'wght' 700;font-size:clamp(34px,min(5.6vw,9vh),96px);line-height:0.92;letter-spacing:-0.02em;animation:rise 1.6s cubic-bezier(.16,.8,.24,1) both .6s;">Koushani<br />Datta</span>
-      </div>
-      <nav style="display:flex;flex-direction:column;gap:10px;min-width:260px;pointer-events:auto;font-size:11.5px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;animation:fadeIn 1.4s ease both 1.6s;">
-        <span style="display:inline-flex;align-items:center;gap:8px;opacity:0.75;letter-spacing:0.18em;"><span aria-hidden="true">✥</span>Drag to look · Click to play</span>
-        <button onClick="{{ toggleDusk }}" style="{{ menuBtnStyle }}" style-hover="padding-left:12px;color:#C41E2A"><span>{{ timeLabel }}</span><span>{{ timeIcon }}</span></button>
-      </nav>
-    </div>
-  </div>
-</div>
+</header>
 <section data-screen-label="Portfolio title" style="position:relative;overflow:hidden;min-height:min(66vh,620px);padding:clamp(40px,7vh,80px) clamp(18px,4vw,56px) clamp(30px,5vh,60px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;background:linear-gradient(180deg,#B9B7E8 0%,#D3CFEC 30%,#ECE7F3 65%,#F6F2EC 100%);">
   <canvas data-kosfloat="1" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0;"></canvas>
-  <span style="position:relative;z-index:1;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:11.5px;letter-spacing:0.22em;text-transform:uppercase;color:#6B625B;">Selected work · 2019 — 2026</span>
+  
         <h1 ref="{{ titleRef }}" style="position:relative;z-index:1;margin:0;display:flex;justify-content:center;align-items:baseline;font-size:clamp(58px,15vw,280px);line-height:0.88;letter-spacing:-0.025em;white-space:nowrap;pointer-events:auto;user-select:none;">
           <span data-l="0" style="display:inline-block;">P</span><span data-l="1" style="display:inline-block;">o</span><span data-l="2" style="display:inline-block;">r</span><span data-l="3" style="display:inline-block;">t</span><span data-l="4" style="display:inline-block;">f</span><span data-l="5" style="display:inline-block;">o</span><span data-l="6" style="display:inline-block;">l</span><span data-l="7" style="display:inline-block;">i</span><span data-l="8" style="display:inline-block;">o</span>
         </h1>
@@ -138,23 +127,9 @@
         <span aria-hidden="true" style="flex:none;width:34px;height:34px;border-radius:10px;background:#14110F;color:#F6F2EC;display:flex;align-items:center;justify-content:center;font-size:14px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.25);">↗</span>
       </div>
     </a>
-<a href="SQFT.dc.html" style="display:flex;flex-direction:column;gap:0;border-radius:18px;box-shadow:0 0 0 5px rgba(255,255,255,0.8),0 0 0 6px rgba(20,17,15,0.14),0 40px 70px -40px rgba(43,36,102,0.55);transition:transform .7s cubic-bezier(.16,.8,.24,1);" style-hover="transform:translateY(-8px);color:#14110F">
-      <div style="position:relative;overflow:hidden;border-radius:14px 14px 0 0;aspect-ratio:16/9;background:#E4DCD2;border:1px solid rgba(255,255,255,0.75);box-shadow:inset 0 1px 0 rgba(255,255,255,0.9),inset 0 -2px 0 rgba(20,17,15,0.18),0 30px 60px -36px rgba(43,36,102,0.55);">
-        <img src="assets/sqft/01.jpg" alt="SQ FT." style="width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block;transition:transform 1.2s cubic-bezier(.16,.8,.24,1);" style-hover="transform:scale(1.06)" />
-        
-        
-      </div>
-      <div style="position:relative;flex:1;min-height:clamp(96px,8vw,128px);display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 14px 13px 16px;border-radius:0 0 14px 14px;background:linear-gradient(180deg,rgba(255,255,255,0.92) 0%,rgba(246,242,236,0.82) 100%);border:1px solid rgba(255,255,255,0.9);border-top:1px solid rgba(43,36,102,0.12);box-shadow:inset 0 1px 0 #FFFFFF,inset 0 -2px 0 rgba(20,17,15,0.08),0 24px 40px -26px rgba(43,36,102,0.55);">
-        <div style="display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-width:0;">
-          <span style="font-family:'Anybody',sans-serif;font-variation-settings:'wdth' 125,'wght' 750;font-size:clamp(18px,1.4vw,22px);line-height:1;letter-spacing:-0.025em;color:#14110F;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;">SQ FT.</span>
-          <span style="display:flex;flex-wrap:wrap;gap:6px;max-width:100%;"><span style="font-family:'IBM Plex Mono',monospace;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;font-size:9.5px;color:#2B2466;border:1.2px solid rgba(43,36,102,0.35);border-radius:999px;padding:4px 8px;white-space:nowrap;">Identity</span><span style="font-family:'IBM Plex Mono',monospace;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;font-size:9.5px;color:#2B2466;border:1.2px solid rgba(43,36,102,0.35);border-radius:999px;padding:4px 8px;white-space:nowrap;">Motion</span></span>
-        </div>
-        <span aria-hidden="true" style="flex:none;width:34px;height:34px;border-radius:10px;background:#14110F;color:#F6F2EC;display:flex;align-items:center;justify-content:center;font-size:14px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.25);">↗</span>
-      </div>
-    </a>
 <a href="Lethea.dc.html" style="display:flex;flex-direction:column;gap:0;border-radius:18px;box-shadow:0 0 0 5px rgba(255,255,255,0.8),0 0 0 6px rgba(20,17,15,0.14),0 40px 70px -40px rgba(43,36,102,0.55);transition:transform .7s cubic-bezier(.16,.8,.24,1);" style-hover="transform:translateY(-8px);color:#14110F">
       <div style="position:relative;overflow:hidden;border-radius:14px 14px 0 0;aspect-ratio:16/9;background:#E4DCD2;border:1px solid rgba(255,255,255,0.75);box-shadow:inset 0 1px 0 rgba(255,255,255,0.9),inset 0 -2px 0 rgba(20,17,15,0.18),0 30px 60px -36px rgba(43,36,102,0.55);">
-        <img src="assets/thumbs/lethea.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s cubic-bezier(.16,.8,.24,1);" style-hover="transform:scale(1.05)" /><img src="assets/lethea/lethea-logo-white.png" alt="" aria-hidden="true" style="position:absolute;left:clamp(16px,2vw,28px);bottom:clamp(14px,2vw,24px);width:clamp(110px,10vw,170px);height:auto;z-index:2;pointer-events:none;filter:drop-shadow(0 2px 10px rgba(0,0,0,0.35));" />
+        <img src="assets/thumbs/lethea.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s cubic-bezier(.16,.8,.24,1);" style-hover="transform:scale(1.05)" /><img src="assets/lethea/lethea-logo-white.png" alt="" aria-hidden="true" style="position:absolute;left:68%;top:70%;transform:translate(-50%,-50%);width:clamp(120px,12vw,200px);height:auto;z-index:2;pointer-events:none;filter:drop-shadow(0 2px 10px rgba(0,0,0,0.35));" />
         
         
       </div>
@@ -176,6 +151,20 @@
         <div style="display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-width:0;">
           <span style="font-family:'Anybody',sans-serif;font-variation-settings:'wdth' 125,'wght' 750;font-size:clamp(18px,1.4vw,22px);line-height:1;letter-spacing:-0.025em;color:#14110F;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;">Culture Chutney</span>
           <span style="display:flex;flex-wrap:wrap;gap:6px;max-width:100%;"><span style="font-family:'IBM Plex Mono',monospace;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;font-size:9.5px;color:#2B2466;border:1.2px solid rgba(43,36,102,0.35);border-radius:999px;padding:4px 8px;white-space:nowrap;">Branding</span><span style="font-family:'IBM Plex Mono',monospace;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;font-size:9.5px;color:#2B2466;border:1.2px solid rgba(43,36,102,0.35);border-radius:999px;padding:4px 8px;white-space:nowrap;">Packaging</span></span>
+        </div>
+        <span aria-hidden="true" style="flex:none;width:34px;height:34px;border-radius:10px;background:#14110F;color:#F6F2EC;display:flex;align-items:center;justify-content:center;font-size:14px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.25);">↗</span>
+      </div>
+    </a>
+<a href="SQFT.dc.html" style="display:flex;flex-direction:column;gap:0;border-radius:18px;box-shadow:0 0 0 5px rgba(255,255,255,0.8),0 0 0 6px rgba(20,17,15,0.14),0 40px 70px -40px rgba(43,36,102,0.55);transition:transform .7s cubic-bezier(.16,.8,.24,1);" style-hover="transform:translateY(-8px);color:#14110F">
+      <div style="position:relative;overflow:hidden;border-radius:14px 14px 0 0;aspect-ratio:16/9;background:#E4DCD2;border:1px solid rgba(255,255,255,0.75);box-shadow:inset 0 1px 0 rgba(255,255,255,0.9),inset 0 -2px 0 rgba(20,17,15,0.18),0 30px 60px -36px rgba(43,36,102,0.55);">
+        <img src="assets/sqft/01.jpg" alt="SQ FT." style="width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block;transition:transform 1.2s cubic-bezier(.16,.8,.24,1);" style-hover="transform:scale(1.06)" />
+        
+        
+      </div>
+      <div style="position:relative;flex:1;min-height:clamp(96px,8vw,128px);display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 14px 13px 16px;border-radius:0 0 14px 14px;background:linear-gradient(180deg,rgba(255,255,255,0.92) 0%,rgba(246,242,236,0.82) 100%);border:1px solid rgba(255,255,255,0.9);border-top:1px solid rgba(43,36,102,0.12);box-shadow:inset 0 1px 0 #FFFFFF,inset 0 -2px 0 rgba(20,17,15,0.08),0 24px 40px -26px rgba(43,36,102,0.55);">
+        <div style="display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-width:0;">
+          <span style="font-family:'Anybody',sans-serif;font-variation-settings:'wdth' 125,'wght' 750;font-size:clamp(18px,1.4vw,22px);line-height:1;letter-spacing:-0.025em;color:#14110F;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;">SQ FT.</span>
+          <span style="display:flex;flex-wrap:wrap;gap:6px;max-width:100%;"><span style="font-family:'IBM Plex Mono',monospace;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;font-size:9.5px;color:#2B2466;border:1.2px solid rgba(43,36,102,0.35);border-radius:999px;padding:4px 8px;white-space:nowrap;">Identity</span><span style="font-family:'IBM Plex Mono',monospace;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;font-size:9.5px;color:#2B2466;border:1.2px solid rgba(43,36,102,0.35);border-radius:999px;padding:4px 8px;white-space:nowrap;">Motion</span></span>
         </div>
         <span aria-hidden="true" style="flex:none;width:34px;height:34px;border-radius:10px;background:#14110F;color:#F6F2EC;display:flex;align-items:center;justify-content:center;font-size:14px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.25);">↗</span>
       </div>
@@ -266,6 +255,42 @@
   </div>
 </section>
 
+<section id="experimental" data-screen-label="Experimental work" style="position:relative;z-index:1;background:transparent;padding:clamp(48px,8vh,90px) clamp(18px,4vw,56px) 0;display:flex;flex-direction:column;gap:clamp(28px,5vh,56px);">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;">
+    <h2 style="margin:0;font-family:'Anybody',sans-serif;font-variation-settings:'wdth' 130,'wght' 700;font-size:clamp(30px,4vw,60px);letter-spacing:-0.02em;line-height:1;">Experimental work</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(28px,3vw,44px) clamp(18px,2vw,28px);">
+<a href="https://koushani22.github.io/your-garden-space/" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:0;border-radius:18px;box-shadow:0 0 0 5px rgba(255,255,255,0.8),0 0 0 6px rgba(20,17,15,0.14),0 40px 70px -40px rgba(43,36,102,0.55);transition:transform .7s cubic-bezier(.16,.8,.24,1);" style-hover="transform:translateY(-8px);color:#14110F">
+      <div style="position:relative;overflow:hidden;border-radius:14px 14px 0 0;aspect-ratio:16/9;background:#E4DCD2;border:1px solid rgba(255,255,255,0.75);box-shadow:inset 0 1px 0 rgba(255,255,255,0.9),inset 0 -2px 0 rgba(20,17,15,0.18),0 30px 60px -36px rgba(43,36,102,0.55);">
+        <img src="assets/thumbs/garden-cover.jpg" alt="Your Garden Space" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s cubic-bezier(.16,.8,.24,1);" style-hover="transform:scale(1.05)" />
+        
+        
+      </div>
+      <div style="position:relative;flex:1;min-height:clamp(96px,8vw,128px);display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 14px 13px 16px;border-radius:0 0 14px 14px;background:linear-gradient(180deg,rgba(255,255,255,0.92) 0%,rgba(246,242,236,0.82) 100%);border:1px solid rgba(255,255,255,0.9);border-top:1px solid rgba(43,36,102,0.12);box-shadow:inset 0 1px 0 #FFFFFF,inset 0 -2px 0 rgba(20,17,15,0.08),0 24px 40px -26px rgba(43,36,102,0.55);">
+        <div style="display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-width:0;">
+          <span style="font-family:'Anybody',sans-serif;font-variation-settings:'wdth' 125,'wght' 750;font-size:clamp(18px,1.4vw,22px);line-height:1;letter-spacing:-0.025em;color:#14110F;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;">Your Garden Space</span>
+          <span style="display:flex;flex-wrap:wrap;gap:6px;max-width:100%;"><span style="font-family:'IBM Plex Mono',monospace;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;font-size:9.5px;color:#2B2466;border:1.2px solid rgba(43,36,102,0.35);border-radius:999px;padding:4px 8px;white-space:nowrap;">3D</span><span style="font-family:'IBM Plex Mono',monospace;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;font-size:9.5px;color:#2B2466;border:1.2px solid rgba(43,36,102,0.35);border-radius:999px;padding:4px 8px;white-space:nowrap;">Interactive</span></span>
+        </div>
+        <span aria-hidden="true" style="flex:none;width:34px;height:34px;border-radius:10px;background:#14110F;color:#F6F2EC;display:flex;align-items:center;justify-content:center;font-size:14px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.25);">↗</span>
+      </div>
+    </a>
+<a href="https://koushani22.github.io/reverush/" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:0;border-radius:18px;box-shadow:0 0 0 5px rgba(255,255,255,0.8),0 0 0 6px rgba(20,17,15,0.14),0 40px 70px -40px rgba(43,36,102,0.55);transition:transform .7s cubic-bezier(.16,.8,.24,1);" style-hover="transform:translateY(-8px);color:#14110F">
+      <div style="position:relative;overflow:hidden;border-radius:14px 14px 0 0;aspect-ratio:16/9;background:#E4DCD2;border:1px solid rgba(255,255,255,0.75);box-shadow:inset 0 1px 0 rgba(255,255,255,0.9),inset 0 -2px 0 rgba(20,17,15,0.18),0 30px 60px -36px rgba(43,36,102,0.55);">
+        <img loading="lazy" decoding="async" src="assets/thumbs/reverush.jpg" alt="Reverush" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" />
+        
+        
+      </div>
+      <div style="position:relative;flex:1;min-height:clamp(96px,8vw,128px);display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 14px 13px 16px;border-radius:0 0 14px 14px;background:linear-gradient(180deg,rgba(255,255,255,0.92) 0%,rgba(246,242,236,0.82) 100%);border:1px solid rgba(255,255,255,0.9);border-top:1px solid rgba(43,36,102,0.12);box-shadow:inset 0 1px 0 #FFFFFF,inset 0 -2px 0 rgba(20,17,15,0.08),0 24px 40px -26px rgba(43,36,102,0.55);">
+        <div style="display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-width:0;">
+          <span style="font-family:'Anybody',sans-serif;font-variation-settings:'wdth' 125,'wght' 750;font-size:clamp(18px,1.4vw,22px);line-height:1;letter-spacing:-0.025em;color:#14110F;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;">Reverush</span>
+          <span style="display:flex;flex-wrap:wrap;gap:6px;max-width:100%;"><span style="font-family:'IBM Plex Mono',monospace;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;font-size:9.5px;color:#2B2466;border:1.2px solid rgba(43,36,102,0.35);border-radius:999px;padding:4px 8px;white-space:nowrap;">3D</span><span style="font-family:'IBM Plex Mono',monospace;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;font-size:9.5px;color:#2B2466;border:1.2px solid rgba(43,36,102,0.35);border-radius:999px;padding:4px 8px;white-space:nowrap;">Game</span></span>
+        </div>
+        <span aria-hidden="true" style="flex:none;width:34px;height:34px;border-radius:10px;background:#14110F;color:#F6F2EC;display:flex;align-items:center;justify-content:center;font-size:14px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.25);">↗</span>
+      </div>
+    </a>
+  </div>
+</section>
+
 <section id="more" data-screen-label="More work" style="position:relative;z-index:1;overflow:hidden;background:transparent;color:#14110F;">
   <div style="position:relative;z-index:5;display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;padding:clamp(60px,10vh,120px) clamp(18px,4vw,56px) 0;pointer-events:none;">
     <h2 style="margin:0;font-family:'Anybody',sans-serif;font-variation-settings:'wdth' 130,'wght' 700;font-size:clamp(30px,4vw,60px);letter-spacing:-0.02em;line-height:1;color:#14110F;">More work</h2>
@@ -276,7 +301,7 @@
       <sc-for list="{{ spaceCards }}" as="c" hint-placeholder-count="24">
         <div data-card="{{ c.i }}" style="{{ c.style }}">
           <div data-card-in="1" style="position:relative;width:100%;height:100%;border-radius:10px;overflow:hidden;background:#F3ECF6;border:1px solid rgba(255,255,255,0.85);box-shadow:inset 0 1px 0 rgba(255,255,255,0.9),inset 0 -2px 0 rgba(20,17,15,0.12),0 0 0 3px rgba(255,255,255,0.5),0 0 0 4px rgba(20,17,15,0.08),0 30px 60px -24px rgba(43,36,102,0.45);transition:box-shadow .4s, border-color .4s;">
-            <sc-if value="{{ c.isImg }}" hint-placeholder-val="{{ false }}"><img loading="lazy" decoding="async" data-src="{{ c.src }}" alt="{{ c.cap }}" style="width:100%;height:100%;object-fit:contain;display:block;" /></sc-if><sc-if value="{{ c.isVid }}" hint-placeholder-val="{{ false }}"><video data-src="{{ c.src }}" autoplay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" style="width:100%;height:100%;object-fit:contain;display:block;"></video></sc-if><sc-if value="{{ c.isSlot }}" hint-placeholder-val="{{ true }}"><image-slot id="{{ c.slot }}" shape="rect" placeholder="{{ c.ph }}" style="width:100%;height:100%;"></image-slot></sc-if>
+            <sc-if value="{{ c.isImg }}" hint-placeholder-val="{{ false }}"><img loading="lazy" decoding="async" data-src="{{ c.src }}" alt="{{ c.cap }}" style="width:100%;height:100%;object-fit:contain;display:block;" /></sc-if><sc-if value="{{ c.isVid }}" hint-placeholder-val="{{ false }}"><video data-src="{{ c.src }}" poster="{{ c.poster }}" preload="none" autoplay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" style="width:100%;height:100%;object-fit:contain;display:block;"></video></sc-if><sc-if value="{{ c.isSlot }}" hint-placeholder-val="{{ true }}"><image-slot id="{{ c.slot }}" shape="rect" placeholder="{{ c.ph }}" style="width:100%;height:100%;"></image-slot></sc-if>
           </div>
           <span data-card-cap="1" style="position:absolute;left:0;top:calc(100% + 8px);font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:11.5px;letter-spacing:0.2em;text-transform:uppercase;font-size:10px;color:#2B2466;white-space:nowrap;opacity:0;transition:opacity .3s;">{{ c.cap }}</span>
         </div>
@@ -319,20 +344,20 @@
     <h2 style="margin:0;font-family:'Anybody',sans-serif;font-variation-settings:'wdth' 130,'wght' 700;font-size:clamp(30px,4vw,60px);letter-spacing:-0.02em;line-height:1;color:#14110F;">Wins &amp; recognition</h2>
     <span style="font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:11.5px;letter-spacing:0.22em;text-transform:uppercase;color:#2B2466;">Awards · Features</span>
   </div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(16px,2.4vw,32px);">
-    <a href="Forest Gold.dc.html" style="position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;gap:40px;min-height:clamp(420px,58vh,560px);grid-column:1 / -1;padding:clamp(24px,3vw,40px);border-radius:22px;background:#14110F;color:#F6F2EC;box-shadow:0 40px 70px -35px rgba(43,36,102,0.7);transition:transform .8s cubic-bezier(.16,.8,.24,1);" style-hover="transform:translateY(-6px);color:#F6F2EC">
-      <img loading="lazy" decoding="async" src="assets/me/penta-duo.webp" alt="Koushani receiving the Pentawards Bronze" style="position:absolute;left:42%;right:0;top:0;bottom:0;width:58%;height:100%;object-fit:cover;object-position:center 25%;z-index:0;transform:scale(1.03);transition:transform 1.4s cubic-bezier(.16,.8,.24,1);" />
-      <div aria-hidden="true" style="position:absolute;inset:0;z-index:0;background:linear-gradient(90deg,#14110F 0%,#14110F 42%,rgba(20,17,15,0.55) 50%,rgba(20,17,15,0) 62%);"></div>
-      <div style="position:relative;z-index:1;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;max-width:min(40%,520px);min-width:260px;"><span style="font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:11.5px;letter-spacing:0.22em;text-transform:uppercase;color:#F2B6CF;">2026 · Packaging</span>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(16px,2.4vw,32px);">
+    <a href="Forest Gold.dc.html" style="position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;gap:28px;min-height:clamp(440px,60vh,560px);padding:clamp(22px,2.6vw,36px);border-radius:22px;background:#14110F;color:#F6F2EC;box-shadow:0 40px 70px -35px rgba(43,36,102,0.7);transition:transform .8s cubic-bezier(.16,.8,.24,1);" style-hover="transform:translateY(-6px);color:#F6F2EC">
+      <img loading="lazy" decoding="async" src="assets/me/penta-duo-1800.jpg" alt="Koushani receiving the Pentawards Bronze" style="position:absolute;left:0;right:0;top:0;bottom:0;width:100%;height:100%;object-fit:cover;object-position:34% 18%;z-index:0;transform:scale(1.02);transition:transform 1.4s cubic-bezier(.16,.8,.24,1);" />
+      <div aria-hidden="true" style="position:absolute;inset:0;z-index:0;background:linear-gradient(90deg,#14110F 0%,rgba(20,17,15,0.95) 34%,rgba(20,17,15,0.5) 46%,rgba(20,17,15,0) 56%),linear-gradient(0deg,rgba(20,17,15,0.85) 0%,rgba(20,17,15,0) 42%);"></div>
+      <div style="position:relative;z-index:1;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;max-width:100%;min-width:0;"><span style="font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:11.5px;letter-spacing:0.22em;text-transform:uppercase;color:#F2B6CF;">2026 · Packaging</span>
         </div>
-      <div style="position:relative;z-index:1;display:flex;flex-direction:column;gap:14px;max-width:min(40%,520px);min-width:260px;"><div style="display:flex;align-items:center;gap:16px;"><img loading="lazy" decoding="async" src="assets/me/trophy.gif" alt="Pentawards Bronze trophy" style="width:88px;height:88px;flex:none;object-fit:contain;filter:drop-shadow(0 14px 20px rgba(0,0,0,0.5));" /><img loading="lazy" decoding="async" src="assets/me/penta-logo-white.png" alt="2026 Pentawards Bronze" style="width:min(200px,60%);height:auto;" /></div><span style="font-family:'Instrument Serif',serif;font-size:clamp(44px,5vw,80px);line-height:0.95;letter-spacing:-0.02em;">Pentawards</span><span style="font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:13.5px;color:#D9D4EE;">The Forest Gold — Sundarbans whiskey ↗</span></div>
+      <div style="position:relative;z-index:1;display:flex;flex-direction:column;gap:14px;max-width:100%;min-width:0;"><div style="display:flex;align-items:center;gap:16px;"><img loading="lazy" decoding="async" src="assets/me/trophy.gif" alt="Pentawards Bronze trophy" style="width:72px;height:72px;flex:none;object-fit:contain;filter:drop-shadow(0 14px 20px rgba(0,0,0,0.5));" /><span style="display:flex;flex-direction:column;gap:2px;font-family:'Instrument Serif',serif;font-size:clamp(20px,1.7vw,26px);line-height:1.05;color:#F6F2EC;"><span>2026</span><span>Pentawards Bronze</span></span></div><span style="font-family:'Instrument Serif',serif;font-size:clamp(44px,5vw,80px);line-height:0.95;letter-spacing:-0.02em;">Pentawards</span><span style="font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:13.5px;color:#D9D4EE;">The Forest Gold — Sundarbans whiskey ↗</span></div>
     </a>
-    <a href="https://www.facebook.com/arenaanimation/videos/canvas-and-you-contest-that-made-it-to-arena-animations-digital-calendar-for-the/484861503268098/" target="_blank" rel="noopener" style="position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-end;gap:20px;min-height:0;height:clamp(200px,24vh,260px);grid-column:1 / -1;padding:clamp(24px,3vw,40px);border-radius:22px;background:rgba(250,246,242,0.66);backdrop-filter:blur(16px) saturate(1.25);-webkit-backdrop-filter:blur(16px) saturate(1.25);color:#14110F;box-shadow:0 30px 60px -35px rgba(43,36,102,0.5);transition:transform .8s cubic-bezier(.16,.8,.24,1);" style-hover="transform:translateY(-6px);color:#14110F">
-      <div style="position:absolute;left:0;top:0;bottom:0;width:58%;z-index:0;overflow:hidden;background:#000000;"><img loading="lazy" decoding="async" src="assets/me/canvas-you-art.webp" alt="Canvas &amp; You — Arena Animation top 12" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;transform:scale(1.02);transition:transform 1.4s cubic-bezier(.16,.8,.24,1);" /></div>
-      <div aria-hidden="true" style="position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(270deg,#F6F2EC 0%,#F6F2EC 40%,rgba(246,242,236,0) 46%);"></div>
-      <div style="position:relative;z-index:1;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;width:min(40%,520px);min-width:260px;"><span style="font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:11.5px;letter-spacing:0.22em;text-transform:uppercase;color:#C41E2A;">2022 · Illustration</span>
-        <span style="width:88px;height:88px;flex:none;border-radius:50%;animation:kspin 14s linear infinite;background:radial-gradient(circle at 35% 30%,#FF6B75,#C41E2A 70%,#7E0F18);box-shadow:inset 0 -6px 12px rgba(0,0,0,0.25),0 12px 24px rgba(196,30,42,0.35);display:flex;align-items:center;justify-content:center;font-family:'Anybody',sans-serif;font-variation-settings:'wdth' 120,'wght' 800;font-size:13px;letter-spacing:0.08em;color:#F6F2EC;">WINNER</span></div>
-      <div style="position:relative;z-index:1;display:flex;flex-direction:column;gap:14px;width:min(40%,520px);min-width:260px;"><span style="font-family:'Instrument Serif',serif;font-size:clamp(44px,5vw,80px);line-height:0.95;letter-spacing:-0.02em;">Canvas &amp; You</span><span style="font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:13.5px;color:#4A433E;">Arena Animation digital calendar ↗</span></div>
+    <a href="https://www.facebook.com/arenaanimation/videos/canvas-and-you-contest-that-made-it-to-arena-animations-digital-calendar-for-the/484861503268098/" target="_blank" rel="noopener" style="position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;align-items:stretch;gap:14px;min-height:clamp(440px,60vh,560px);padding:clamp(22px,2.6vw,36px);border-radius:22px;background:rgba(250,246,242,0.66);backdrop-filter:blur(16px) saturate(1.25);-webkit-backdrop-filter:blur(16px) saturate(1.25);color:#14110F;box-shadow:0 30px 60px -35px rgba(43,36,102,0.5);transition:transform .8s cubic-bezier(.16,.8,.24,1);" style-hover="transform:translateY(-6px);color:#14110F">
+      <div style="position:absolute;left:0;right:0;top:0;height:62%;z-index:0;overflow:hidden;background:#000000;"><img loading="lazy" decoding="async" src="assets/more/o01.webp" alt="Canvas &amp; You — A Cellist, mixed media" style="width:100%;height:100%;object-fit:cover;object-position:50% 22%;display:block;transform:scale(1.02);transition:transform 1.4s cubic-bezier(.16,.8,.24,1);" /></div>
+      <div aria-hidden="true" style="position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(0deg,#F6F2EC 0%,#F6F2EC 40%,rgba(246,242,236,0.92) 45%,rgba(246,242,236,0.55) 50%,rgba(246,242,236,0.18) 55%,rgba(246,242,236,0) 60%);"></div>
+      <div style="position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;gap:16px;width:100%;"><span style="font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:11.5px;letter-spacing:0.22em;text-transform:uppercase;color:#C41E2A;">2022 · Illustration</span>
+        <span style="position:absolute;right:0;bottom:calc(100% + 12px);width:80px;height:80px;flex:none;border-radius:50%;animation:kspin 14s linear infinite;background:radial-gradient(circle at 35% 30%,#FF6B75,#C41E2A 70%,#7E0F18);box-shadow:inset 0 -6px 12px rgba(0,0,0,0.25),0 12px 24px rgba(196,30,42,0.35);display:flex;align-items:center;justify-content:center;font-family:'Anybody',sans-serif;font-variation-settings:'wdth' 120,'wght' 800;font-size:13px;letter-spacing:0.08em;color:#F6F2EC;">WINNER</span></div>
+      <div style="position:relative;z-index:1;display:flex;flex-direction:column;gap:14px;width:100%;"><span style="font-family:'Instrument Serif',serif;font-size:clamp(44px,5vw,80px);line-height:0.95;letter-spacing:-0.02em;">Canvas &amp; You</span><span style="font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:13.5px;color:#4A433E;">Arena Animation digital calendar ↗</span></div>
     </a>
   </div>
 </section>
@@ -431,7 +456,7 @@
         <details style="border-radius:18px;background:linear-gradient(180deg,#FFFFFF 0%,#F2EDF8 100%);border:1.5px solid #FFFFFF;box-shadow:0 6px 0 #B9AFE0,0 22px 34px -20px rgba(43,36,102,0.55);transform:perspective(900px) rotateX(0deg);transition:transform .4s cubic-bezier(.16,.8,.24,1),box-shadow .4s;" style-hover="transform:perspective(900px) rotateX(6deg) translateY(-3px);box-shadow:0 9px 0 #B9AFE0,0 30px 40px -20px rgba(43,36,102,0.6)">
           <summary style="list-style:none;cursor:pointer;display:grid;grid-template-columns:minmax(96px,auto) minmax(0,1fr) auto;align-items:center;gap:clamp(10px,1.4vw,18px);padding:clamp(12px,1.8vh,18px) clamp(14px,1.6vw,22px);">
             <span style="display:flex;flex-direction:column;gap:5px;"><span style="font-family:'Anybody',sans-serif;font-variation-settings:'wdth' 130,'wght' 900;font-size:clamp(18px,1.5vw,24px);letter-spacing:-0.02em;line-height:1;color:#14110F;white-space:nowrap;">2024 — 25</span><span style="font-family:'IBM Plex Mono',monospace;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;font-size:10px;color:#6B6296;white-space:nowrap;">Sep — Aug</span></span>
-            <span style="display:flex;flex-direction:column;gap:5px;min-width:0;"><span style="font-family:'Instrument Serif',serif;font-size:clamp(19px,1.5vw,24px);line-height:1.05;color:#14110F;text-wrap:balance;">Graduate Diploma, Art &amp; Design</span><span style="font-family:'IBM Plex Mono',monospace;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;font-size:10.5px;line-height:1.4;color:#C41E2A;">Royal College of Art</span></span>
+            <span style="display:flex;flex-direction:column;gap:5px;min-width:0;"><span style="font-family:'Instrument Serif',serif;font-size:clamp(19px,1.5vw,24px);line-height:1.05;color:#14110F;text-wrap:balance;">Postgraduate Diploma, Art &amp; Design</span><span style="font-family:'IBM Plex Mono',monospace;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;font-size:10.5px;line-height:1.4;color:#C41E2A;">Royal College of Art</span></span>
             <span data-plus="1" style="width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#2B2466;color:#F6F2EC;font-size:18px;line-height:1;box-shadow:0 3px 0 #14110F;transition:transform .35s cubic-bezier(.16,.8,.24,1);">+</span>
           </summary>
           <div style="display:flex;flex-direction:column;gap:10px;padding:0 clamp(14px,1.6vw,22px) clamp(14px,2vh,20px);border-top:1.5px dashed rgba(43,36,102,0.2);margin:0 clamp(14px,1.6vw,22px);padding-left:0;padding-right:0;padding-top:12px;">
@@ -441,6 +466,16 @@
         </details>
         <details style="border-radius:18px;background:linear-gradient(180deg,#FFFFFF 0%,#F2EDF8 100%);border:1.5px solid #FFFFFF;box-shadow:0 6px 0 #B9AFE0,0 22px 34px -20px rgba(43,36,102,0.55);transform:perspective(900px) rotateX(0deg);transition:transform .4s cubic-bezier(.16,.8,.24,1),box-shadow .4s;" style-hover="transform:perspective(900px) rotateX(6deg) translateY(-3px);box-shadow:0 9px 0 #B9AFE0,0 30px 40px -20px rgba(43,36,102,0.6)">
           <summary style="list-style:none;cursor:pointer;display:grid;grid-template-columns:minmax(96px,auto) minmax(0,1fr) auto;align-items:center;gap:clamp(10px,1.4vw,18px);padding:clamp(12px,1.8vh,18px) clamp(14px,1.6vw,22px);">
+            <span style="display:flex;flex-direction:column;gap:5px;"><span style="font-family:'Anybody',sans-serif;font-variation-settings:'wdth' 130,'wght' 900;font-size:clamp(18px,1.5vw,24px);letter-spacing:-0.02em;line-height:1;color:#14110F;white-space:nowrap;">2021 — 22</span><span style="font-family:'IBM Plex Mono',monospace;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;font-size:10px;color:#6B6296;white-space:nowrap;">Dec — May</span></span>
+            <span style="display:flex;flex-direction:column;gap:5px;min-width:0;"><span style="font-family:'Instrument Serif',serif;font-size:clamp(19px,1.5vw,24px);line-height:1.05;color:#14110F;text-wrap:balance;">Postgraduate Diploma in User Experience Design</span><span style="font-family:'IBM Plex Mono',monospace;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;font-size:10.5px;line-height:1.4;color:#C41E2A;">IIT Bombay</span></span>
+            <span data-plus="1" style="width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#2B2466;color:#F6F2EC;font-size:18px;line-height:1;box-shadow:0 3px 0 #14110F;transition:transform .35s cubic-bezier(.16,.8,.24,1);">+</span>
+          </summary>
+          <div style="display:flex;flex-direction:column;gap:10px;padding:0 clamp(14px,1.6vw,22px) clamp(14px,2vh,20px);border-top:1.5px dashed rgba(43,36,102,0.2);margin:0 clamp(14px,1.6vw,22px);padding-left:0;padding-right:0;padding-top:12px;">
+            <span style="align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;font-size:10px;color:#2B2466;border:1.5px solid #2B2466;border-radius:999px;padding:3px 9px;">◉ Online</span>
+            <ul style="margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px;font-size:14.5px;line-height:1.55;color:#2B2466;text-wrap:pretty;"><li>User research, information architecture and high-fidelity prototyping, grounded in HCI principles.</li></ul>
+          </div>
+        </details><details style="border-radius:18px;background:linear-gradient(180deg,#FFFFFF 0%,#F2EDF8 100%);border:1.5px solid #FFFFFF;box-shadow:0 6px 0 #B9AFE0,0 22px 34px -20px rgba(43,36,102,0.55);transform:perspective(900px) rotateX(0deg);transition:transform .4s cubic-bezier(.16,.8,.24,1),box-shadow .4s;" style-hover="transform:perspective(900px) rotateX(6deg) translateY(-3px);box-shadow:0 9px 0 #B9AFE0,0 30px 40px -20px rgba(43,36,102,0.6)">
+          <summary style="list-style:none;cursor:pointer;display:grid;grid-template-columns:minmax(96px,auto) minmax(0,1fr) auto;align-items:center;gap:clamp(10px,1.4vw,18px);padding:clamp(12px,1.8vh,18px) clamp(14px,1.6vw,22px);">
             <span style="display:flex;flex-direction:column;gap:5px;"><span style="font-family:'Anybody',sans-serif;font-variation-settings:'wdth' 130,'wght' 900;font-size:clamp(18px,1.5vw,24px);letter-spacing:-0.02em;line-height:1;color:#14110F;white-space:nowrap;">2021 — 23</span><span style="font-family:'IBM Plex Mono',monospace;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;font-size:10px;color:#6B6296;white-space:nowrap;">Nov — Dec</span></span>
             <span style="display:flex;flex-direction:column;gap:5px;min-width:0;"><span style="font-family:'Instrument Serif',serif;font-size:clamp(19px,1.5vw,24px);line-height:1.05;color:#14110F;text-wrap:balance;">Graphic Art &amp; Animation · Distinction</span><span style="font-family:'IBM Plex Mono',monospace;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;font-size:10.5px;line-height:1.4;color:#C41E2A;">Arena Animation</span></span>
             <span data-plus="1" style="width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#2B2466;color:#F6F2EC;font-size:18px;line-height:1;box-shadow:0 3px 0 #14110F;transition:transform .35s cubic-bezier(.16,.8,.24,1);">+</span>
@@ -448,17 +483,6 @@
           <div style="display:flex;flex-direction:column;gap:10px;padding:0 clamp(14px,1.6vw,22px) clamp(14px,2vh,20px);border-top:1.5px dashed rgba(43,36,102,0.2);margin:0 clamp(14px,1.6vw,22px);padding-left:0;padding-right:0;padding-top:12px;">
             <span style="align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;font-size:10px;color:#2B2466;border:1.5px solid #2B2466;border-radius:999px;padding:3px 9px;">◉ Kolkata</span>
             <ul style="margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px;font-size:14.5px;line-height:1.55;color:#2B2466;text-wrap:pretty;"><li>Diploma in graphic art and animation, completed with Distinction.</li><li>Winner — “Canvas &amp; You” national contest; illustration featured in Arena’s 2022 digital calendar.</li></ul>
-          </div>
-        </details>
-        <details style="border-radius:18px;background:linear-gradient(180deg,#FFFFFF 0%,#F2EDF8 100%);border:1.5px solid #FFFFFF;box-shadow:0 6px 0 #B9AFE0,0 22px 34px -20px rgba(43,36,102,0.55);transform:perspective(900px) rotateX(0deg);transition:transform .4s cubic-bezier(.16,.8,.24,1),box-shadow .4s;" style-hover="transform:perspective(900px) rotateX(6deg) translateY(-3px);box-shadow:0 9px 0 #B9AFE0,0 30px 40px -20px rgba(43,36,102,0.6)">
-          <summary style="list-style:none;cursor:pointer;display:grid;grid-template-columns:minmax(96px,auto) minmax(0,1fr) auto;align-items:center;gap:clamp(10px,1.4vw,18px);padding:clamp(12px,1.8vh,18px) clamp(14px,1.6vw,22px);">
-            <span style="display:flex;flex-direction:column;gap:5px;"><span style="font-family:'Anybody',sans-serif;font-variation-settings:'wdth' 130,'wght' 900;font-size:clamp(18px,1.5vw,24px);letter-spacing:-0.02em;line-height:1;color:#14110F;white-space:nowrap;">2021 — 22</span><span style="font-family:'IBM Plex Mono',monospace;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;font-size:10px;color:#6B6296;white-space:nowrap;">Dec — May</span></span>
-            <span style="display:flex;flex-direction:column;gap:5px;min-width:0;"><span style="font-family:'Instrument Serif',serif;font-size:clamp(19px,1.5vw,24px);line-height:1.05;color:#14110F;text-wrap:balance;">Certificate in User Experience Design</span><span style="font-family:'IBM Plex Mono',monospace;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;font-size:10.5px;line-height:1.4;color:#C41E2A;">IIT Bombay</span></span>
-            <span data-plus="1" style="width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#2B2466;color:#F6F2EC;font-size:18px;line-height:1;box-shadow:0 3px 0 #14110F;transition:transform .35s cubic-bezier(.16,.8,.24,1);">+</span>
-          </summary>
-          <div style="display:flex;flex-direction:column;gap:10px;padding:0 clamp(14px,1.6vw,22px) clamp(14px,2vh,20px);border-top:1.5px dashed rgba(43,36,102,0.2);margin:0 clamp(14px,1.6vw,22px);padding-left:0;padding-right:0;padding-top:12px;">
-            <span style="align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;font-size:10px;color:#2B2466;border:1.5px solid #2B2466;border-radius:999px;padding:3px 9px;">◉ Online</span>
-            <ul style="margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px;font-size:14.5px;line-height:1.55;color:#2B2466;text-wrap:pretty;"><li>User research, information architecture and high-fidelity prototyping, grounded in HCI principles.</li></ul>
           </div>
         </details>
       </div>
@@ -473,11 +497,12 @@
   <span style="align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:11.5px;letter-spacing:0.22em;text-transform:uppercase;color:#2B2466;background:#F6F2EC;border-radius:999px;padding:7px 14px;">Contact</span>
   <a href="mailto:koushanidatta22@gmail.com" style="align-self:flex-start;display:flex;flex-direction:column;gap:clamp(10px,1.6vh,18px);max-width:min(100%,760px);color:#14110F;padding:clamp(22px,3vw,40px);border-radius:22px;background:rgba(250,246,252,0.72);backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);border:1.5px solid rgba(255,255,255,0.8);box-shadow:0 30px 60px -30px rgba(43,36,102,0.45);" style-hover="color:#2B2466">
     <span style="font-family:'Instrument Serif',serif;font-size:clamp(44px,7.4vw,128px);line-height:0.92;letter-spacing:-0.025em;text-wrap:balance;">Have a brand <em style="color:#C41E2A;">waiting</em> to bloom?</span>
-    <span style="align-self:flex-start;display:inline-flex;align-items:center;gap:14px;padding:12px 12px 12px 22px;border-radius:999px;background:#F6F2EC;color:#2B2466;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:clamp(12px,1.05vw,14px);letter-spacing:0.14em;box-shadow:0 18px 40px -18px rgba(43,36,102,0.6);transition:transform .4s cubic-bezier(.16,.8,.24,1);" style-hover="transform:translateY(-3px)">koushanidatta22@gmail.com<span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:#C41E2A;color:#FFFFFF;font-size:16px;">↗</span></span>
+    <span style="align-self:flex-start;display:inline-flex;align-items:center;gap:14px;padding:12px 12px 12px 22px;border-radius:999px;background:#F6F2EC;color:#2B2466;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:clamp(12px,1.05vw,14px);letter-spacing:0.14em;box-shadow:0 18px 40px -18px rgba(43,36,102,0.6);transition:transform .4s cubic-bezier(.16,.8,.24,1);" style-hover="transform:translateY(-3px)">koushanidatta22@gmail.com<span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:#C41E2A;color:#FFFFFF;flex:none;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"></path><path d="M8 7h9v9"></path></svg></span></span>
   </a>
-  <div style="display:flex;flex-wrap:wrap;gap:10px;"><a href="https://www.linkedin.com/in/koushanidatta/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;padding:10px 18px;border-radius:999px;border:1.5px solid #2B2466;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#2B2466;background:rgba(246,242,236,0.7);backdrop-filter:blur(6px);transition:background .25s,color .25s;" style-hover="background:#2B2466;color:#F6F2EC">LinkedIn ↗</a><a href="https://www.figma.com/deck/xjYeBPAPsnXFidR311cglG" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;padding:10px 18px;border-radius:999px;border:1.5px solid #2B2466;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#2B2466;background:rgba(246,242,236,0.7);backdrop-filter:blur(6px);transition:background .25s,color .25s;" style-hover="background:#2B2466;color:#F6F2EC">Portfolio deck ↗</a><a href="https://instagram.com/inkosistent" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;padding:10px 18px;border-radius:999px;border:1.5px solid #2B2466;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#2B2466;background:rgba(246,242,236,0.7);backdrop-filter:blur(6px);transition:background .25s,color .25s;" style-hover="background:#2B2466;color:#F6F2EC">Instagram ↗</a></div>
+  <div style="display:flex;flex-wrap:wrap;gap:10px;"><a href="https://www.linkedin.com/in/koushanidatta/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;padding:10px 18px;border-radius:999px;border:1.5px solid #2B2466;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#2B2466;background:rgba(246,242,236,0.7);backdrop-filter:blur(6px);transition:background .25s,color .25s;" style-hover="background:#2B2466;color:#F6F2EC">LinkedIn ↗</a><a href="https://www.figma.com/deck/xjYeBPAPsnXFidR311cglG" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;padding:10px 18px;border-radius:999px;border:1.5px solid #2B2466;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#2B2466;background:rgba(246,242,236,0.7);backdrop-filter:blur(6px);transition:background .25s,color .25s;" style-hover="background:#2B2466;color:#F6F2EC">Portfolio deck ↗</a><a href="https://instagram.com/inkosistent" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;padding:10px 18px;border-radius:999px;border:1.5px solid #2B2466;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#2B2466;background:rgba(246,242,236,0.7);backdrop-filter:blur(6px);transition:background .25s,color .25s;" style-hover="background:#2B2466;color:#F6F2EC">Instagram ↗</a>
+    <a href="https://www.behance.net/koushanidatta" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;padding:10px 18px;border-radius:999px;border:1.5px solid #2B2466;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#2B2466;background:rgba(246,242,236,0.7);backdrop-filter:blur(6px);transition:background .25s,color .25s;" style-hover="background:#2B2466;color:#F6F2EC">Behance ↗</a></div>
   <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:11.5px;letter-spacing:0.22em;text-transform:uppercase;color:#14110F;margin-top:clamp(20px,4vh,40px);padding:10px 0;">
-    <span>Koushani Datta · Kos</span><span>London {{ ldn }}</span><span>© 2026</span>
+    <span>Koushani Datta · Kos</span><span>© 2026</span>
   </div>
 </div>
 </div>
@@ -502,21 +527,21 @@ const MEDIA = [
   ['assets/more/o04.png', 'Poster · Queen’s Gambit'], ['assets/more/o05.webp', 'Digital painting · Vogue cover'], ['assets/more/o06.webp', 'Digital · Abstract portrait'],
   ['assets/more/o07.png', 'Illustration · Portrait'], ['assets/more/o08.webp', 'Illustration · Night city'], ['assets/more/o09.webp', 'Illustration · Urban road, day'],
   ['assets/more/v02.mp4', 'Motion', 'v'], ['assets/more/n01.webp', 'Textile · Embroidered branch'], ['assets/more/v03.mp4', 'Motion', 'v'],
-  ['assets/more/n02.webp', 'Laser-cut · Running tigers'], ['assets/more/v04.mp4', 'Motion', 'v'], ['assets/more/n03.webp', 'Sculpture · Found-object figures']
+  ['assets/more/n02.webp', 'Laser-cut · Running tigers'], ['assets/more/v04.mp4', 'Motion', 'v'], ['assets/more/n03.webp', 'Sculpture · Found-object figures'], ['assets/more/v05.mp4', 'Motion · Artefact book', 'v'], ['assets/more/v06.mp4', 'Motion · Snow', 'v']
 ];
-const AR = {"m01":1.7778,"m02":0.794,"m03":0.7442,"m04":0.7315,"m05":0.6661,"m06":0.7921,"m07":0.6667,"m08":1.3327,"m09":0.7259,"m10":0.7569,"m11":0.8022,"v01":1.7778,"o01":1,"o02":0.7397,"o03":1.0013,"o04":0.703,"o05":0.7063,"o06":0.686,"o07":1.3413,"o08":1.7581,"o09":3.288,"o10":3.2948,"o11":1.2536,"n01":1.8084,"n02":1.1846,"n03":0.9257,"v02":0.5625,"v03":0.5625,"v04":1};
+const AR = {"v05":1.7778,"v06":1.5,"m01":1.7778,"m02":0.794,"m03":0.7442,"m04":0.7315,"m05":0.6661,"m06":0.7921,"m07":0.6667,"m08":1.3327,"m09":0.7259,"m10":0.7569,"m11":0.8022,"v01":1.7778,"o01":1,"o02":0.7397,"o03":1.0013,"o04":0.703,"o05":0.7063,"o06":0.686,"o07":1.3413,"o08":1.7581,"o09":3.288,"o10":3.2948,"o11":1.2536,"n01":1.8084,"n02":1.1846,"n03":0.9257,"v02":0.5625,"v03":0.5625,"v04":1};
 const SPACE = Array.from({ length: MEDIA.length }, (_, i) => {
   const shapes = [[300, 200], [220, 280], [260, 260], [340, 200], [200, 260], [280, 180]];
   let [w, h] = shapes[i % shapes.length];
   const md = MEDIA[i];
   if (md) { const a = AR[md[0].split('/').pop().split('.')[0]] || 1, area = w * h; w = Math.round(Math.sqrt(area * a)); h = Math.round(w / a); }
   return { i, slot: md ? 'more-' + (i + 1) : 'more-24', ph: 'More work ' + String(i + 1).padStart(2, '0'), cap: String(i + 1).padStart(2, '0') + ' · ' + (md ? md[1] : 'Project name'),
-    src: md ? md[0] : '', isImg: !!md && !md[2], isVid: !!md && md[2] === 'v', isSlot: !md,
+    src: md ? md[0] : '', poster: md && md[2] === 'v' ? md[0].replace('.mp4', '-poster.webp') : '', isImg: !!md && !md[2], isVid: !!md && md[2] === 'v', isSlot: !md,
     style: { position: 'absolute', left: -w / 2, top: -h / 2, width: w, height: h, transformStyle: 'preserve-3d', willChange: 'transform, opacity', cursor: 'pointer' } };
 });
 class Component extends DCLogic {
   setupSpace() {
-    const fillSrc = () => document.querySelectorAll('[data-card-in] img[data-src], [data-card-in] video[data-src]').forEach(el => { const v = el.getAttribute('data-src'); if (v && v.indexOf('{{') < 0 && el.getAttribute('src') !== v) { el.setAttribute('src', v); if (el.tagName === 'VIDEO') el.play && el.play().catch(() => {}); } });
+    const fillSrc = () => document.querySelectorAll('[data-card-in] img[data-src], [data-card-in] video[data-src]').forEach(el => { const v = el.getAttribute('data-src'); if (v && v.indexOf('{{') < 0 && el.getAttribute('src') !== v) { el.setAttribute('src', v); if (el.tagName === 'VIDEO') el.play && el.play().catch(() => {}); } }); fillSrc(); setTimeout(fillSrc, 400); setTimeout(fillSrc, 1500);
     const host = this.spaceRef.current; if (!host) return;
     const cards = [...host.querySelectorAll('[data-card]')], close = host.querySelector('[data-space-close]');
     const N = cards.length, NEAR = 420, FAR = -3400, SPAN = NEAR - FAR;
@@ -542,9 +567,6 @@ class Component extends DCLogic {
     const key = e => { if (e.key === 'Escape') doClose(); };
     host.addEventListener('pointermove', move); host.addEventListener('wheel', wheel, { passive: true }); window.addEventListener('keydown', key);
     const io = new IntersectionObserver(([en]) => { vis = en.isIntersecting; }); io.observe(host);
-    // the card media is ~50MB (videos ~36MB), so it only loads once this section is near the screen, and videos pause when it leaves
-    const vio = new IntersectionObserver(([en]) => { if (en.isIntersecting) { fillSrc(); setTimeout(fillSrc, 400); }
-      host.querySelectorAll('video').forEach(v => { if (!en.isIntersecting) v.pause(); else if (v.getAttribute('src')) v.play().catch(() => {}); }); }, { rootMargin: '400px 0px' }); vio.observe(host);
     const loop = now => {
       raf = requestAnimationFrame(loop); const dt = Math.min(50, now - last); last = now; if (!vis) return;
       smx += (mx - smx) * 0.05; smy += (my - smy) * 0.05;
@@ -563,7 +585,7 @@ class Component extends DCLogic {
       });
     };
     raf = requestAnimationFrame(loop);
-    this.spaceOff = () => { cancelAnimationFrame(raf); io.disconnect(); vio.disconnect(); window.removeEventListener('keydown', key); };
+    this.spaceOff = () => { cancelAnimationFrame(raf); io.disconnect(); window.removeEventListener('keydown', key); };
   }
 
   rootRef = React.createRef(); canvasRef = React.createRef(); titleRef = React.createRef(); tipRef = React.createRef();
@@ -590,13 +612,11 @@ class Component extends DCLogic {
     const B = 'https://esm.sh/three@0.169.0';
     const T = await import(B);
     const ex = p => import(B + '/examples/jsm/' + p);
-    const [{ RoundedBoxGeometry }, { Reflector }, { RoomEnvironment }, { EffectComposer }, { RenderPass }, { UnrealBloomPass }, { OutputPass }, { mergeGeometries }] = await Promise.all([
+    const [{ RoundedBoxGeometry }, { Reflector }, { RoomEnvironment }, { EffectComposer }, { RenderPass }, { UnrealBloomPass }, { OutputPass }] = await Promise.all([
       ex('geometries/RoundedBoxGeometry.js'), ex('objects/Reflector.js'), ex('environments/RoomEnvironment.js'),
-      ex('postprocessing/EffectComposer.js'), ex('postprocessing/RenderPass.js'), ex('postprocessing/UnrealBloomPass.js'), ex('postprocessing/OutputPass.js'), ex('utils/BufferGeometryUtils.js')]);
+      ex('postprocessing/EffectComposer.js'), ex('postprocessing/RenderPass.js'), ex('postprocessing/UnrealBloomPass.js'), ex('postprocessing/OutputPass.js')]);
     const cv = this.canvasRef.current, root = this.rootRef.current; if (!cv) return;
     const DPR = Math.min(1, window.devicePixelRatio);
-    // lite = phones, low-memory devices, data-saver: skip the remote HDR/PBR/model upgrade and use smaller shadows
-    const nc = navigator.connection || {}, lite = !!nc.saveData || /2g/.test(nc.effectiveType || '') || (navigator.deviceMemory || 8) <= 4 || window.innerWidth < 760;
     const R = new T.WebGLRenderer({ canvas: cv, antialias: true, powerPreference: 'high-performance' });
     R.setPixelRatio(DPR); R.outputColorSpace = T.SRGBColorSpace; R.toneMapping = T.ACESFilmicToneMapping; R.toneMappingExposure = 0.88;
     R.shadowMap.enabled = true; R.shadowMap.type = T.PCFSoftShadowMap;
@@ -626,7 +646,7 @@ class Component extends DCLogic {
     scene.fog = new T.Fog(cur.fog.clone(), 75, 230);
     const hemi = new T.HemisphereLight(cur.hT.clone(), cur.hB.clone(), cur.hI); scene.add(hemi);
     const sun = new T.DirectionalLight(cur.sun.clone(), cur.sunI); sun.position.set(-20, 24, 14); sun.castShadow = true;
-    sun.shadow.mapSize.setScalar(lite ? 1024 : 2048); Object.assign(sun.shadow.camera, { left: -28, right: 28, top: 28, bottom: -28, near: 1, far: 100 }); sun.shadow.bias = -0.0003; sun.shadow.normalBias = 0.03; sun.shadow.radius = 3;
+    sun.shadow.mapSize.set(2048, 2048); Object.assign(sun.shadow.camera, { left: -28, right: 28, top: 28, bottom: -28, near: 1, far: 100 }); sun.shadow.bias = -0.0003; sun.shadow.normalBias = 0.03; sun.shadow.radius = 3;
     scene.add(sun);
     const gateLight = new T.PointLight(0xff4a34, 0, 28, 1.6); gateLight.position.set(0, 5, -2.5); scene.add(gateLight);
     const rep = (t, x, y) => { const c = t.clone(); c.repeat.set(x, y); c.needsUpdate = true; return c; };
@@ -639,8 +659,7 @@ class Component extends DCLogic {
       clay: PH({ color: 0xB9643F, roughness: 0.5, clearcoat: 0.35, clearcoatRoughness: 0.4, sheen: 0.4, sheenColor: new T.Color(0xffc2a0), bumpMap: rep(stoneTex, 3, 3), bumpScale: 0.6 }),
       marble: PH({ map: rep(marbleTex, 2, 1), roughness: 0.18, clearcoat: 0.8, clearcoatRoughness: 0.1 }),
       chrome: PH({ color: 0xffffff, metalness: 1, roughness: 0.0, clearcoat: 1, clearcoatRoughness: 0, envMapIntensity: 2.6 }),
-      // faked glass: real transmission forces an extra full-scene render in every view and mirror
-      glass: PH({ color: 0xffe6dc, transparent: true, opacity: 0.45, roughness: 0.02, metalness: 0.1, clearcoat: 1, iridescence: 0.6, envMapIntensity: 2.2, depthWrite: false }),
+      glass: PH({ color: 0xffffff, transmission: 1, thickness: 1.4, roughness: 0.02, ior: 1.5, attenuationColor: new T.Color(0xffd2bd), attenuationDistance: 2.5, iridescence: 0.4, envMapIntensity: 1.5 }),
       dark: new T.MeshStandardMaterial({ color: 0x241D1E, roughness: 0.7 }),
       bronze: PH({ color: 0x7A5434, metalness: 1, roughness: 0.35 })
     };
@@ -656,9 +675,6 @@ class Component extends DCLogic {
     // mirror pool
     rbox(15.4, 0.34, 7.4, mat.stone, 0, 0.17, 9);
     const refl = new Reflector(new T.PlaneGeometry(14, 6), { color: 0x8a9799, textureWidth: 512, textureHeight: 256, clipBias: 0.003 }); refl.rotation.x = -Math.PI / 2; refl.position.set(0, 0.35, 9); scene.add(refl);
-    // each mirror re-renders the whole scene, so refresh reflections every n-th frame instead of every frame
-    const every = (o, n) => { const f = o.onBeforeRender; let i = 0; o.onBeforeRender = function () { if (i++ % n === 0) f.apply(this, arguments); }; };
-    every(refl, 2);
     // platform, stairs, lanterns
     rbox(18, 1.2, 11, mat.stone, 0, 0.6, -4.5);
     for (let i = 0; i < 6; i++) rbox(6.4, 0.2 * (i + 1), 0.55, mat.stone, 0, 0.1 * (i + 1), 1 + 0.275 + (5 - i) * 0.55, null, 0.03);
@@ -709,7 +725,7 @@ class Component extends DCLogic {
     const bank = new T.Mesh(riverGeo(1.6), new T.MeshStandardMaterial({ color: 0x8E7A62, roughness: 1 })); bank.rotation.x = -Math.PI / 2; bank.position.set(0, -0.19, -38); bank.receiveShadow = true; scene.add(bank);
     const bank2 = new T.Mesh(riverGeo(0.7), new T.MeshStandardMaterial({ color: 0x6F6150, roughness: 0.6 })); bank2.rotation.x = -Math.PI / 2; bank2.position.set(0, -0.17, -38); bank2.receiveShadow = true; scene.add(bank2);
     const river = new Reflector(riverGeo(0), { color: 0x7d8f96, textureWidth: 1024, textureHeight: 256, clipBias: 0.003 });
-    river.rotation.x = -Math.PI / 2; river.position.set(0, -0.15, -38); scene.add(river); this._river = river; every(river, 3);
+    river.rotation.x = -Math.PI / 2; river.position.set(0, -0.15, -38); scene.add(river); this._river = river;
     // ---- kash phool (Saccharum spontaneum) along both riverbanks
     {
       const kr = (() => { let s = 4242; return () => (s = (s * 16807) % 2147483647) / 2147483647; })();
@@ -857,13 +873,6 @@ class Component extends DCLogic {
 
     const GROVE = [["t",-56,-46,1.6],["l",-46,-50,1.75],["t",-40,-46,1.9000000000000001],["t",-30,-50,1.6],["l",-24,-46,1.75],["t",-14,-50,1.9000000000000001],["t",-8,-46,1.6],["l",2,-50,1.75],["t",8,-46,1.9000000000000001],["t",18,-50,1.6],["l",24,-46,1.75],["t",34,-50,1.9000000000000001],["t",40,-46,1.6],["l",50,-50,1.75],["t",56,-46,1.9000000000000001],["l",-50,-58,1.9],["t",-40.8,-61,1.9],["l",-31.6,-64,1.9],["t",-22.400000000000002,-58,1.9],["l",-13.200000000000003,-61,1.9],["t",-4,-64,1.9],["l",5.199999999999996,-58,1.9],["t",14.399999999999991,-61,1.9],["l",23.599999999999994,-64,1.9],["t",32.8,-58,1.9],["l",42,-61,1.9],["t",51.19999999999999,-64,1.9],["t",-30,-22,1.6],["l",-36,-14,1.7],["t",-41,-28,1.8],["b",-26,-8,1.2],["t",-47,-6,1.9],["l",-33,-34,1.6],["t",-52,-20,2],["b",-39,2,1.25],["t",30,-22,1.6],["l",36,-14,1.7],["t",41,-28,1.8],["b",26,-8,1.2],["t",47,-6,1.9],["l",33,-34,1.6],["t",52,-20,2],["b",39,2,1.25]];
     GROVE.forEach(([k, x, z, s], i) => k === 't' ? tree(x, z, s) : k === 'b' ? cypress(x, z, s) : (i % 2 ? tree(x, z, s * 0.95) : cypress(x, z, s * 0.7)));
-    // trees only ever move as a whole group, so bake each one's branches/caps/roots/puffs into one mesh per material (~40 draw calls -> ~4)
-    natTrees.forEach(({ o: g }) => { const by = new Map();
-      g.children.forEach(c => { if (!c.isMesh || c.isInstancedMesh || c.material.transparent) return; const k = c.material.uuid + '|' + Object.keys(c.geometry.attributes).sort().join() + '|' + !!c.geometry.index; by.has(k) ? by.get(k).push(c) : by.set(k, [c]); });
-      by.forEach(list => { if (list.length < 2) return;
-        const geo = mergeGeometries(list.map(c => { c.updateMatrix(); return c.geometry.clone().applyMatrix4(c.matrix); }), false); if (!geo) return;
-        const m = new T.Mesh(geo, list[0].material); m.castShadow = list.some(c => c.castShadow); m.receiveShadow = list.some(c => c.receiveShadow);
-        list.forEach(c => g.remove(c)); g.add(m); }); });
 
     this._trees = natTrees;
     {
@@ -939,11 +948,9 @@ class Component extends DCLogic {
       const applyPBR = (m, t, rx, ry, tint) => { if (!t) return; [['map', t.map], ['normalMap', t.nor], ['roughnessMap', t.rough]].forEach(([k, tx]) => { if (!tx) return; const c = tx.clone(); c.wrapS = c.wrapT = T.RepeatWrapping; c.repeat.set(rx, ry); c.anisotropy = 8; if (k === 'map') c.colorSpace = T.SRGBColorSpace; c.needsUpdate = true; m[k] = c; });
         m.bumpMap = null; m.roughness = 1; m.color.set(tint || 0xffffff); if (m.normalMap) m.normalScale.set(1.2, 1.2); m.needsUpdate = true; };
       const { RGBELoader } = await ex('loaders/RGBELoader.js');
-      const phHDR = async id => { const j = await loadJSON(id); const u = j.hdri['1k'].hdr.url; const t = await new RGBELoader().loadAsync(u); t.mapping = T.EquirectangularReflectionMapping; return t; };
+      const phHDR = async id => { const j = await loadJSON(id); const u = j.hdri['2k'].hdr.url; const t = await new RGBELoader().loadAsync(u); t.mapping = T.EquirectangularReflectionMapping; return t; };
       first(['kloofendal_48d_partly_cloudy_puresky', 'kloppenheim_06_puresky', 'goegap'], phHDR).then(t => { if (!t) return; hdr.day = t; scene.environment = t; envBoost = 1.5; });
-      // dusk sky only downloads the first time dusk mode is switched on
-      this._loadDusk = () => { this._loadDusk = null; first(['qwantani_dusk_2_puresky', 'kiara_1_dawn', 'venice_sunset'], phHDR).then(t => { if (t) hdr.dusk = t; }); };
-      if (this.state.dusk) this._loadDusk();
+      first(['qwantani_dusk_2_puresky', 'kiara_1_dawn', 'venice_sunset'], phHDR).then(t => { if (t) hdr.dusk = t; });
       first(['aerial_beach_01', 'coast_sand_01', 'aerial_sand', 'sand_01'], phTex).then(t => applyPBR(mat.sand, t, 60, 60, 0x93A862));
       first(['sandstone_blocks_08', 'beige_wall_001', 'plastered_stone_wall', 'castle_wall_slates'], phTex).then(t => { applyPBR(mat.stone, t, 3, 3, 0xF6EDE1); applyPBR(mat.stone2, t, 3, 3, 0xE2CBB0); applyPBR(mat.mesa, t, 4, 4, 0xD2AE90); });
       first(['marble_01'], phTex).then(t => { if (!t) return; applyPBR(mat.marble, t, 2, 1); mat.marble.roughness = 0.35; mat.marble.clearcoat = 0.8; });
@@ -993,17 +1000,21 @@ class Component extends DCLogic {
           stems.count = fi; fruit.count = fi; extra.forEach(x => { x.im.count = x.n; x.im.castShadow = true; x.im.instanceMatrix.needsUpdate = true; if (x.im.instanceColor) x.im.instanceColor.needsUpdate = true; scene.add(x.im); }); fruit.castShadow = true; fruit.instanceMatrix.needsUpdate = true; if (fruit.instanceColor) fruit.instanceColor.needsUpdate = true; stems.instanceMatrix.needsUpdate = true;
           const bloom = new T.Group();
           scene.add(fruit); scene.add(stems); });
-        // boulders are ~5MB, so they wait until everything else has had the bandwidth
-        setTimeout(() => first(['namaqualand_boulder_02', 'namaqualand_boulder_05', 'boulder_01', 'rock_09'], phModel).then(m => { if (!m) return; [[-18, 9, 3.2, 0.3], [21, 6, 4.5, 2.1], [-30, -6, 6, 1.2], [28, -22, 7, 4]].forEach(d => { const c = fit(m.clone(true), d[2]); c.position.x = d[0]; c.position.z = d[1]; c.rotation.y = d[3]; scene.add(c); }); }), 8000);
+        first(['namaqualand_boulder_02', 'namaqualand_boulder_05', 'boulder_01', 'rock_09'], phModel).then(m => { if (!m) return; [[-18, 9, 3.2, 0.3], [21, 6, 4.5, 2.1], [-30, -6, 6, 1.2], [28, -22, 7, 4]].forEach(d => { const c = fit(m.clone(true), d[2]); c.position.x = d[0]; c.position.z = d[1]; c.rotation.y = d[3]; scene.add(c); }); });
       } catch (e) { console.warn('models skipped', e); }
       try {
         const { Water } = await ex('objects/Water.js');
         const wn = await texL.loadAsync('https://threejs.org/examples/textures/waternormals.jpg'); wn.wrapS = wn.wrapT = T.RepeatWrapping;
         water = new Water(new T.PlaneGeometry(14, 6), { textureWidth: 512, textureHeight: 256, waterNormals: wn, sunDirection: sun.position.clone().normalize(), sunColor: 0xfff1de, waterColor: 0x23302f, distortionScale: 0.35, fog: true, alpha: 1 });
-        water.rotation.x = -Math.PI / 2; water.position.set(0, 0.35, 9); water.material.uniforms.size.value = 6; scene.add(water); refl.visible = false; every(water, 2);
+        water.rotation.x = -Math.PI / 2; water.position.set(0, 0.35, 9); water.material.uniforms.size.value = 6; scene.add(water); refl.visible = false;
         if (this._river) { const rw = new Water(this._riverGeo(0), { textureWidth: 512, textureHeight: 256, waterNormals: wn, sunDirection: sun.position.clone().normalize(), sunColor: 0xffe6c8, waterColor: 0x2E4A4C, distortionScale: 1.2, fog: true, alpha: 1 });
-          rw.rotation.x = -Math.PI / 2; rw.position.set(0, -0.15, -38); rw.material.uniforms.size.value = 2.5; scene.add(rw); this._river.visible = false; this._rw = rw; every(rw, 3); }
+          rw.rotation.x = -Math.PI / 2; rw.position.set(0, -0.15, -38); rw.material.uniforms.size.value = 2.5; scene.add(rw); this._river.visible = false; this._rw = rw; }
       } catch (e) { console.warn('water skipped', e); }
+      try {
+        const { GTAOPass } = await ex('postprocessing/GTAOPass.js');
+        const ao = new GTAOPass(scene, cam, W, H); ao.updateGtaoMaterial({ radius: 0.9, distanceExponent: 1.2, thickness: 1.5, scale: 1.4, samples: 16 }); ao.blendIntensity = 1;
+        /* GTAO disabled for performance */
+      } catch (e) { console.warn('ao skipped', e); }
       try {
         const { ShaderPass } = await ex('postprocessing/ShaderPass.js');
         grain = new ShaderPass({ uniforms: { tDiffuse: { value: null }, time: { value: 0 } },
@@ -1013,9 +1024,7 @@ class Component extends DCLogic {
       } catch (e) { console.warn('grain skipped', e); }
     };
     const size = () => { W = root.clientWidth; H = root.clientHeight; R.setSize(W, H, false); composer.setSize(W, H); cam.aspect = W / H; cam.updateProjectionMatrix(); rad = cam.aspect < 1 ? 36 / Math.max(0.5, cam.aspect) * 0.9 : 36; };
-    size(); const ro = new ResizeObserver(size); ro.observe(root);
-    // let the first frames paint before pulling the remote HDR/PBR/model assets
-    if (!lite) (window.requestIdleCallback || (f => setTimeout(f, 1500)))(() => upgrade(), { timeout: 3000 });
+    size(); const ro = new ResizeObserver(size); ro.observe(root); upgrade();
     const ray = new T.Raycaster(), ndc = new T.Vector2();
     let az = 0.3, azV = 0, dragging = false, downX = 0, downY = 0, lastX = 0, mx = 0, my = 0, smx = 0, smy = 0, hovered = null, ringK = 0, ringOn = false, pulse = 0;
     const kindOf = o => { while (o && !(o.userData && o.userData.kind)) o = o.parent; return o; };
@@ -1123,7 +1132,6 @@ class Component extends DCLogic {
               if (f.u >= 1) { f.st = 'rest'; f.timer = 6 + Math.random() * 10; } }
           }}); }
       scene.fog.color.copy(cur.fog); hemi.color.copy(cur.hT); hemi.groundColor.copy(cur.hB); hemi.intensity = cur.hI; sun.color.copy(cur.sun); sun.intensity = cur.sunI; scene.environmentIntensity = cur.env * envBoost;
-      if (this.state.dusk && this._loadDusk) this._loadDusk();
       if (hdr.day) { const want = this.state.dusk && hdr.dusk ? hdr.dusk : hdr.day; if (scene.environment !== want) scene.environment = want; }
       if (!this._skyC) { this._skyC = { top: new T.Color(0x2B2466), mid: new T.Color(0xB9B7E8), lt: 0 };
         const disc = (c, r) => { const m = new T.Mesh(new T.CircleGeometry(r, 48), new T.MeshBasicMaterial({ color: c, fog: false, toneMapped: false })); scene.add(m); return m; };
@@ -1214,7 +1222,6 @@ class Component extends DCLogic {
     const tick = () => this.setState({ ldn: new Date().toLocaleTimeString('en-GB', { timeZone: 'Europe/London', hour: '2-digit', minute: '2-digit' }) });
     tick(); this.clock = setInterval(tick, 15000);
     this.setupTitle();
-    this.setupScene().catch(e => console.warn('3D scene failed', e));
     const LAYOUTS = {
       title: [['bottle','',0,0,0.6,''],['swatch','',0,0,0.6,''],['pencil','',0,0,0.58,''],['reel','',0,0,0.55,''],['box','',0,0,0.56,''],['knot','',0,0,0.55,''],['brush','',0,0,0.58,'']],
       about: [['knot','',0.86,-0.8,0.42,'']],
@@ -1222,15 +1229,11 @@ class Component extends DCLogic {
       experience: [['brush','',-1.05,-0.05,0.45,''],['reel','',1.05,-0.05,0.45,'']],
       contact: [] };
     const mf = () => { if (this.kf) return; if (!window.mountKosFloat) { this.kft = setTimeout(mf, 120); return; } this.kf = [];
-      const mount = c => c.hasAttribute('data-kosworld')
-        ? window.mountKosWorld && window.mountKosWorld(c).then(h => this.kf.push(h)).catch(e => console.warn('world failed', e))
-        : window.mountKosFloat(c, { layout: LAYOUTS[c.dataset.kosfloat === '1' ? 'title' : c.dataset.kosfloat], ring: c.dataset.kosfloat === '1' }).then(h => this.kf.push(h)).catch(e => console.warn('float 3D failed', e));
-      // each canvas is its own WebGL scene, so only build it when it scrolls near the viewport
-      this.kio = new IntersectionObserver(es => es.forEach(e => { if (!e.isIntersecting) return; this.kio.unobserve(e.target); mount(e.target); }), { rootMargin: '600px 0px' });
-      document.querySelectorAll('[data-kosworld], [data-kosfloat]').forEach(c => this.kio.observe(c)); };
+      const w = document.querySelector('[data-kosworld]'); if (w && window.mountKosWorld) window.mountKosWorld(w).then(h => this.kf.push(h)).catch(e => console.warn('world failed', e));
+      document.querySelectorAll('[data-kosfloat]').forEach(c => window.mountKosFloat(c, { layout: LAYOUTS[c.dataset.kosfloat === '1' ? 'title' : c.dataset.kosfloat], ring: c.dataset.kosfloat === '1' }).then(h => this.kf.push(h)).catch(e => console.warn('float 3D failed', e))); };
     mf();
   }
-  componentWillUnmount() { this.worldOff && this.worldOff(); this.spaceOff && this.spaceOff(); this.ringOff && this.ringOff(); clearTimeout(this.kft); this.kio && this.kio.disconnect(); this.kf && this.kf.forEach && this.kf.forEach(h => h.dispose()); clearInterval(this.clock); clearInterval(this.titleTimer); this.offScene && this.offScene(); }
+  componentWillUnmount() { this.worldOff && this.worldOff(); this.spaceOff && this.spaceOff(); this.ringOff && this.ringOff(); clearTimeout(this.kft); this.kf && this.kf.forEach && this.kf.forEach(h => h.dispose()); clearInterval(this.clock); clearInterval(this.titleTimer); this.offScene && this.offScene(); }
 
   renderVals() {
     const d = this.state.dusk; const contactSky = { position: 'absolute', inset: 0, zIndex: -1, pointerEvents: 'none', background: 'linear-gradient(180deg, rgba(246,242,236,0) 0%, #1E1A52 14%, #3E2E7A 40%, #7C4E92 66%, #C9768E 86%, #EFA486 100%)', opacity: 0 }; const contactFade = { position: 'absolute', inset: 0, zIndex: 0, pointerEvents: 'none', background: d ? 'linear-gradient(180deg,#A592C6 0%,rgba(165,146,198,0.6) 14%,rgba(165,146,198,0) 36%)' : 'linear-gradient(90deg,rgba(246,242,236,0.55) 0%,rgba(246,242,236,0.25) 45%,rgba(246,242,236,0) 65%)', opacity: 1, transition: 'background 1.4s ease' }; const duskVeil = { position: 'absolute', left: 0, right: 0, top: '100svh', bottom: 0, zIndex: -1, pointerEvents: 'none', background: 'linear-gradient(180deg, #2A2160 0%, #5B3F8F 32%, #A35F95 60%, #5B3F8F 86%, #261C5C 100%)', opacity: d ? 1 : 0, transition: 'opacity 1.4s ease' }; const ink = d ? '#F3E8DA' : '#2A211C', line = d ? 'rgba(243,232,218,0.35)' : 'rgba(42,33,28,0.28)';

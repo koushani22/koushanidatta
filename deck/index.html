@@ -61,7 +61,8 @@
   @keyframes wisePhoneScroll { 0%,8% { transform: translateY(0); } 46%,54% { transform: translateY(var(--end)); } 92%,100% { transform: translateY(0); } }
   @keyframes fgCycle { 0% { opacity: 0; } 3% { opacity: 1; } 25% { opacity: 1; } 28% { opacity: 0; } 100% { opacity: 0; } }
 @keyframes fgBar { 0% { transform: scaleX(0); } 25% { transform: scaleX(1); } 25.01%, 100% { transform: scaleX(0); } }
-@keyframes cyc2 { 0% { opacity: 0; } 3% { opacity: 1; } 50% { opacity: 1; } 53% { opacity: 0; } 100% { opacity: 0; } }
+@media print { [style*="animation:cyc"] { animation: none !important; } }
+    @keyframes cyc2 { 0% { opacity: 0; } 3% { opacity: 1; } 50% { opacity: 1; } 53% { opacity: 0; } 100% { opacity: 0; } }
 @keyframes bar2 { 0% { transform: scaleX(0); } 50% { transform: scaleX(1); } 50.01%, 100% { transform: scaleX(0); } }
 @keyframes cyc3 { 0% { opacity: 0; } 3% { opacity: 1; } 33.3% { opacity: 1; } 36.3% { opacity: 0; } 100% { opacity: 0; } }
 @keyframes bar3 { 0% { transform: scaleX(0); } 33.3% { transform: scaleX(1); } 33.31%, 100% { transform: scaleX(0); } }
@@ -246,7 +247,7 @@
   </div>
 </section>
 <section data-label="Bloom — Garden, identity &amp; dieline" data-speaker-notes="Bloom — Garden, identity &amp; dieline" style="background:#7FC3F0;overflow:hidden;">
-<div style="position:absolute;inset:0;background:#7FC3F0;opacity:0;animation:cyc3 12s linear infinite;animation-delay:0s;">
+<div style="position:absolute;inset:0;background:#7FC3F0;opacity:1;animation:cyc3 12s linear infinite;animation-delay:0s;">
 <div style="position:absolute;inset:0;"><div data-label="Garden of Bloom" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:none;background:#7FC3F0;overflow:hidden;"><img loading="lazy" decoding="async" src="../assets/bloom2/eden.webp" alt="Three Bloom devices hanging like fruit from a vine" style="position:absolute;inset:0;width:1920px;height:1080px;object-fit:cover;display:block;max-width:none;"></div></div>
 </div>
 <div style="position:absolute;inset:0;background:#BFDDF7;opacity:0;animation:cyc3 12s linear infinite;animation-delay:-8s;">
@@ -367,7 +368,7 @@
   </div>
 </section>
 <section data-label="Mycelium — Story &amp; material" data-speaker-notes="Mycelium — Story &amp; material" style="background:#0C0A09;overflow:hidden;">
-<div style="position:absolute;inset:0;background:#0C0A09;opacity:0;animation:cyc2 8s linear infinite;animation-delay:0s;">
+<div style="position:absolute;inset:0;background:#0C0A09;opacity:1;animation:cyc2 8s linear infinite;animation-delay:0s;">
 <div style="position:absolute;inset:0;">
 <div data-label="Mycelium — Brand story" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:none;background:#D9D0BF;color:#0C0A09;font-family:'DM Sans',sans-serif;overflow:hidden;">
     <div style="position:absolute;inset:0;overflow:hidden;"><img loading="lazy" decoding="async" src="../assets/myc2/story.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;"></div>
@@ -416,7 +417,7 @@
 </div>
 </section>
 <section data-label="Mycelium — Circularity" data-speaker-notes="Mycelium — Circularity" style="background:#0C0A09;overflow:hidden;">
-<div style="position:absolute;inset:0;background:#0C0A09;opacity:0;animation:cyc2 8s linear infinite;animation-delay:0s;">
+<div style="position:absolute;inset:0;background:#0C0A09;opacity:1;animation:cyc2 8s linear infinite;animation-delay:0s;">
 <div style="position:absolute;inset:0;">
 <div data-label="Mycelium — Circularity" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:none;background:#D9D0BF;color:#0C0A09;font-family:'DM Sans',sans-serif;overflow:hidden;">
     <div style="position:absolute;inset:0;overflow:hidden;"><img loading="lazy" decoding="async" src="../assets/myc2/circular.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;"></div>
@@ -524,7 +525,7 @@
   </div>
 </section>
 <section data-label="Lethea — Product" data-speaker-notes="Lethea — Product" style="background:#07102A;overflow:hidden;">
-<div style="position:absolute;inset:0;background:#07102A;opacity:0;animation:cyc7 28s linear infinite;animation-delay:0s;">
+<div style="position:absolute;inset:0;background:#07102A;opacity:1;animation:cyc7 28s linear infinite;animation-delay:0s;">
 <div style="position:absolute;inset:0;">
 <div data-label="Lethea — Product system" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:none;background:#07102A;color:#F3EEE8;font-family:'DM Sans',sans-serif;overflow:hidden;"><img loading="lazy" decoding="async" src="../assets/lethea/hero-range.webp" alt="" style="position:absolute;inset:0;width:1920px;height:1080px;object-fit:cover;display:block;max-width:none;"><div style="position:absolute;right:110px;top:64px;width:1140px;display:flex;flex-direction:column;gap:16px;"><span style="font-size:22px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#A98BF5;">Flavours</span><h2 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-0.04em;font-size:60px;line-height:0.94;color:#F3EEE8;white-space:nowrap;">Mandarin by day. Plum by night.</h2><p style="margin:0;font-size:26px;line-height:1.35;color:#CFC6E6;white-space:nowrap;">First Flush for the morning ritual, Second Flush for the evening.</p></div>
   </div>
@@ -579,7 +580,7 @@
   </div>
 </section>
 <section data-label="Lethea — Campaign" data-speaker-notes="Lethea — Campaign" style="background:#0C0A09;overflow:hidden;">
-<div style="position:absolute;inset:0;background:#0C0A09;opacity:0;animation:cyc4 16s linear infinite;animation-delay:0s;">
+<div style="position:absolute;inset:0;background:#0C0A09;opacity:1;animation:cyc4 16s linear infinite;animation-delay:0s;">
 <div style="position:absolute;inset:0;">
 <div data-label="Lethea — Campaign" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:none;background:#0C0A09;color:#F3EEE8;font-family:'DM Sans',sans-serif;overflow:hidden;"><img loading="lazy" decoding="async" src="../assets/lethea/k-ad1.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;max-width:none;"><div style="position:absolute;inset:0;animation:lethSwap 8s cubic-bezier(.77,0,.18,1) infinite;"><img loading="lazy" decoding="async" src="../assets/lethea/k-ad2.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;max-width:none;"></div>
   </div>
@@ -643,7 +644,7 @@
   </div>
 </section>
 <section data-label="Culture Chutney — Process &amp; logo in use" data-speaker-notes="Culture Chutney — Process &amp; logo in use" style="background:#ADC641;overflow:hidden;">
-<div style="position:absolute;inset:0;background:#ADC641;opacity:0;animation:cyc2 8s linear infinite;animation-delay:0s;">
+<div style="position:absolute;inset:0;background:#ADC641;opacity:1;animation:cyc2 8s linear infinite;animation-delay:0s;">
 <div style="position:absolute;inset:0;">
 <div data-label="Culture Chutney — Process" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:none;background:#ADC641;overflow:hidden;">
     <img loading="lazy" decoding="async" src="../assets/cc/c04.jpg" alt="" style="position:absolute;left:0px;top:0;width:1920px;height:1080px;object-fit:cover;object-position:center;display:block;">
@@ -661,7 +662,7 @@
 </div>
 </section>
 <section data-label="Culture Chutney — Poster series" data-speaker-notes="Culture Chutney — Poster series" style="background:#ADC641;overflow:hidden;">
-<div style="position:absolute;inset:0;background:#ADC641;opacity:0;animation:cyc2 8s linear infinite;animation-delay:0s;">
+<div style="position:absolute;inset:0;background:#ADC641;opacity:1;animation:cyc2 8s linear infinite;animation-delay:0s;">
 <div style="position:absolute;inset:0;">
 <div data-label="Culture Chutney — Poster series 1" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:none;background:#ADC641;overflow:hidden;">
     <span style="position:absolute;left:80px;top:60px;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:22px;letter-spacing:0.22em;text-transform:uppercase;color:#1E5A26;">05 — Poster series · one per edition</span>
@@ -683,7 +684,7 @@
 </div>
 </section>
 <section data-label="Culture Chutney — Social &amp; printables" data-speaker-notes="Culture Chutney — Social &amp; printables" style="background:#ADC641;overflow:hidden;">
-<div style="position:absolute;inset:0;background:#ADC641;opacity:0;animation:cyc3 12s linear infinite;animation-delay:0s;">
+<div style="position:absolute;inset:0;background:#ADC641;opacity:1;animation:cyc3 12s linear infinite;animation-delay:0s;">
 <div style="position:absolute;inset:0;">
 <div data-label="Culture Chutney — Social" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:none;background:#ADC641;overflow:hidden;">
     <img loading="lazy" decoding="async" src="../assets/cc/c05.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
@@ -709,7 +710,7 @@
 </div>
 </section>
 <section data-label="Culture Chutney — On the ground" data-speaker-notes="Culture Chutney — On the ground" style="background:#ADC641;overflow:hidden;">
-<div style="position:absolute;inset:0;background:#ADC641;opacity:0;animation:cyc2 8s linear infinite;animation-delay:0s;">
+<div style="position:absolute;inset:0;background:#ADC641;opacity:1;animation:cyc2 8s linear infinite;animation-delay:0s;">
 <div style="position:absolute;inset:0;">
 <div data-label="Culture Chutney — Ticket &amp; tote" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:none;background:#ADC641;overflow:hidden;">
     <img loading="lazy" decoding="async" src="../assets/cc3/43.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
@@ -757,7 +758,7 @@
   </div>
 </section>
 <section data-label="SQ FT. — Origin &amp; art" data-speaker-notes="SQ FT. — Origin &amp; art" style="background:#0C0A09;overflow:hidden;">
-<div style="position:absolute;inset:0;background:#0C0A09;opacity:0;animation:cyc2 8s linear infinite;animation-delay:0s;">
+<div style="position:absolute;inset:0;background:#0C0A09;opacity:1;animation:cyc2 8s linear infinite;animation-delay:0s;">
 <div style="position:absolute;inset:0;">
 <div data-label="SQ FT. — Origin" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:none;background:#0C0A09;color:#F3EEE8;font-family:'DM Sans',sans-serif;overflow:hidden;">
     <img loading="lazy" decoding="async" src="../assets/sqft2/03.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;">
@@ -784,7 +785,7 @@
 <span style="position:absolute;left:28px;top:28px;z-index:40;display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:rgba(20,17,15,0.78);color:#F6F2EC;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:18px;letter-spacing:0.16em;text-transform:uppercase;">▶ Video</span>
 </section>
 <section data-label="SQ FT. — Bottle, unbox &amp; materials" data-speaker-notes="SQ FT. — Bottle, unbox &amp; materials" style="background:#0C0A09;overflow:hidden;">
-<div style="position:absolute;inset:0;background:#0C0A09;opacity:0;animation:cyc3 12s linear infinite;animation-delay:0s;">
+<div style="position:absolute;inset:0;background:#0C0A09;opacity:1;animation:cyc3 12s linear infinite;animation-delay:0s;">
 <div style="position:absolute;inset:0;">
 <div data-label="SQ FT. — Square bottle" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:none;background:#0C0A09;color:#F3EEE8;font-family:'DM Sans',sans-serif;overflow:hidden;">
     <img loading="lazy" decoding="async" src="../assets/sqft2/06.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;">
@@ -810,7 +811,7 @@
 </div>
 </section>
 <section data-label="SQ FT. — Cocktail, artists &amp; street" data-speaker-notes="SQ FT. — Cocktail, artists &amp; street" style="background:#0C0A09;overflow:hidden;">
-<div style="position:absolute;inset:0;background:#0C0A09;opacity:0;animation:cyc3 12s linear infinite;animation-delay:0s;">
+<div style="position:absolute;inset:0;background:#0C0A09;opacity:1;animation:cyc3 12s linear infinite;animation-delay:0s;">
 <div style="position:absolute;inset:0;">
 <div data-label="SQ FT. — Cocktail drop" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:none;background:#0C0A09;color:#F3EEE8;font-family:'DM Sans',sans-serif;overflow:hidden;">
     <img loading="lazy" decoding="async" src="../assets/sqft2/12.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;">
