@@ -12,7 +12,7 @@
   <meta name="description" content="Koushani Datta — London-based branding &amp; packaging designer. Award-winning brand identity, packaging and campaign work." />
   <link rel="icon" type="image/png" href="favicon.png" />
   <script data-seo="1">(function(){var d=document,h=d.head;d.title="Koushani Datta — Branding & Packaging Designer";if(!h.querySelector('meta[name=description]')){var m=d.createElement('meta');m.name='description';m.content="Koushani Datta \u2014 London-based branding & packaging designer. Award-winning brand identity, packaging and campaign work.";h.appendChild(m);}if(!h.querySelector('link[rel=icon]')){var l=d.createElement('link');l.rel='icon';l.type='image/png';l.href='favicon.png';h.appendChild(l);}})();</script>
-  <script src="./autoplay.js"></script>
+  <script src="./home-performance.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Anybody:wdth,wght@50..150,100..900&family=IBM+Plex+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -46,7 +46,6 @@
   [style*="white-space: nowrap"]:not([data-slide-wrap] *) { white-space: normal !important; }
 }
 </style>
-  <script src="./lazy-video.js"></script>
   <script src="sound.js"></script>
 </helmet>
 <div style="position:relative;isolation:isolate;background:#F6F2EC;color:#14110F;"><div aria-hidden="true" style="{{ duskVeil }}"></div>
@@ -84,7 +83,7 @@
 <a href="Forest Gold.dc.html" style="display:flex;flex-direction:column;gap:0;border-radius:18px;box-shadow:0 0 0 4px rgba(255,255,255,0.55),0 0 0 5px rgba(20,17,15,0.10);transition:transform .7s cubic-bezier(.16,.8,.24,1);" style-hover="color:#14110F">
       <div style="position:relative;overflow:hidden;border-radius:18px 18px 0 0;width:100%;height:clamp(320px,62vh,640px);background:#E4DCD2;border:1px solid rgba(255,255,255,0.75);box-shadow:inset 0 1px 0 rgba(255,255,255,0.9),inset 0 -2px 0 rgba(20,17,15,0.18),0 30px 60px -36px rgba(43,36,102,0.55);">
         <img loading="lazy" decoding="async" src="assets/forest-gold/pg33.jpg" alt="The Forest Gold" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s cubic-bezier(.16,.8,.24,1);" style-hover="transform:scale(1.06)" />
-        <div style="position:absolute;left:0;top:0;bottom:0;width:42.8%;background:#000;overflow:hidden;z-index:1;"><video preload="none" data-lazy="assets/forest-gold/fg-logo.mp4" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;transform:scale(1.25);"></video></div>
+        <div style="position:absolute;left:0;top:0;bottom:0;width:42.8%;background:#000;overflow:hidden;z-index:1;"><video preload="none" data-lazy="assets/forest-gold/fg-logo.mp4" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;transform:scale(1.25);"></video></div>
         
         <span style="position:absolute;right:16px;top:16px;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:11.5px;letter-spacing:0.2em;text-transform:uppercase;background:#C41E2A;color:#F6F2EC;padding:6px 10px;border-radius:999px;">✦ Pentawards Bronze</span>
       </div>
@@ -301,7 +300,7 @@
       <sc-for list="{{ spaceCards }}" as="c" hint-placeholder-count="24">
         <div data-card="{{ c.i }}" style="{{ c.style }}">
           <div data-card-in="1" style="position:relative;width:100%;height:100%;border-radius:10px;overflow:hidden;background:#F3ECF6;border:1px solid rgba(255,255,255,0.85);box-shadow:inset 0 1px 0 rgba(255,255,255,0.9),inset 0 -2px 0 rgba(20,17,15,0.12),0 0 0 3px rgba(255,255,255,0.5),0 0 0 4px rgba(20,17,15,0.08),0 30px 60px -24px rgba(43,36,102,0.45);transition:box-shadow .4s, border-color .4s;">
-            <sc-if value="{{ c.isImg }}" hint-placeholder-val="{{ false }}"><img loading="lazy" decoding="async" data-src="{{ c.src }}" alt="{{ c.cap }}" style="width:100%;height:100%;object-fit:contain;display:block;" /></sc-if><sc-if value="{{ c.isVid }}" hint-placeholder-val="{{ false }}"><video data-src="{{ c.src }}" poster="{{ c.poster }}" preload="none" autoplay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" style="width:100%;height:100%;object-fit:contain;display:block;"></video></sc-if><sc-if value="{{ c.isSlot }}" hint-placeholder-val="{{ true }}"><image-slot id="{{ c.slot }}" shape="rect" placeholder="{{ c.ph }}" style="width:100%;height:100%;"></image-slot></sc-if>
+            <sc-if value="{{ c.isImg }}" hint-placeholder-val="{{ false }}"><img loading="lazy" decoding="async" data-src="{{ c.src }}" alt="{{ c.cap }}" style="width:100%;height:100%;object-fit:contain;display:block;" /></sc-if><sc-if value="{{ c.isVid }}" hint-placeholder-val="{{ false }}"><video data-src="{{ c.src }}" poster="{{ c.poster }}" preload="none" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" style="width:100%;height:100%;object-fit:contain;display:block;"></video></sc-if><sc-if value="{{ c.isSlot }}" hint-placeholder-val="{{ true }}"><image-slot id="{{ c.slot }}" shape="rect" placeholder="{{ c.ph }}" style="width:100%;height:100%;"></image-slot></sc-if>
           </div>
           <span data-card-cap="1" style="position:absolute;left:0;top:calc(100% + 8px);font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:11.5px;letter-spacing:0.2em;text-transform:uppercase;font-size:10px;color:#2B2466;white-space:nowrap;opacity:0;transition:opacity .3s;">{{ c.cap }}</span>
         </div>
@@ -541,7 +540,6 @@ const SPACE = Array.from({ length: MEDIA.length }, (_, i) => {
 });
 class Component extends DCLogic {
   setupSpace() {
-    const fillSrc = () => document.querySelectorAll('[data-card-in] img[data-src], [data-card-in] video[data-src]').forEach(el => { const v = el.getAttribute('data-src'); if (v && v.indexOf('{{') < 0 && el.getAttribute('src') !== v) { el.setAttribute('src', v); if (el.tagName === 'VIDEO') el.play && el.play().catch(() => {}); } }); fillSrc(); setTimeout(fillSrc, 400); setTimeout(fillSrc, 1500);
     const host = this.spaceRef.current; if (!host) return;
     const cards = [...host.querySelectorAll('[data-card]')], close = host.querySelector('[data-space-close]');
     const N = cards.length, NEAR = 420, FAR = -3400, SPAN = NEAR - FAR;
@@ -1209,12 +1207,7 @@ class Component extends DCLogic {
   }
   componentDidMount() {
     setTimeout(() => { const cv = document.querySelector('video[data-cc-card]'); if (cv) { const go = () => { try { cv.currentTime = 2.5; } catch (e) {} }; cv.readyState >= 1 ? go() : cv.addEventListener('loadedmetadata', go, { once: true }); } }, 0);
-    const kick = () => document.querySelectorAll('video').forEach(v => { v.muted = true; v.defaultMuted = true; v.playsInline = true; v.loop = true; v.setAttribute('muted', ''); v.setAttribute('playsinline', ''); if (v.paused) { const p = v.play(); p && p.catch(() => {}); } });
-    kick(); [200, 800, 2000].forEach(t => setTimeout(kick, t));
-    this.vio = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting && e.target.paused) { e.target.muted = true; const p = e.target.play(); p && p.catch(() => {}); } }), { threshold: 0.1 });
-    document.querySelectorAll('video').forEach(v => this.vio.observe(v));
-    const once = () => { kick(); window.removeEventListener('pointerdown', once); window.removeEventListener('scroll', once); };
-    window.addEventListener('pointerdown', once); window.addEventListener('scroll', once, { passive: true });
+    this.homeMediaOff = window.kosHomePerformance.watchMedia();
     this.setupWorld();
     setTimeout(() => { const el = this.kcRef.current; if (el && el.animate) this.kcIdle = el.animate([{ transform: 'rotate(-2.5deg)' }, { transform: 'rotate(2.5deg)' }], { duration: 3200, iterations: Infinity, direction: 'alternate', easing: 'ease-in-out' }); }, 50);
     this.setupSpace();
@@ -1228,12 +1221,22 @@ class Component extends DCLogic {
       recognition: [['bottle','',0.92,0.7,0.7,''],['box','',-0.92,-0.7,0.6,'']],
       experience: [['brush','',-1.05,-0.05,0.45,''],['reel','',1.05,-0.05,0.45,'']],
       contact: [] };
-    const mf = () => { if (this.kf) return; if (!window.mountKosFloat) { this.kft = setTimeout(mf, 120); return; } this.kf = [];
-      const w = document.querySelector('[data-kosworld]'); if (w && window.mountKosWorld) window.mountKosWorld(w).then(h => this.kf.push(h)).catch(e => console.warn('world failed', e));
-      document.querySelectorAll('[data-kosfloat]').forEach(c => window.mountKosFloat(c, { layout: LAYOUTS[c.dataset.kosfloat === '1' ? 'title' : c.dataset.kosfloat], ring: c.dataset.kosfloat === '1' }).then(h => this.kf.push(h)).catch(e => console.warn('float 3D failed', e))); };
+    const mf = () => {
+      if (this.sceneOffs) return;
+      if (!window.mountKosFloat || !window.mountKosWorld) { this.kft = setTimeout(mf, 120); return; }
+      this.sceneOffs = [];
+      const observe = (target, mount) => this.sceneOffs.push(window.kosHomePerformance.observeScene(target, mount));
+      const w = document.querySelector('[data-kosworld]'), work = document.getElementById('work');
+      if (w && work) observe(work, () => window.mountKosWorld(w, {
+        isVisible: () => !!this.worldRef.current && this.worldRef.current.style.opacity !== '0'
+      }));
+      document.querySelectorAll('[data-kosfloat]').forEach(c => observe(c.parentElement, () => window.mountKosFloat(c, {
+        layout: LAYOUTS[c.dataset.kosfloat === '1' ? 'title' : c.dataset.kosfloat], ring: c.dataset.kosfloat === '1'
+      })));
+    };
     mf();
   }
-  componentWillUnmount() { this.worldOff && this.worldOff(); this.spaceOff && this.spaceOff(); this.ringOff && this.ringOff(); clearTimeout(this.kft); this.kf && this.kf.forEach && this.kf.forEach(h => h.dispose()); clearInterval(this.clock); clearInterval(this.titleTimer); this.offScene && this.offScene(); }
+  componentWillUnmount() { this.worldOff && this.worldOff(); this.spaceOff && this.spaceOff(); this.ringOff && this.ringOff(); clearTimeout(this.kft); this.homeMediaOff && this.homeMediaOff(); this.sceneOffs && this.sceneOffs.forEach(off => off()); clearInterval(this.clock); clearInterval(this.titleTimer); this.offScene && this.offScene(); }
 
   renderVals() {
     const d = this.state.dusk; const contactSky = { position: 'absolute', inset: 0, zIndex: -1, pointerEvents: 'none', background: 'linear-gradient(180deg, rgba(246,242,236,0) 0%, #1E1A52 14%, #3E2E7A 40%, #7C4E92 66%, #C9768E 86%, #EFA486 100%)', opacity: 0 }; const contactFade = { position: 'absolute', inset: 0, zIndex: 0, pointerEvents: 'none', background: d ? 'linear-gradient(180deg,#A592C6 0%,rgba(165,146,198,0.6) 14%,rgba(165,146,198,0) 36%)' : 'linear-gradient(90deg,rgba(246,242,236,0.55) 0%,rgba(246,242,236,0.25) 45%,rgba(246,242,236,0) 65%)', opacity: 1, transition: 'background 1.4s ease' }; const duskVeil = { position: 'absolute', left: 0, right: 0, top: '100svh', bottom: 0, zIndex: -1, pointerEvents: 'none', background: 'linear-gradient(180deg, #2A2160 0%, #5B3F8F 32%, #A35F95 60%, #5B3F8F 86%, #261C5C 100%)', opacity: d ? 1 : 0, transition: 'opacity 1.4s ease' }; const ink = d ? '#F3E8DA' : '#2A211C', line = d ? 'rgba(243,232,218,0.35)' : 'rgba(42,33,28,0.28)';
@@ -1258,3 +1261,4 @@ class Component extends DCLogic {
 </script>
 </body>
 </html>
+

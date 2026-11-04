@@ -198,7 +198,7 @@
     window.addEventListener('pointermove', move); window.addEventListener('click', click);
     let vis = true; const io = new IntersectionObserver(([en]) => { vis = en.isIntersecting; }); io.observe(host);
     const t0 = performance.now(); let prev = t0, raf;
-    const loop = () => { raf = requestAnimationFrame(loop); if (!vis) { prev = performance.now(); return; }
+    const loop = () => { raf = requestAnimationFrame(loop); if (!vis || document.hidden) { prev = performance.now(); return; }
       const now = performance.now(), dt = Math.min(0.05, (now - prev) / 1000), t = (now - t0) / 1000; prev = now;
       const sy = host.getBoundingClientRect().top / Math.max(1, window.innerHeight);
       objs.forEach((o, i) => { const u = o.userData, k = u.k; u.k *= 0.965; const sc = u.s * Math.min(1.2, Math.max(0.55, hw / 9));
@@ -221,7 +221,8 @@
   };
 
   // ---- mini world for the contact section: hill, pink trees, kash, torii, fireflies, floating crafts
-  window.mountKosWorld = async function (cv) {
+  window.mountKosWorld = async function (cv, opts) {
+    opts = opts || {};
     const T = await import(B);
     const { RoomEnvironment } = await import(B + '/examples/jsm/environments/RoomEnvironment.js');
     const { RoundedBoxGeometry } = await import(B + '/examples/jsm/geometries/RoundedBoxGeometry.js');
@@ -414,7 +415,7 @@
     window.addEventListener('pointermove', move); window.addEventListener('click', click);
     let vis = true; const io = new IntersectionObserver(([en]) => { vis = en.isIntersecting; }); io.observe(host);
     const M4 = new T.Matrix4(), q = new T.Quaternion(), e = new T.Euler(), v = new T.Vector3(), sc = new T.Vector3(); const t0 = performance.now(); let prev = t0, raf, smx = 0, smy = 0;
-    const loop = () => { raf = requestAnimationFrame(loop); if (!vis) { prev = performance.now(); return; }
+    const loop = () => { raf = requestAnimationFrame(loop); if (!vis || document.hidden || (opts.isVisible && !opts.isVisible())) { prev = performance.now(); return; }
       const now = performance.now(), dt = Math.min(0.05, (now - prev) / 1000), t = (now - t0) / 1000; prev = now; smx += (mx - smx) * 0.04; smy += (my - smy) * 0.04;
       cam.position.set(smx * 1.6, 3.4 - smy * 0.6, 7); cam.lookAt(tgt);
       trees.forEach((g, i) => { const u = g.userData; u.shake *= 0.95; g.rotation.z = Math.sin(t * 0.6 + i) * 0.015 + Math.sin(t * 14 + i) * 0.08 * u.shake; g.scale.y = g.scale.x * (1 + Math.sin(t * 20) * 0.03 * u.shake) / 1; });
@@ -472,3 +473,4 @@
     return { dispose() { cancelAnimationFrame(raf); ro.disconnect(); io.disconnect(); window.removeEventListener('pointermove', move); window.removeEventListener('click', click); tip.remove(); R.dispose(); } };
   };
 })();
+
