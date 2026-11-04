@@ -46,7 +46,7 @@
   [style*="white-space: nowrap"]:not([data-slide-wrap] *) { white-space: normal !important; }
 }
 </style>
-  <script src="sound.js"></script>
+  <script src="sound.js?v=landing-audio-1"></script>
 </helmet>
 <div style="position:relative;isolation:isolate;background:#F6F2EC;color:#14110F;"><div aria-hidden="true" style="{{ duskVeil }}"></div>
 <header id="top" data-screen-label="Top bar" style="position:relative;z-index:3;padding:clamp(16px,3vh,28px) clamp(18px,4vw,56px) 0;font-family:'IBM Plex Mono',monospace;color:#14110F;">
@@ -554,11 +554,11 @@ class Component extends DCLogic {
     window.addEventListener('pointerup', () => { setTimeout(() => { drag = null; }, 0); });
     host.addEventListener('pointermove', e => { if (!drag || !(e.buttons & 1)) return; const dx = e.clientX - drag.x, dy = e.clientY - drag.y; if (Math.abs(dx) + Math.abs(dy) > 6) drag.moved = true; panX = Math.max(-1100, Math.min(1100, drag.px + dx * 1.4)); panY = Math.max(-420, Math.min(420, drag.py + dy * 1.2)); });
     host.addEventListener('click', e => { if (drag && drag.moved) { e.stopPropagation(); e.preventDefault(); } }, true);
-    const doClose = () => { if (!open) return; open = null; close.style.opacity = 0; close.style.pointerEvents = 'none'; };
+    const doClose = (quiet = false) => { if (!open) return; open = null; close.style.opacity = 0; close.style.pointerEvents = 'none'; if (!quiet) window.dispatchEvent(new CustomEvent('kos-content-toggle', { detail: 'close' })); };
     P.forEach(p => {
       p.el.addEventListener('pointerenter', () => { hover = p; p.cap.style.opacity = 1; p.inner.style.borderColor = '#FFFFFF'; });
       p.el.addEventListener('pointerleave', () => { if (hover === p) hover = null; p.cap.style.opacity = 0; p.inner.style.borderColor = 'rgba(255,255,255,0.85)'; });
-      p.el.addEventListener('click', e => { if (open === p) return; e.stopPropagation(); doClose(); open = p;  close.style.opacity = 1; close.style.pointerEvents = 'auto'; });
+      p.el.addEventListener('click', e => { if (open === p) return; e.stopPropagation(); doClose(true); open = p;  close.style.opacity = 1; close.style.pointerEvents = 'auto'; window.dispatchEvent(new CustomEvent('kos-content-toggle', { detail: 'open' })); });
     });
     close.addEventListener('click', e => { e.stopPropagation(); doClose(); });
     host.addEventListener('click', e => { if (open && !open.el.contains(e.target)) doClose(); });
@@ -1244,7 +1244,7 @@ class Component extends DCLogic {
     return {
       duskVeil, contactSky, contactFade,
       kcRef: this.kcRef || (this.kcRef = React.createRef()),
-      jangle: () => { const el = this.kcRef.current; if (!el || !el.animate) return; el.animate([{ transform: 'rotate(0deg)' }, { transform: 'rotate(-11deg)' }, { transform: 'rotate(9deg)' }, { transform: 'rotate(-6deg)' }, { transform: 'rotate(3deg)' }, { transform: 'rotate(0deg)' }], { duration: 1100, easing: 'cubic-bezier(.2,.7,.3,1)', composite: 'add' }); },
+      jangle: () => { const el = this.kcRef.current; if (!el || !el.animate) return; window.dispatchEvent(new CustomEvent('kos-keychain')); el.animate([{ transform: 'rotate(0deg)' }, { transform: 'rotate(-11deg)' }, { transform: 'rotate(9deg)' }, { transform: 'rotate(-6deg)' }, { transform: 'rotate(3deg)' }, { transform: 'rotate(0deg)' }], { duration: 1100, easing: 'cubic-bezier(.2,.7,.3,1)', composite: 'add' }); },
       spaceRef: this.spaceRef, worldRef: this.worldRef, spaceCards: SPACE,
       stopLink: e => e.preventDefault(),
       rootRef: this.rootRef, canvasRef: this.canvasRef, titleRef: this.titleRef, tipRef: this.tipRef, ldn: this.state.ldn,
@@ -1261,4 +1261,5 @@ class Component extends DCLogic {
 </script>
 </body>
 </html>
+
 
