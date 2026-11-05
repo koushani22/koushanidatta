@@ -1,9 +1,10 @@
 (function () {
   if (window.__kosSound) return;
   window.__kosSound = 1;
-  const AMBIENT_LEVEL = 0.05; // Same 5% starting level as the approved demo.
+  const AMBIENT_LEVEL = 0.08; // Approved warm-keys demo at 8%.
   let on = false;
   let ctx, master, ambient, effects, fadeTimer = 0, barsFrame = 0, phase = 0;
+  let musicDry, musicWet, musicTimer = 0, musicStep = 0, musicNext = 0;
   let lastType = -Infinity, lastObject = -Infinity, lastAction = -Infinity;
   const scheduled = new Set();
 
@@ -26,32 +27,67 @@
     master = ctx.createGain(); master.gain.value = 0; master.connect(ctx.destination);
     ambient = ctx.createGain(); ambient.gain.value = 0; ambient.connect(master);
     effects = ctx.createGain(); effects.gain.value = 0.65; effects.connect(master);
-    const tone = ctx.createBiquadFilter();
-    tone.type = 'lowpass'; tone.frequency.value = 900; tone.Q.value = 0.4;
-    const dry = ctx.createGain(); dry.gain.value = 0.8;
-    tone.connect(dry); dry.connect(ambient);
-    const reverb = ctx.createConvolver(), length = Math.floor(ctx.sampleRate * 3.8);
+    const filter = ctx.createBiquadFilter();
+    filter.type = 'lowpass'; filter.frequency.value = 1500; filter.Q.value = 0.35;
+    filter.connect(ambient);
+    musicDry = ctx.createGain(); musicDry.gain.value = 0.85; musicDry.connect(filter);
+    const reverb = ctx.createConvolver(), length = Math.floor(ctx.sampleRate * 2.8);
     const impulse = ctx.createBuffer(2, length, ctx.sampleRate);
+    let seed = 17123;
     for (let channel = 0; channel < 2; channel++) {
       const samples = impulse.getChannelData(channel);
-      for (let i = 0; i < length; i++) samples[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / length, 3.5);
+      for (let i = 0; i < length; i++) {
+        seed = (seed * 16807) % 2147483647;
+        samples[i] = ((seed / 2147483647) * 2 - 1) * Math.pow(1 - i / length, 3.2);
+      }
     }
     reverb.buffer = impulse;
-    const wet = ctx.createGain(); wet.gain.value = 0.22;
-    tone.connect(reverb); reverb.connect(wet); wet.connect(ambient);
-    [130.8128, 195.9977, 261.6256, 293.6648, 329.6276].forEach((frequency, index) => {
-      const voice = ctx.createGain(); voice.gain.value = 0.14 / (1 + index * 0.6);
-      const pan = ctx.createStereoPanner(); pan.pan.value = (index - 2) * 0.2;
-      voice.connect(pan); pan.connect(tone);
-      [-2.5, 2.5].forEach(detune => {
-        const oscillator = ctx.createOscillator();
-        oscillator.type = 'sine'; oscillator.frequency.value = frequency; oscillator.detune.value = detune;
-        oscillator.connect(voice); oscillator.start();
-      });
-      const drift = ctx.createOscillator(), depth = ctx.createGain();
-      drift.frequency.value = 0.032 + index * 0.009; depth.gain.value = voice.gain.value * 0.14;
-      drift.connect(depth); depth.connect(voice.gain); drift.start();
+    musicWet = ctx.createGain(); musicWet.gain.value = 0.20;
+    musicWet.connect(reverb); reverb.connect(filter);
+  }
+
+  function musicVoice(midi, time, duration, amplitude, pad, panPosition) {
+    const gain = ctx.createGain(), pan = ctx.createStereoPanner();
+    gain.gain.setValueAtTime(0, time);
+    gain.gain.linearRampToValueAtTime(amplitude, time + (pad ? 0.8 : 0.035));
+    gain.gain.exponentialRampToValueAtTime(0.0001, time + duration);
+    pan.pan.value = panPosition;
+    gain.connect(pan); pan.connect(musicDry); pan.connect(musicWet);
+    const partials = pad ? [[1,1]] : [[1,1],[2,0.16],[3,0.035]];
+    let remaining = partials.length;
+    partials.forEach(([ratio, level], index) => {
+      const oscillator = ctx.createOscillator(), partialGain = ctx.createGain();
+      oscillator.type = 'sine'; oscillator.frequency.value = 440 * Math.pow(2, (midi - 69) / 12) * ratio;
+      partialGain.gain.setValueAtTime(level, time);
+      if (index) partialGain.gain.exponentialRampToValueAtTime(0.0001, time + Math.max(0.15, duration / (index + 1)));
+      oscillator.connect(partialGain); partialGain.connect(gain);
+      oscillator.onended = () => {
+        oscillator.disconnect(); partialGain.disconnect();
+        if (!--remaining) { gain.disconnect(); pan.disconnect(); }
+      };
+      oscillator.start(time); oscillator.stop(time + duration + 0.02);
     });
+  }
+
+  function stopMusic() {
+    clearInterval(musicTimer); musicTimer = 0; musicNext = 0;
+  }
+  function startMusic() {
+    if (musicTimer || !audible()) return;
+    const chords = [[48,52,55,59], [45,52,55,59], [53,57,60,64], [43,50,55,57]];
+    const beat = 60 / 72;
+    musicNext = ctx.currentTime + 0.12;
+    const schedule = () => {
+      if (!audible()) return;
+      while (musicNext < ctx.currentTime + 0.18) {
+        const position = musicStep % 16, chord = chords[Math.floor(musicStep / 16) % chords.length];
+        if (!position) chord.forEach((note, index) => musicVoice(note, musicNext, beat * 7.6, 0.020, true, (index - 1.5) * 0.18));
+        const part = [0,5,11].indexOf(position);
+        if (part >= 0) musicVoice(chord[[0,2,1][part]] + 12, musicNext, 2.8, part ? 0.19 : 0.23, false, [-0.15,0.15,0][part]);
+        musicStep++; musicNext += beat / 2;
+      }
+    };
+    schedule(); musicTimer = setInterval(schedule, 50);
   }
 
   const audible = () => on && ctx && ctx.state === 'running' && !document.hidden;
@@ -179,7 +215,8 @@
       await ctx.resume();
       if (!on || document.hidden) return;
       fade(master.gain, 1, 0.35);
-      fade(ambient.gain, AMBIENT_LEVEL * 0.5, 3.5);
+      fade(ambient.gain, AMBIENT_LEVEL * 0.9, 1.5);
+      startMusic();
     } catch (_) {
       on = false;
       paint();
@@ -190,6 +227,7 @@
     clearTimeout(fadeTimer); clearSounds();
     if (on) activate();
     else if (ctx) {
+      stopMusic();
       fade(master.gain, 0, 0.35);
       fadeTimer = setTimeout(() => { if (!on && ctx.state !== 'closed') ctx.suspend(); }, 450);
     }
@@ -229,11 +267,11 @@
   document.addEventListener('visibilitychange', () => {
     clearSounds(); paint();
     if (!ctx) return;
-    if (document.hidden) ctx.suspend();
+    if (document.hidden) { stopMusic(); ctx.suspend(); }
     else if (on) activate();
   });
   window.addEventListener('pagehide', event => {
-    clearTimeout(fadeTimer); clearSounds(); cancelAnimationFrame(barsFrame);
+    clearTimeout(fadeTimer); clearSounds(); stopMusic(); cancelAnimationFrame(barsFrame);
     if (!ctx) return;
     if (event.persisted) ctx.suspend();
     else ctx.close();
