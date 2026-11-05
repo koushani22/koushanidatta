@@ -150,6 +150,46 @@
     });
   }
 
+  // Short, inharmonic steel contacts for the About-section keychain.
+  // Separate from the landing-page 3D object's existing effect.
+  let keychainBuffer, lastKeychain = -Infinity;
+  function keychainJingle() {
+    const now = performance.now();
+    if (!audible() || now - lastKeychain < 1200) return;
+    lastKeychain = now;
+    if (!keychainBuffer) {
+      const rate = ctx.sampleRate, length = Math.ceil(rate * 1.08);
+      keychainBuffer = ctx.createBuffer(1, length, rate);
+      const samples = keychainBuffer.getChannelData(0);
+      const contacts = [[0,0.24,0.97],[0.105,1,1],[0.121,0.44,1.13],[0.352,0.55,0.91],[0.371,0.24,1.08],[0.603,0.27,1.04],[0.622,0.12,0.94],[0.855,0.09,1.10]];
+      const modes = [[860,0.13,0.018],[1880,1,0.032],[3017,0.64,0.024],[4580,0.38,0.017],[6340,0.20,0.012],[8170,0.10,0.008]];
+      let seed = 7283;
+      contacts.forEach(([at, strength, pitch]) => {
+        const start = Math.round(at * rate), count = Math.ceil(0.16 * rate);
+        let previousNoise = 0;
+        for (let i = 0; i < count && start + i < length; i++) {
+          const t = i / rate;
+          let value = 0;
+          modes.forEach(([frequency, level, decay]) => {
+            value += Math.sin(2 * Math.PI * frequency * pitch * t) * level * Math.exp(-t / decay);
+          });
+          seed = seed * 16807 % 2147483647;
+          const noise = seed / 2147483647 * 2 - 1;
+          value += (noise - previousNoise) * 0.16 * Math.exp(-t / 0.004);
+          previousNoise = noise;
+          samples[start + i] += value * strength * Math.min(1, t / 0.0007);
+        }
+      });
+      let peak = 0;
+      for (let i = 0; i < length; i++) peak = Math.max(peak, Math.abs(samples[i]));
+      if (peak) for (let i = 0; i < length; i++) samples[i] *= 0.065 / peak;
+    }
+    const source = ctx.createBufferSource();
+    source.buffer = keychainBuffer; source.connect(effects);
+    source.onended = () => source.disconnect();
+    source.start();
+  }
+
   const materials = {
     Packaging: () => tone(760, 720, 0.021, 0.16),
     Dieline: () => { breath(0.055, 0.026, 650, 350); tone(180, 130, 0.013, 0.065); },
@@ -179,7 +219,7 @@
     if (event.detail === 'Kos.') rattle();
     else tone(310, 130, 0.032, 0.14);
   }));
-  window.addEventListener('kos-keychain', () => action(rattle));
+  window.addEventListener('kos-keychain', keychainJingle);
   window.addEventListener('kos-content-toggle', event => content(event.detail === 'open'));
 
   const btn = document.createElement('button');

@@ -66,7 +66,7 @@
   #work, #about, #experience, #contact { scroll-margin-top:76px; }
 }
 </style>
-  <script src="sound.js?v=warm-keys-2"></script>
+  <script src="sound.js?v=keychain-3"></script>
 </helmet>
 <div style="position:relative;isolation:isolate;background:#F6F2EC;color:#14110F;"><div aria-hidden="true" style="{{ duskVeil }}"></div>
 <header id="top" data-screen-label="Top bar" style="position:relative;z-index:3;padding:clamp(16px,3vh,28px) clamp(18px,4vw,56px) 0;font-family:'IBM Plex Mono',monospace;color:#14110F;">
@@ -356,7 +356,9 @@
     </div>
     <div style="display:flex;flex-direction:column;justify-content:center;gap:26px;padding:clamp(8px,2vh,24px) 0;">
       <div style="display:flex;justify-content:flex-end;margin-bottom:-6px;">
-        <img loading="lazy" decoding="async" ref="{{ kcRef }}" onClick="{{ jangle }}" src="assets/me/keychain-kos.webp" alt="Kos. keychain" title="Kos." style="width:min(100%,400px);height:auto;cursor:pointer;transform-origin:42% 4%;filter:drop-shadow(0 24px 22px rgba(43,36,102,0.28));user-select:none;" />
+        <button type="button" onClick="{{ jangle }}" aria-label="Jiggle Kos. keychain" style="display:block;width:min(100%,400px);padding:0;border:0;background:transparent;cursor:pointer;line-height:0;">
+          <img loading="lazy" decoding="async" ref="{{ kcRef }}" src="assets/me/keychain-kos.webp" alt="Kos. keychain" draggable="false" style="display:block;width:100%;height:auto;transform-origin:42% 4%;filter:drop-shadow(0 24px 22px rgba(43,36,102,0.28));user-select:none;" />
+        </button>
       </div>
       <div data-screen-label="About card" style="display:flex;flex-direction:column;gap:22px;padding:clamp(22px,3vw,40px);border-radius:22px;background:rgba(250,246,252,0.72);backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);border:1.5px solid rgba(255,255,255,0.8);box-shadow:0 30px 60px -30px rgba(43,36,102,0.45);">
       <span style="font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:11.5px;letter-spacing:0.22em;text-transform:uppercase;color:#2B2466;">About me</span>
@@ -1290,7 +1292,6 @@ class Component extends DCLogic {
     this.homeMediaOff = window.kosHomePerformance.watchMedia();
     this.setupMobileNav();
     this.setupWorld();
-    setTimeout(() => { const el = this.kcRef.current; if (el && el.animate) this.kcIdle = el.animate([{ transform: 'rotate(-2.5deg)' }, { transform: 'rotate(2.5deg)' }], { duration: 3200, iterations: Infinity, direction: 'alternate', easing: 'ease-in-out' }); }, 50);
     this.setupSpace();
     this.setupRing();
     const tick = () => this.setState({ ldn: new Date().toLocaleTimeString('en-GB', { timeZone: 'Europe/London', hour: '2-digit', minute: '2-digit' }) });
@@ -1317,7 +1318,7 @@ class Component extends DCLogic {
     };
     mf();
   }
-  componentWillUnmount() { this.mobileNavOff && this.mobileNavOff(); this.worldOff && this.worldOff(); this.spaceOff && this.spaceOff(); this.ringOff && this.ringOff(); clearTimeout(this.kft); this.homeMediaOff && this.homeMediaOff(); this.sceneOffs && this.sceneOffs.forEach(off => off()); clearInterval(this.clock); clearInterval(this.titleTimer); this.offScene && this.offScene(); }
+  componentWillUnmount() { this.keychainAnimation && this.keychainAnimation.cancel(); this.mobileNavOff && this.mobileNavOff(); this.worldOff && this.worldOff(); this.spaceOff && this.spaceOff(); this.ringOff && this.ringOff(); clearTimeout(this.kft); this.homeMediaOff && this.homeMediaOff(); this.sceneOffs && this.sceneOffs.forEach(off => off()); clearInterval(this.clock); clearInterval(this.titleTimer); this.offScene && this.offScene(); }
 
   renderVals() {
     const d = this.state.dusk; const contactSky = { position: 'absolute', inset: 0, zIndex: -1, pointerEvents: 'none', background: 'linear-gradient(180deg, rgba(246,242,236,0) 0%, #1E1A52 14%, #3E2E7A 40%, #7C4E92 66%, #C9768E 86%, #EFA486 100%)', opacity: 0 }; const contactFade = { position: 'absolute', inset: 0, zIndex: 0, pointerEvents: 'none', background: d ? 'linear-gradient(180deg,#A592C6 0%,rgba(165,146,198,0.6) 14%,rgba(165,146,198,0) 36%)' : 'linear-gradient(90deg,rgba(246,242,236,0.55) 0%,rgba(246,242,236,0.25) 45%,rgba(246,242,236,0) 65%)', opacity: 1, transition: 'background 1.4s ease' }; const duskVeil = { position: 'absolute', left: 0, right: 0, top: '100svh', bottom: 0, zIndex: -1, pointerEvents: 'none', background: 'linear-gradient(180deg, #2A2160 0%, #5B3F8F 32%, #A35F95 60%, #5B3F8F 86%, #261C5C 100%)', opacity: d ? 1 : 0, transition: 'opacity 1.4s ease' }; const ink = d ? '#F3E8DA' : '#2A211C', line = d ? 'rgba(243,232,218,0.35)' : 'rgba(42,33,28,0.28)';
@@ -1329,7 +1330,18 @@ class Component extends DCLogic {
       mobileMenuIcon: this.state.mobileMenuOpen ? '×' : '+',
       toggleMobileMenu: () => this.setMobileMenu(!this.state.mobileMenuOpen),
       kcRef: this.kcRef || (this.kcRef = React.createRef()),
-      jangle: () => { const el = this.kcRef.current; if (!el || !el.animate) return; window.dispatchEvent(new CustomEvent('kos-keychain')); el.animate([{ transform: 'rotate(0deg)' }, { transform: 'rotate(-11deg)' }, { transform: 'rotate(9deg)' }, { transform: 'rotate(-6deg)' }, { transform: 'rotate(3deg)' }, { transform: 'rotate(0deg)' }], { duration: 1100, easing: 'cubic-bezier(.2,.7,.3,1)', composite: 'add' }); },
+      jangle: () => {
+        const el = this.kcRef.current;
+        if (!el || (this.keychainAnimation && this.keychainAnimation.playState === 'running')) return;
+        window.dispatchEvent(new CustomEvent('kos-keychain'));
+        if (!el.animate || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        const frames = Array.from({ length: 73 }, (_, i) => {
+          const t = i / 60;
+          const angle = i === 72 ? 0 : -5 * Math.exp(-3.6 * t) * Math.sin(4 * Math.PI * t);
+          return { transform: 'rotate(' + angle + 'deg)', offset: i / 72 };
+        });
+        this.keychainAnimation = el.animate(frames, { duration: 1200, easing: 'linear' });
+      },
       spaceRef: this.spaceRef, worldRef: this.worldRef, spaceCards: SPACE,
       stopLink: e => e.preventDefault(),
       rootRef: this.rootRef, canvasRef: this.canvasRef, titleRef: this.titleRef, tipRef: this.tipRef, ldn: this.state.ldn,
