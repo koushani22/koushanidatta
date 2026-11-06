@@ -4,12 +4,12 @@
   style.textContent = `
 .kos-more-mobile { height:auto!important; margin-top:24px!important; padding:0 18px 48px; perspective:none!important; overflow:visible!important; cursor:auto!important; -webkit-mask-image:none!important; mask-image:none!important; }
 .kos-more-mobile [data-space-world],.kos-more-mobile [data-space-close] { display:none!important; }
-.kos-mobile-work-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px 14px; }
+.kos-mobile-work-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr)); gap:16px 12px; align-items:start; }
 .kos-mobile-work-grid button { display:block; width:100%; padding:0; border:0; background:transparent; color:#2B2466; text-align:left; font:500 12px/1.5 'DM Sans',system-ui,sans-serif; cursor:pointer; }
 .kos-mobile-work-grid button[hidden] { display:none; }
-.kos-mobile-work-grid .work-thumb-frame { position:relative; display:grid; place-items:center; width:100%; aspect-ratio:4/5; padding:6px; overflow:hidden; border:1px solid rgba(43,36,102,.16); border-radius:10px; background:#F3ECF6; }
+.kos-mobile-work-grid .work-thumb-frame { box-sizing:border-box; position:relative; display:grid; place-items:center; width:100%; aspect-ratio:1; padding:4px; overflow:hidden; border:1px solid rgba(43,36,102,.16); border-radius:10px; background:#F3ECF6; }
 .kos-mobile-work-grid img { display:block; width:100%; height:100%; object-fit:contain; }
-.kos-mobile-work-grid .work-caption { display:block; margin-top:8px; }
+.kos-mobile-work-grid .work-caption { display:block; margin-top:6px; }
 .kos-mobile-work-grid .work-video-label { position:absolute; left:8px; bottom:8px; padding:4px 7px; border-radius:5px; background:#14110F; color:#F6F2EC; font:500 11px/1.4 'IBM Plex Mono',monospace; }
 .kos-mobile-work-more { display:block; min-height:48px; width:100%; margin:24px 0 0; padding:10px 16px; border:1px solid #4A3E8C; border-radius:8px; background:#F6F2EC; color:#2B2466; font:500 13px/1.5 'IBM Plex Mono',monospace; cursor:pointer; }
 .kos-mobile-work-dialog { box-sizing:border-box; width:calc(100% - 16px); max-width:960px; max-height:calc(100svh - 16px); padding:0; overflow:auto; border:0; border-radius:12px; background:#F6F2EC; color:#14110F; }
