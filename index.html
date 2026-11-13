@@ -68,6 +68,12 @@
 }
 </style>
   <script src="sound.js?v=keychain-3"></script>
+<style id="game-play-controls">
+.game-play-link{position:absolute!important;inset:auto 16px clamp(26px,calc(4vw - 22px),42px) auto!important;z-index:2;box-sizing:border-box!important;display:inline-flex!important;flex-direction:row!important;align-items:center!important;justify-content:center!important;gap:8px!important;width:114px!important;height:44px!important;min-height:44px!important;padding:0!important;border:1px solid #2B2466!important;border-radius:8px!important;background:#211B42!important;color:#F6F2EC!important;font-family:'IBM Plex Mono',monospace!important;font-size:10px!important;font-weight:600!important;line-height:1!important;letter-spacing:.08em!important;white-space:nowrap!important;text-decoration:none!important;box-shadow:none!important;transition:background .2s ease,transform .2s ease!important}
+.game-play-link:hover{background:#3D3270!important;transform:translateY(-2px)}
+.game-play-link:focus-visible{outline:3px solid #B9A5E4;outline-offset:3px}
+.game-play-link svg{display:block!important;flex:none!important;width:12px!important;height:12px!important}
+</style>
 </helmet>
 <div style="position:relative;isolation:isolate;background:#F6F2EC;color:#14110F;"><div aria-hidden="true" style="{{ duskVeil }}"></div>
 <header id="top" data-screen-label="Top bar" style="position:relative;z-index:3;padding:clamp(16px,3vh,28px) clamp(18px,4vw,56px) 0;font-family:'IBM Plex Mono',monospace;color:#14110F;">
@@ -315,10 +321,10 @@
           <span style="font-family:'Anybody',sans-serif;font-variation-settings:'wdth' 125,'wght' 750;font-size:clamp(18px,1.4vw,22px);line-height:1;letter-spacing:-0.025em;color:#14110F;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;">Reverush</span>
           <span style="display:flex;flex-wrap:wrap;gap:6px;max-width:100%;"><span style="font-family:'IBM Plex Mono',monospace;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;font-size:9.5px;color:#2B2466;border:1.2px solid rgba(43,36,102,0.35);border-radius:999px;padding:4px 8px;white-space:nowrap;">3D</span><span style="font-family:'IBM Plex Mono',monospace;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;font-size:9.5px;color:#2B2466;border:1.2px solid rgba(43,36,102,0.35);border-radius:999px;padding:4px 8px;white-space:nowrap;">Game</span></span>
         </div>
-        <span aria-hidden="true" style="flex:none;width:34px;height:34px;border-radius:10px;background:#14110F;color:#F6F2EC;display:flex;align-items:center;justify-content:center;font-size:14px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.25);">↗</span>
+        <span aria-hidden="true" style="flex:none;width:114px;height:44px;"></span>
       </div>
     </a>
-<a href="https://koushani22.github.io/reverush/" target="_blank" rel="noopener" aria-label="Play Reverush in a new tab" style="position:absolute;top:12px;right:12px;z-index:2;display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 16px;border-radius:999px;background:#171428ed;color:#fff;font:600 13px/1.2 Arial,sans-serif;text-decoration:none;border:1px solid #ffffff88;box-shadow:0 3px 12px #0004;">Play now ↗</a>
+<a href="https://koushani22.github.io/reverush/" target="_blank" rel="noopener" aria-label="Play Reverush in a new tab" class="game-play-link"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4 2.5 13 8l-9 5.5z" fill="currentColor"/></svg><span>PLAY NOW</span></a>
 </div>
 <div style="position:relative;min-width:0;"><a href="Dusklight.html" style="display:flex;flex-direction:column;gap:0;border-radius:18px;box-shadow:0 0 0 5px rgba(255,255,255,0.8),0 0 0 6px rgba(20,17,15,0.14),0 40px 70px -40px rgba(43,36,102,0.55);transition:transform .7s cubic-bezier(.16,.8,.24,1);" style-hover="transform:translateY(-8px);color:#14110F">
       <div style="position:relative;overflow:hidden;border-radius:14px 14px 0 0;aspect-ratio:16/9;background:#E4DCD2;border:1px solid rgba(255,255,255,0.75);box-shadow:inset 0 1px 0 rgba(255,255,255,0.9),inset 0 -2px 0 rgba(20,17,15,0.18),0 30px 60px -36px rgba(43,36,102,0.55);">
@@ -331,10 +337,10 @@
           <span style="font-family:'Anybody',sans-serif;font-variation-settings:'wdth' 125,'wght' 750;font-size:clamp(18px,1.4vw,22px);line-height:1;letter-spacing:-0.025em;color:#14110F;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;">Dusklight</span>
           <span style="display:flex;flex-wrap:wrap;gap:6px;max-width:100%;"><span style="font-family:'IBM Plex Mono',monospace;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;font-size:9.5px;color:#2B2466;border:1.2px solid rgba(43,36,102,0.35);border-radius:999px;padding:4px 8px;white-space:nowrap;">3D</span><span style="font-family:'IBM Plex Mono',monospace;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;font-size:9.5px;color:#2B2466;border:1.2px solid rgba(43,36,102,0.35);border-radius:999px;padding:4px 8px;white-space:nowrap;">Game</span></span>
         </div>
-        <span aria-hidden="true" style="flex:none;width:34px;height:34px;border-radius:10px;background:#14110F;color:#F6F2EC;display:flex;align-items:center;justify-content:center;font-size:14px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.25);">↗</span>
+        <span aria-hidden="true" style="flex:none;width:114px;height:44px;"></span>
       </div>
     </a>
-<a href="https://koushani22.github.io/Dusklight/" target="_blank" rel="noopener" aria-label="Play Dusklight in a new tab" style="position:absolute;top:12px;right:12px;z-index:2;display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 16px;border-radius:999px;background:#231a3fed;color:#fff;font:600 13px/1.2 Arial,sans-serif;text-decoration:none;border:1px solid #ffffff88;box-shadow:0 3px 12px #0004;">Play now ↗</a>
+<a href="https://koushani22.github.io/Dusklight/" target="_blank" rel="noopener" aria-label="Play Dusklight in a new tab" class="game-play-link"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4 2.5 13 8l-9 5.5z" fill="currentColor"/></svg><span>PLAY NOW</span></a>
 </div>
   </div>
 </section>
