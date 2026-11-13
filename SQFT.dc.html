@@ -12,7 +12,6 @@
   <meta name="description" content="Koushani Datta — London-based branding &amp; packaging designer. Award-winning brand identity, packaging and campaign work." />
   <link rel="icon" type="image/png" href="favicon.png" />
   <script data-seo="1">(function(){var d=document,h=d.head;d.title="SQ FT. — Koushani Datta";if(!h.querySelector('meta[name=description]')){var m=d.createElement('meta');m.name='description';m.content="Koushani Datta \u2014 London-based branding & packaging designer. Award-winning brand identity, packaging and campaign work.";h.appendChild(m);}if(!h.querySelector('link[rel=icon]')){var l=d.createElement('link');l.rel='icon';l.type='image/png';l.href='favicon.png';h.appendChild(l);}})();</script>
-  <script src="./autoplay.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=DM+Sans:opsz,wght@9..40,300..800&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet" />
@@ -47,7 +46,7 @@
   <div style="display:flex;flex-direction:column;gap:clamp(16px,2.4vw,32px);padding:clamp(20px,4vw,56px) clamp(12px,3vw,40px);">
   <div data-slide-wrap="1" data-card="1" data-screen-label="Logo motion" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(43,36,102,0.45),0 0 0 1px rgba(43,36,102,0.08);background:#0C0A09;">
 <div data-label="SQ FT. — Logo motion" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(0.2);background:#0C0A09;color:#F3EEE8;font-family:'DM Sans',sans-serif;overflow:hidden;">
-    <div style="position:absolute;inset:0;overflow:hidden;"><video preload="auto" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" src="assets/sqft2/sq-01-02.mp4" poster="assets/sqft2/sq-01-02-poster.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video></div>
+    <div style="position:absolute;inset:0;overflow:hidden;"><video preload="none" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" data-lazy="assets/sqft2/sq-01-02.mp4" poster="assets/sqft2/sq-01-02-poster.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video></div>
     <div style="display:none;"><div style="display:flex;flex-direction:column;gap:14px;">
         
         <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-0.02em;font-size:54px;line-height:1;text-wrap:balance;">A puffy, stackable mark</span>
@@ -125,11 +124,7 @@
   </div>
     <div data-slide-wrap="1" data-card="1" data-screen-label="Car film" style="position:relative;width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:clamp(10px,1.4vw,22px);box-shadow:0 30px 60px -34px rgba(43,36,102,0.45),0 0 0 1px rgba(43,36,102,0.08);background:#0C0A09;">
 <div data-car-film="1" style="position:absolute;inset:0;background:#0C0A09;overflow:hidden;">
-    <video data-car="0" data-src="assets/sqft2/car-14.mp4" muted="{{ true }}" playsInline="{{ true }}" preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:1;"></video>
-    <video data-car="1" data-src="assets/sqft2/car-15.mp4" muted="{{ true }}" playsInline="{{ true }}" preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;"></video>
-    <video data-car="2" data-src="assets/sqft2/car-16.mp4" muted="{{ true }}" playsInline="{{ true }}" preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;"></video>
-    <video data-car="3" data-src="assets/sqft2/car-17.mp4" muted="{{ true }}" playsInline="{{ true }}" preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;"></video>
-    <video data-car="4" data-src="assets/sqft2/car-18.mp4" muted="{{ true }}" playsInline="{{ true }}" preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;"></video>
+    <video aria-label="SQ FT. street campaign film" controls muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="none" data-lazy="assets/sqft2/car-film-web-v2.mp4" poster="assets/sqft2/car-film-poster-v2.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"></video>
   </div>
   </div>
   </div>
@@ -142,34 +137,6 @@
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
   componentDidMount() {
-    const cars = [...document.querySelectorAll('video[data-car]')];
-    if (cars.length) {
-      const prep = i => { const n = cars[i % cars.length]; if (n._req) return n._req; n._req = fetch(n.dataset.src).then(r => r.blob()).then(b => { n.src = URL.createObjectURL(b); n.load(); return new Promise(res => n.readyState >= 3 ? res() : n.addEventListener('canplaythrough', res, { once: true })); }); return n._req; };
-      cars.forEach(v => { v.loop = false; v.muted = true; });
-      prep(0).then(() => { if (on) cars[0].play().catch(() => {}); return cars.slice(1).reduce((p, _, k) => p.then(() => prep(k + 1)), Promise.resolve()); });
-      cars[0].addEventListener('playing', () => prep(1), { once: true });
-      let cur = 0, on = false, swapping = false, raf;
-      const show = (i) => cars.forEach((v, k) => { v.style.zIndex = k === i ? 2 : 1; v.style.opacity = k === i ? 1 : 0; });
-      const swap = () => {
-        if (swapping) return; swapping = true;
-        const v = cars[cur], ni = (cur + 1) % cars.length, n = cars[ni];
-        if (!n.src) { v.pause(); prep(ni).then(() => { swapping = false; swap(); }); return; }
-        n.currentTime = 0;
-        const reveal = () => { show(ni); v.pause(); cur = ni; swapping = false; prep(ni + 1); setTimeout(() => { v.currentTime = 0; }, 100); };
-        n.play().then(() => { n.requestVideoFrameCallback ? n.requestVideoFrameCallback(reveal) : reveal(); }).catch(() => { swapping = false; });
-      };
-      const tick = () => { raf = requestAnimationFrame(tick); const v = cars[cur]; if (on && v.duration && v.duration - v.currentTime < 0.12) swap(); };
-      cars.forEach(v => v.addEventListener('ended', swap));
-      show(0); tick();
-      const io = new IntersectionObserver(es => es.forEach(e => { on = e.isIntersecting; if (on) { cars[cur].muted = true; cars[cur].play().catch(() => {}); } else cars[cur].pause(); }), { threshold: 0.2 });
-      io.observe(cars[0].parentElement); this.carIO = io; this.carRaf = () => cancelAnimationFrame(raf);
-    }
-    const kick = () => document.querySelectorAll('video:not([data-car])').forEach(v => { v.muted = true; v.defaultMuted = true; v.playsInline = true; v.loop = true; v.setAttribute('muted', ''); v.setAttribute('playsinline', ''); if (v.paused) { const p = v.play(); p && p.catch(() => {}); } });
-    kick(); [200, 800, 2000].forEach(t => setTimeout(kick, t));
-    this.vio = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting && e.target.paused) { e.target.muted = true; const p = e.target.play(); p && p.catch(() => {}); } }), { threshold: 0.1 });
-    document.querySelectorAll('video:not([data-car])').forEach(v => this.vio.observe(v));
-    const once = () => { kick(); window.removeEventListener('pointerdown', once); window.removeEventListener('scroll', once); };
-    window.addEventListener('pointerdown', once); window.addEventListener('scroll', once, { passive: true });
     const fit = () => document.querySelectorAll('[data-slide-wrap]').forEach(w => { const s = w.clientWidth / 1920; const el = w.firstElementChild; if (el && !el.hasAttribute('data-car-film')) el.style.transform = 'scale(' + s + ')'; });
     fit(); this.ro = new ResizeObserver(fit); document.querySelectorAll('[data-slide-wrap]').forEach(w => this.ro.observe(w));
     const wraps = [...document.querySelectorAll('[data-slide-wrap]')];
