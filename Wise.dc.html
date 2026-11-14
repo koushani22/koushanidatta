@@ -131,24 +131,70 @@ class Component extends DCLogic {
   componentDidMount() {
     const cars = [...document.querySelectorAll('video[data-car]')];
     if (cars.length) {
-      const prep = i => { const n = cars[i % cars.length]; if (n._req) return n._req; n._req = fetch(n.dataset.src).then(r => r.blob()).then(b => { n.src = URL.createObjectURL(b); n.load(); return new Promise(res => n.readyState >= 3 ? res() : n.addEventListener('canplaythrough', res, { once: true })); }); return n._req; };
-      cars.forEach(v => { v.loop = false; v.muted = true; });
-      let cur = 0, on = false, swapping = false, raf;
-      prep(0).then(() => { if (on) cars[0].play().catch(() => {}); return prep(1); });
-      const show = (i) => cars.forEach((v, k) => { v.style.zIndex = k === i ? 2 : 1; v.style.opacity = k === i ? 1 : 0; });
-      const swap = () => {
-        if (swapping) return; swapping = true;
-        const v = cars[cur], ni = (cur + 1) % cars.length, n = cars[ni];
-        if (!n.src) { v.pause(); prep(ni).then(() => { swapping = false; swap(); }); return; }
-        n.currentTime = 0; n.muted = !this.musicOn;
-        const reveal = () => { show(ni); v.pause(); cur = ni; swapping = false; prep(ni + 1); setTimeout(() => { v.currentTime = 0; }, 100); };
-        n.play().then(() => { n.requestVideoFrameCallback ? n.requestVideoFrameCallback(reveal) : reveal(); }).catch(() => { swapping = false; });
+      let cur = 0, on = false, near = false, swapping = false, disposed = false;
+      const listeners = [];
+      const listen = (el, type, fn) => { el.addEventListener(type, fn); listeners.push(() => el.removeEventListener(type, fn)); };
+      const prep = i => {
+        const n = cars[i % cars.length];
+        if (n._req) return n._req;
+        n._req = new Promise((resolve, reject) => {
+          const clear = () => { n.removeEventListener('loadeddata', ready); n.removeEventListener('error', fail); };
+          const ready = () => { clear(); resolve(); };
+          const fail = () => { clear(); n._req = null; reject(new Error('Film unavailable')); };
+          n.addEventListener('loadeddata', ready); n.addEventListener('error', fail);
+          // Stream directly: playback no longer waits for a complete fetch/blob.
+          n.preload = 'auto'; n.src = n.dataset.src; n.load();
+          if (n.readyState >= 2) ready();
+        });
+        return n._req;
       };
-      const tick = () => { raf = requestAnimationFrame(tick); const v = cars[cur]; if (on && v.duration && v.duration - v.currentTime < 0.12) swap(); };
-      cars.forEach(v => v.addEventListener('ended', swap));
-      show(0); tick();
-      const io = new IntersectionObserver(es => es.forEach(e => { on = e.isIntersecting; if (on) { cars[cur].muted = !this.musicOn; cars[cur].play().catch(() => {}); if (this.musicOn) this.musicResume(); } else { cars[cur].pause(); this.musicPause && this.musicPause(); } }), { threshold: 0.2 });
-      io.observe(cars[0].parentElement); this.carIO = io; this.carRaf = () => cancelAnimationFrame(raf);
+      cars.forEach(v => { v.loop = false; v.muted = true; v.preload = 'none'; });
+      const show = i => cars.forEach((v, k) => { v.style.zIndex = k === i ? 2 : 1; v.style.opacity = k === i ? 1 : 0; });
+      const playable = () => on && !document.hidden && !disposed;
+      const swap = async () => {
+        if (swapping || !playable()) return;
+        swapping = true;
+        const v = cars[cur], ni = (cur + 1) % cars.length, n = cars[ni];
+        try {
+          await prep(ni);
+          if (!playable()) return;
+          n.currentTime = 0; n.muted = !this.musicOn;
+          await n.play();
+          if (!playable()) { n.pause(); return; }
+          show(ni); v.pause(); cur = ni; v.currentTime = 0;
+        } catch (_) { /* Keep the still/current frame if a film cannot start. */ }
+        finally { swapping = false; }
+      };
+      const tick = () => {
+        const v = cars[cur];
+        if (!playable() || !Number.isFinite(v.duration)) return;
+        const remaining = v.duration - v.currentTime;
+        if (remaining <= 3) prep(cur + 1).catch(() => {});
+        if (remaining <= 0.12) swap();
+      };
+      const resume = () => {
+        if (!playable()) { cars.forEach(v => v.pause()); this.musicPause && this.musicPause(); return; }
+        prep(cur).then(() => {
+          if (!playable()) return;
+          if (cars[cur].ended) { swap(); return; }
+          cars[cur].muted = !this.musicOn;
+          cars[cur].play().catch(() => {});
+          if (this.musicOn) this.musicResume && this.musicResume();
+        }).catch(() => {});
+      };
+      cars.forEach(v => { listen(v, 'timeupdate', tick); listen(v, 'ended', () => { if (v === cars[cur]) swap(); }); });
+      const loadIO = new IntersectionObserver(es => es.forEach(e => {
+        near = e.isIntersecting;
+        if (near && !document.hidden) prep(cur).catch(() => {});
+      }), { rootMargin: '600px 0px' });
+      const io = new IntersectionObserver(es => es.forEach(e => { on = e.isIntersecting; resume(); }), { threshold: 0.2 });
+      listen(document, 'visibilitychange', () => {
+        if (near && !document.hidden) prep(cur).catch(() => {});
+        resume();
+      });
+      show(0); loadIO.observe(cars[0].parentElement); io.observe(cars[0].parentElement);
+      this.carIO = io;
+      this.carRaf = () => { disposed = true; loadIO.disconnect(); listeners.forEach(off => off()); cars.forEach(v => v.pause()); };
     }
     const sb = document.querySelector('[data-wise-sound]');
     if (sb) {

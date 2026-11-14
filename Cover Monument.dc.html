@@ -12,7 +12,7 @@
   <meta name="description" content="Koushani Datta — London-based branding &amp; packaging designer. Award-winning brand identity, packaging and campaign work." />
   <link rel="icon" type="image/png" href="favicon.png" />
   <script data-seo="1">(function(){var d=document,h=d.head;d.title="Koushani Datta — Branding & Packaging Designer";if(!h.querySelector('meta[name=description]')){var m=d.createElement('meta');m.name='description';m.content="Koushani Datta \u2014 London-based branding & packaging designer. Award-winning brand identity, packaging and campaign work.";h.appendChild(m);}if(!h.querySelector('link[rel=icon]')){var l=d.createElement('link');l.rel='icon';l.type='image/png';l.href='favicon.png';h.appendChild(l);}})();</script>
-  <script src="./home-performance.js"></script>
+  <script src="./home-performance.js?v=artwork-priority-1"></script>
   <script src="more-work-mobile.js?v=2"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
@@ -32,7 +32,7 @@
     @keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
       details > summary::-webkit-details-marker { display: none; } details[open] [data-plus] { transform: rotate(45deg); }
   </style>
-  <script src="./kos3d.js"></script>
+  <script src="./kos3d.js?v=artwork-priority-1"></script>
   <script src="./image-slot.js"></script>
 <style id="kos-mobile">
 @media (max-width: 760px) {
@@ -1351,7 +1351,8 @@ class Component extends DCLogic {
       const observe = (target, mount) => this.sceneOffs.push(window.kosHomePerformance.observeScene(target, mount));
       const w = document.querySelector('[data-kosworld]'), work = document.getElementById('work');
       if (w && work) observe(work, () => window.mountKosWorld(w, {
-        isVisible: () => !!this.worldRef.current && this.worldRef.current.style.opacity !== '0'
+        maxFPS: 24,
+        isVisible: () => !!this.worldRef.current && this.worldRef.current.style.opacity !== '0' && window.kosHomePerformance.canRenderWorld()
       }));
       document.querySelectorAll('[data-kosfloat]').forEach(c => observe(c.parentElement, () => window.mountKosFloat(c, {
         layout: LAYOUTS[c.dataset.kosfloat === '1' ? 'title' : c.dataset.kosfloat], ring: c.dataset.kosfloat === '1'

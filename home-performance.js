@@ -4,6 +4,36 @@
 
   function watchMedia() {
     const videos = new Set(), visible = new Set(), watched = new WeakSet();
+    const imageQueue = new Set();
+    let imageActive = 0, stopped = false;
+    const drainImages = () => {
+      if (stopped) return;
+      while (imageActive < 3 && imageQueue.size) {
+        const distance = el => Math.max(0, el.getBoundingClientRect().top - innerHeight);
+        const img = [...imageQueue].sort((a, b) => distance(a) - distance(b))[0];
+        imageQueue.delete(img);
+        imageActive++;
+        let settled = false;
+        const done = () => {
+          if (settled) return;
+          settled = true;
+          img.removeEventListener('load', done); img.removeEventListener('error', done);
+          imageActive--; drainImages();
+        };
+        img.addEventListener('load', done); img.addEventListener('error', done);
+        // The observer already controls loading; do not defer it a second time.
+        img.loading = 'eager';
+        img.src = img.dataset.src;
+        if (img.complete) done();
+      }
+    };
+    const imageLoad = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        imageQueue.add(entry.target); imageLoad.unobserve(entry.target);
+      });
+      drainImages();
+    }, { rootMargin: '1800px 0px' });
     const valid = value => value && !value.includes('{{');
     const play = video => {
       if (document.hidden || !visible.has(video) || !video.getAttribute('src')) return;
@@ -49,7 +79,8 @@
           videos.add(element);
           playback.observe(element);
         }
-        load.observe(element);
+        if (element.tagName === 'IMG') imageLoad.observe(element);
+        else load.observe(element);
       });
     };
     const resume = () => videos.forEach(video => {
@@ -64,6 +95,7 @@
     document.addEventListener('visibilitychange', resume);
     document.addEventListener('pointerdown', resume);
     return () => {
+      stopped = true; imageQueue.clear(); imageLoad.disconnect();
       load.disconnect(); playback.disconnect(); changes.disconnect();
       document.removeEventListener('visibilitychange', resume);
       document.removeEventListener('pointerdown', resume);
@@ -98,5 +130,21 @@
     };
   }
 
-  window.kosHomePerformance = { watchMedia, observeScene };
+  // Keep the last rendered garden frame while scrolling or awaiting visible art.
+  let lastScroll = -Infinity, lastCheck = -Infinity, artworkPending = false;
+  window.addEventListener('scroll', () => { lastScroll = performance.now(); }, { passive: true });
+  function canRenderWorld() {
+    const now = performance.now();
+    if (document.hidden || now - lastScroll < 180) return false;
+    if (now - lastCheck > 150) {
+      lastCheck = now;
+      artworkPending = [...document.images].some(img => {
+        if (img.closest('x-dc') || img.complete || !img.getAttribute('src')) return false;
+        const r = img.getBoundingClientRect();
+        return r.width > 0 && r.height > 0 && r.bottom > 0 && r.top < innerHeight;
+      });
+    }
+    return !artworkPending;
+  }
+  window.kosHomePerformance = { watchMedia, observeScene, canRenderWorld };
 })();

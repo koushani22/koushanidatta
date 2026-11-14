@@ -416,7 +416,8 @@
     let vis = true; const io = new IntersectionObserver(([en]) => { vis = en.isIntersecting; }); io.observe(host);
     const M4 = new T.Matrix4(), q = new T.Quaternion(), e = new T.Euler(), v = new T.Vector3(), sc = new T.Vector3(); const t0 = performance.now(); let prev = t0, raf, smx = 0, smy = 0;
     const loop = () => { raf = requestAnimationFrame(loop); if (!vis || document.hidden || (opts.isVisible && !opts.isVisible())) { prev = performance.now(); return; }
-      const now = performance.now(), dt = Math.min(0.05, (now - prev) / 1000), t = (now - t0) / 1000; prev = now; smx += (mx - smx) * 0.04; smy += (my - smy) * 0.04;
+      const now = performance.now(); if (opts.maxFPS && now - prev < 1000 / opts.maxFPS) return;
+      const dt = Math.min(0.05, (now - prev) / 1000), t = (now - t0) / 1000; prev = now; smx += (mx - smx) * 0.04; smy += (my - smy) * 0.04;
       cam.position.set(smx * 1.6, 3.4 - smy * 0.6, 7); cam.lookAt(tgt);
       trees.forEach((g, i) => { const u = g.userData; u.shake *= 0.95; g.rotation.z = Math.sin(t * 0.6 + i) * 0.015 + Math.sin(t * 14 + i) * 0.08 * u.shake; g.scale.y = g.scale.x * (1 + Math.sin(t * 20) * 0.03 * u.shake) / 1; });
       kd.forEach((s, i) => { const sw = Math.sin(t * 1.2 + s.ph + s.x * 0.2) * 0.12 + burst * Math.sin(t * 12 + i) * 0.2; e.set(0, 0, sw); q.setFromEuler(e);
