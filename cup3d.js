@@ -11,8 +11,8 @@ class HvCup extends HTMLElement {
     const T = await import('https://esm.sh/three@0.160.0');
     const { RoomEnvironment } = await import('https://esm.sh/three@0.160.0/examples/jsm/environments/RoomEnvironment.js');
     const r = new T.WebGLRenderer({ canvas: cv, antialias: true, alpha: true, preserveDrawingBuffer: true });
-    r.setPixelRatio(Math.min(2, devicePixelRatio)); r.outputColorSpace = T.SRGBColorSpace; r.toneMapping = T.ACESFilmicToneMapping; r.toneMappingExposure = 1.3;
-    r.shadowMap.enabled = true; r.shadowMap.type = T.PCFSoftShadowMap;
+    r.setPixelRatio(Math.min(1.25, devicePixelRatio)); r.outputColorSpace = T.SRGBColorSpace; r.toneMapping = T.ACESFilmicToneMapping; r.toneMappingExposure = 1.3;
+    r.shadowMap.enabled = true; r.shadowMap.type = T.PCFShadowMap;
     const sc = new T.Scene(), pm = new T.PMREMGenerator(r); sc.environment = pm.fromScene(new RoomEnvironment(), 0.04).texture;
     const cam = new T.PerspectiveCamera(24, 1, 0.1, 100); cam.position.set(0, 0.6, 11); cam.lookAt(0, 0.05, 0);
     // dieline geometry (px in 1280x800 file): circle centre, inner/outer radius of the black print area, half-angle
@@ -51,9 +51,10 @@ class HvCup extends HTMLElement {
     const pmv = e => { if (drag !== null) { const d = (e.clientX - drag) * 0.01; rot += d; vel = d * 0.15; drag = e.clientX; } };
     const pu = () => { drag = null; if (Math.abs(vel) < 0.006) vel = 0.012 * Math.sign(vel || 1); };
     cv.addEventListener('pointerdown', pd); cv.addEventListener('pointermove', pmv); cv.addEventListener('pointerup', pu); cv.style.cursor = 'grab';
-    const loop = () => { raf = requestAnimationFrame(loop); if (drag === null) rot += vel; g.rotation.y = rot; r.render(sc, cam); };
+    let vis = true; const io = new IntersectionObserver(([en]) => { vis = en.isIntersecting; }); io.observe(cv);
+    const loop = () => { raf = requestAnimationFrame(loop); if (!vis || document.hidden) return; const _n = performance.now(); if (_n - (loop._l || 0) < 33) return; loop._l = _n; if (drag === null) rot += vel * 2; g.rotation.y = rot; r.render(sc, cam); };
     loop();
-    this._off = () => { cancelAnimationFrame(raf); ro.disconnect(); r.dispose(); };
+    this._off = () => { cancelAnimationFrame(raf); io.disconnect(); ro.disconnect(); r.dispose(); };
   }
 }
 if (!customElements.get('hv-cup')) customElements.define('hv-cup', HvCup);

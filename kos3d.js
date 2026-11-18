@@ -8,8 +8,8 @@
     const { RoundedBoxGeometry } = await import(B + '/examples/jsm/geometries/RoundedBoxGeometry.js');
     const host = cv.parentElement;
     const R = new T.WebGLRenderer({ canvas: cv, antialias: true, alpha: false });
-    R.setPixelRatio(Math.min(1.5, window.devicePixelRatio)); R.outputColorSpace = T.SRGBColorSpace; R.toneMapping = T.ACESFilmicToneMapping; R.toneMappingExposure = 0.95;
-    R.shadowMap.enabled = true; R.shadowMap.type = T.PCFSoftShadowMap;
+    R.setPixelRatio(Math.min(1.25, window.devicePixelRatio)); R.outputColorSpace = T.SRGBColorSpace; R.toneMapping = T.ACESFilmicToneMapping; R.toneMappingExposure = 0.95;
+    R.shadowMap.enabled = true; R.shadowMap.type = T.PCFShadowMap;
     const scene = new T.Scene();
     const pm = new T.PMREMGenerator(R); scene.environment = pm.fromScene(new RoomEnvironment(), 0.04).texture; pm.dispose(); scene.environmentIntensity = 0.6;
     const sky = new T.Mesh(new T.SphereGeometry(80, 32, 16), new T.ShaderMaterial({ side: T.BackSide, depthWrite: false,
@@ -57,7 +57,7 @@
     window.addEventListener('pointermove', move); cv.addEventListener('click', click);
     let vis = true; const io = new IntersectionObserver(([en]) => { vis = en.isIntersecting; }); io.observe(host);
     const t0 = performance.now(); let prev = t0, raf;
-    const loop = () => { raf = requestAnimationFrame(loop); if (!vis) { prev = performance.now(); return; }
+    const loop = () => { raf = requestAnimationFrame(loop); if (!vis || document.hidden) { prev = performance.now(); return; } const _n = performance.now(); if (_n - (loop._l || 0) < 33) return; loop._l = _n; 
       const now = performance.now(), dt = Math.min(0.05, (now - prev) / 1000), t = (now - t0) / 1000; prev = now;
       smx += (mx - smx) * 0.04; smy += (my - smy) * 0.04;
       const intro = 1 - Math.pow(1 - Math.min(1, t / 2.4), 3), rad = 17 + (1 - intro) * 8, az = 0.15 + smx * 0.12 + (1 - intro) * 0.4, el = 0.28 - smy * 0.05;
@@ -176,7 +176,7 @@
     const { RoundedBoxGeometry } = await import(B + '/examples/jsm/geometries/RoundedBoxGeometry.js');
     const host = cv.parentElement;
     const R = new T.WebGLRenderer({ canvas: cv, antialias: true, alpha: true });
-    R.setPixelRatio(Math.min(1.5, window.devicePixelRatio)); R.outputColorSpace = T.SRGBColorSpace; R.toneMapping = T.ACESFilmicToneMapping;
+    R.setPixelRatio(Math.min(1.25, window.devicePixelRatio)); R.outputColorSpace = T.SRGBColorSpace; R.toneMapping = T.ACESFilmicToneMapping;
     const scene = new T.Scene(); const pm = new T.PMREMGenerator(R); scene.environment = pm.fromScene(new RoomEnvironment(), 0.04).texture; pm.dispose();
     scene.add(new T.HemisphereLight(0xF3EEFF, 0xF6DCE8, 0.55)); const dl = new T.DirectionalLight(0xFFF0F6, 1.8); dl.position.set(-4, 6, 8); scene.add(dl); const rl = new T.PointLight(0xC6B6F2, 40, 40, 1.6); rl.position.set(6, -3, 6); scene.add(rl);
     const P = o => new T.MeshPhysicalMaterial(o);
@@ -198,7 +198,7 @@
     window.addEventListener('pointermove', move); window.addEventListener('click', click);
     let vis = true; const io = new IntersectionObserver(([en]) => { vis = en.isIntersecting; }); io.observe(host);
     const t0 = performance.now(); let prev = t0, raf;
-    const loop = () => { raf = requestAnimationFrame(loop); if (!vis || document.hidden) { prev = performance.now(); return; }
+    const loop = () => { raf = requestAnimationFrame(loop); if (!vis || document.hidden) { prev = performance.now(); return; } const _n = performance.now(); if (_n - (loop._l || 0) < 33) return; loop._l = _n; 
       const now = performance.now(), dt = Math.min(0.05, (now - prev) / 1000), t = (now - t0) / 1000; prev = now;
       const sy = host.getBoundingClientRect().top / Math.max(1, window.innerHeight);
       objs.forEach((o, i) => { const u = o.userData, k = u.k; u.k *= 0.965; const sc = u.s * Math.min(1.2, Math.max(0.55, hw / 9));
@@ -227,7 +227,7 @@
     const { RoomEnvironment } = await import(B + '/examples/jsm/environments/RoomEnvironment.js');
     const { RoundedBoxGeometry } = await import(B + '/examples/jsm/geometries/RoundedBoxGeometry.js');
     const host = cv.parentElement;
-    const R = new T.WebGLRenderer({ canvas: cv, antialias: true, alpha: true }); R.setPixelRatio(Math.min(1.5, window.devicePixelRatio)); R.outputColorSpace = T.SRGBColorSpace; R.toneMapping = T.ACESFilmicToneMapping;
+    const R = new T.WebGLRenderer({ canvas: cv, antialias: true, alpha: true }); R.setPixelRatio(Math.min(1.25, window.devicePixelRatio)); R.outputColorSpace = T.SRGBColorSpace; R.toneMapping = T.ACESFilmicToneMapping;
     const scene = new T.Scene(); const pm = new T.PMREMGenerator(R); scene.environment = pm.fromScene(new RoomEnvironment(), 0.04).texture; pm.dispose(); scene.environmentIntensity = 0.5;
     const hemiW = new T.HemisphereLight(0xC9C2FF, 0x4B6A2E, 0.9); scene.add(hemiW); const dl = new T.DirectionalLight(0xFFD6E8, 1.6); dl.position.set(-6, 8, 6); scene.add(dl);
     const rim = new T.PointLight(0xF2B6CF, 30, 30, 1.5); rim.position.set(4, 4, 2); scene.add(rim);
