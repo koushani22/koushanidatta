@@ -15,14 +15,7 @@
     { href: '#experience', label: 'Journey', img: 'assets/me/penta-duo-1800.jpg', cap: 'Pentawards Bronze 2026' },
     { href: '#contact', label: 'Contact', img: 'assets/me/keychain-kos.webp', cap: 'Say hi', contain: true }
   ];
-  const GREET = ["Hi, I'm", '<span class="bn">নমস্কার, আমি</span>', '<span class="hi">नमस्ते, मैं</span>', "Hello, I'm"];
 
-  // Only the few Bengali/Devanagari glyphs used in the greeting are downloaded.
-  const fl = document.createElement('link');
-  fl.rel = 'stylesheet';
-  fl.href = 'https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@500&family=Noto+Sans+Devanagari:wght@500&display=swap&text='
-    + encodeURIComponent('নমস্কার, আমিनमस्ते, मैं');
-  document.head.appendChild(fl);
 
   function setF(el, i) {
     const F = FONTS[i % FONTS.length];
@@ -35,11 +28,9 @@
     const hdr = document.createElement('header');
     hdr.className = 'kh';
     hdr.innerHTML =
-      '<a class="kh-brand" href="#" aria-label="Koushani Datta, back to top">' +
-        '<span class="kh-hello" aria-hidden="true">' + GREET.map(g => g.startsWith('<') ? g : '<span>' + g + '</span>').join('') + '</span>' +
-        '<span class="kh-tile"><b>Kos<i>.</i></b></span></a>' +
+      '<a class="kh-brand" href="#" aria-label="Koushani Datta, back to top">Koushani Datta</a>' +
       '<div class="kh-right"><span class="kh-clock"><i></i>London <span class="kh-time">--:--</span></span>' +
-        '<button class="kh-btn" type="button" aria-expanded="false" aria-controls="kh-menu"><span class="kh-lbl">Menu</span><span class="kh-tw" aria-hidden="true"></span></button></div>';
+        '<button class="kh-btn" type="button" aria-expanded="false" aria-controls="kh-menu"><span class="kh-lbl">Menu</span></button></div>';
 
     const box = document.createElement('nav');
     box.className = 'kh-box'; box.id = 'kh-menu'; box.setAttribute('aria-label', 'Main');
@@ -59,9 +50,6 @@
       [...ITEMS[wi].label].forEach((ch, i) => { const s = document.createElement('span'); s.textContent = ch; s.setAttribute('aria-hidden', 'true'); setF(s, (i * 2 + wi) % FONTS.length); w.appendChild(s); });
     });
 
-    // greeting carousel
-    const hello = [...hdr.querySelectorAll('.kh-hello > span')]; let gi = 0;
-    setInterval(() => { if (document.hidden) return; gi = (gi + 1) % hello.length; hello.forEach(s => { s.style.transform = 'translateY(' + (-gi * 100) + '%)'; }); }, 2600);
 
     // London clock
     const tEl = hdr.querySelector('.kh-time');
