@@ -4,11 +4,35 @@
 
   function watchMedia() {
     const videos = new Set(), visible = new Set(), watched = new WeakSet();
-    const imageQueue = new Set();
+    const imageQueue = new Set(), pendingImages = new Set();
+    // Once the page has settled, quietly fetch every remaining homepage image (nearest first),
+    // so a fast scroll never lands on empty frames. Videos stay on-demand.
+    let preloaded = false, videosPreloaded = false;
+    const preloadRest = () => {
+      if (stopped) return; preloaded = true;
+      pendingImages.forEach(img => { imageLoad.unobserve(img); imageQueue.add(img); });
+      pendingImages.clear();
+      document.querySelectorAll('img[loading="lazy"]').forEach(img => { img.loading = 'eager'; });
+      drainImages();
+    };
+    const pendingVideos = new Set();
+    const preloadVideos = () => {
+      if (stopped) return;
+      pendingVideos.forEach(v => { const src = v.dataset.lazy || v.dataset.src; if (valid(src) && !v.getAttribute('src')) { v.preload = 'auto'; v.setAttribute('src', src); } load.unobserve(v); });
+      pendingVideos.clear(); videosPreloaded = true;
+    };
+    // Every section loads straight away: images right after the first paint (nearest first),
+    // videos as soon as the page has finished loading.
+    const kick = () => { requestAnimationFrame(() => setTimeout(preloadRest, 50)); };
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', kick, { once: true }); else kick();
+    setTimeout(preloadRest, 1200);
+    const afterLoad = () => setTimeout(preloadVideos, 300);
+    if (document.readyState === 'complete') afterLoad(); else window.addEventListener('load', afterLoad, { once: true });
+    setTimeout(preloadVideos, 6000);
     let imageActive = 0, stopped = false;
     const drainImages = () => {
       if (stopped) return;
-      while (imageActive < 3 && imageQueue.size) {
+      while (imageActive < 8 && imageQueue.size) {
         const distance = el => Math.max(0, el.getBoundingClientRect().top - innerHeight);
         const img = [...imageQueue].sort((a, b) => distance(a) - distance(b))[0];
         imageQueue.delete(img);
@@ -30,7 +54,7 @@
     const imageLoad = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
-        imageQueue.add(entry.target); imageLoad.unobserve(entry.target);
+        imageQueue.add(entry.target); pendingImages.delete(entry.target); imageLoad.unobserve(entry.target);
       });
       drainImages();
     }, { rootMargin: '1800px 0px' });
@@ -79,8 +103,8 @@
           videos.add(element);
           playback.observe(element);
         }
-        if (element.tagName === 'IMG') imageLoad.observe(element);
-        else load.observe(element);
+        if (element.tagName === 'IMG') { pendingImages.add(element); imageLoad.observe(element); if (preloaded) { preloadRest(); } }
+        else { pendingVideos.add(element); load.observe(element); if (videosPreloaded) preloadVideos(); }
       });
     };
     const resume = () => videos.forEach(video => {
