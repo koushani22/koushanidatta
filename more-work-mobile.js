@@ -57,7 +57,7 @@
         media.controls = true; media.playsInline = true; media.muted = true; media.preload = 'metadata';
         media.poster = item[0].replace('.mp4','-poster.webp');
         media.setAttribute('aria-label',item[1]);
-      } else { media.alt = item[1]; media.decoding = 'async'; }
+      } else { media.alt = item[1]; }
       media.src = item[0]; stage.appendChild(media);
       if (video) media.play().catch(() => {});
     }
@@ -74,7 +74,7 @@
       button.setAttribute('aria-label','Open ' + item[1]); button.setAttribute('aria-haspopup','dialog');
       button.hidden = index >= 8;
       const frame = document.createElement('span'); frame.className = 'work-thumb-frame';
-      const image = document.createElement('img'); image.loading = 'lazy'; image.decoding = 'async'; image.alt = '';
+      const image = document.createElement('img'); image.alt = '';
       const filename = item[0].split('/').pop().replace(/\.(mp4|png|webp)$/i,'');
       image.src = /^(m\d{2}|n\d{2})$/.test(filename)
         ? 'assets/more/mobile/' + filename + '.webp'
