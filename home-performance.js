@@ -51,7 +51,7 @@
         load.unobserve(element);
         if (element.tagName === 'VIDEO') play(element);
       });
-    }, { rootMargin: '300px 0px' });
+    }, { rootMargin: '1400px 0px' });
     const playback = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         const video = entry.target;
@@ -120,7 +120,7 @@
           }).catch(error => console.warn('3D failed', error));
         });
       });
-    }, { rootMargin: '150px 0px' });
+    }, { rootMargin: '600px 0px' });
     observer.observe(target);
     return () => {
       cancelled = true;
