@@ -216,7 +216,7 @@
         else if (u.kind === 'swing') { o.rotation.z = Math.sin(t * 0.9 + i) * 0.06 + Math.sin(t * 7) * 0.35 * k; o.rotation.y = -0.35 + Math.sin(t * 0.45) * 0.3; o.rotation.x = 0.08; (u.charms || []).forEach((c, j) => { c.rotation.z = Math.sin(t * 1.6 + j * 1.3) * 0.12 + Math.sin(t * 9 + j) * 0.6 * k; c.rotation.x = Math.sin(t * 1.1 + j) * 0.08; }); }
         o.position.set(x, y, zz); o.scale.setScalar(s); });
       R.render(scene, cam); };
-    loop();
+    loop(); requestAnimationFrame(() => requestAnimationFrame(() => { cv.style.opacity = '1'; }));
     return { dispose() { cancelAnimationFrame(raf); ro.disconnect(); io.disconnect(); window.removeEventListener('pointermove', move); window.removeEventListener('click', click); tip.remove(); R.dispose(); } };
   };
 
