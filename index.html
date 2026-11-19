@@ -100,8 +100,8 @@
 }
 </style>
   <script src="sound.js?v=keychain-3"></script>
-  <link rel="stylesheet" href="kos-header.css?v=1" />
-  <script src="kos-header.js?v=1"></script>
+  <link rel="stylesheet" href="kos-header.css?v=2" />
+  <script src="kos-header.js?v=2"></script>
 <style id="game-play-controls">
 .game-play-link{position:absolute!important;inset:auto 16px clamp(26px,calc(4vw - 22px),42px) auto!important;z-index:2;box-sizing:border-box!important;display:inline-flex!important;flex-direction:row!important;align-items:center!important;justify-content:center!important;gap:8px!important;width:114px!important;height:44px!important;min-height:44px!important;padding:0!important;border:1px solid #2B2466!important;border-radius:8px!important;background:#211B42!important;color:#F6F2EC!important;font-family:'IBM Plex Mono',monospace!important;font-size:10px!important;font-weight:600!important;line-height:1!important;letter-spacing:.08em!important;white-space:nowrap!important;text-decoration:none!important;box-shadow:none!important;transition:background .2s ease,transform .2s ease!important}
 .game-play-link:hover{background:#3D3270!important;transform:translateY(-2px)}
@@ -602,13 +602,11 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 const FONTS = [
+  { f: "'Instrument Serif', serif", v: 'normal', s: 'normal', w: 400 },
   { f: "'Instrument Serif', serif", v: 'normal', s: 'italic', w: 400 },
-  { f: "'Anybody', sans-serif", v: "'wdth' 150, 'wght' 800", s: 'normal', w: 800 },
-  { f: "'Anybody', sans-serif", v: "'wdth' 50, 'wght' 200", s: 'normal', w: 200 },
-  { f: "'IBM Plex Mono', monospace", v: 'normal', s: 'normal', w: 300 },
-  { f: "'Instrument Serif', serif", v: 'normal', s: 'normal', w: 400 }
+  { f: "'Anybody', sans-serif", v: "'wdth' 100, 'wght' 650", s: 'normal', w: 650 }
 ];
-const REST = [1, 0, 2, 4, 0, 1, 3, 2, 0];
+const REST = [2, 1, 0, 0, 1, 2, 0, 0, 1];
 
 const MEDIA = [
   ['assets/more/v01.mp4', 'Motion', 'v'], ['assets/more/m01.webp', 'Ink · Chrysler & blossom'], ['assets/more/m02.webp', 'Watercolour · Still life'],

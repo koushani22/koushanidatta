@@ -1,5 +1,7 @@
 /* Floating corner header + "unboxing" menu. Replaces the old cream top bar. */
 #top[data-screen-label="Top bar"] { display: none !important; }
+/* keep the opening section (and its 3D objects) above the fixed cloud backdrop */
+[data-screen-label="Portfolio title"] { z-index: 2; }
 
 .kh { position: fixed; inset: 0 0 auto 0; z-index: 2147483001; display: flex; justify-content: space-between; align-items: flex-start;
   padding: 20px clamp(16px, 3vw, 40px); pointer-events: none; font-family: 'IBM Plex Mono', monospace; }

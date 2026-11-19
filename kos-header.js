@@ -5,11 +5,9 @@
   window.__kosHeader = 1;
 
   const FONTS = [
+    { f: "'Instrument Serif',serif", v: 'normal', s: 'normal', w: 400 },
     { f: "'Instrument Serif',serif", v: 'normal', s: 'italic', w: 400 },
-    { f: "'Anybody',sans-serif", v: "'wdth' 150,'wght' 800", s: 'normal', w: 800 },
-    { f: "'Anybody',sans-serif", v: "'wdth' 50,'wght' 200", s: 'normal', w: 200 },
-    { f: "'IBM Plex Mono',monospace", v: 'normal', s: 'normal', w: 300 },
-    { f: "'Instrument Serif',serif", v: 'normal', s: 'normal', w: 400 }
+    { f: "'Anybody',sans-serif", v: "'wdth' 100,'wght' 650", s: 'normal', w: 650 }
   ];
   const ITEMS = [
     { href: '#work', label: 'Work', img: 'assets/thumbs/bloom.jpg', cap: 'Latest · Bloom' },
